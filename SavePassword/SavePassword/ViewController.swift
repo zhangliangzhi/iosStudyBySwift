@@ -8,20 +8,37 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var spTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var aa:String = NSLocalizedString("teststr", comment: "")
+        spTableView.delegate = self
+        spTableView.dataSource = self
+        
+        let aa:String = NSLocalizedString("teststr", comment: "")
         print(aa)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
 
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "spcell", for: indexPath) as! SpTableViewCell
+        
+        cell.textLabel?.text = "8"
+        return cell
+    }
 }
 
