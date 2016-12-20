@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import CloudKit
 
 class SpTableViewController: UITableViewController {
 
+    @IBOutlet var spTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -23,6 +26,36 @@ class SpTableViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func AddSwiffer(_ sender: Any) {
+        let alert = UIAlertController(title: "Send Swiffer", message: "go send swiffer", preferredStyle: .alert)
+        alert.addTextField { (textField: UITextField) in
+            textField.placeholder = "Your sweet"
+        }
+        
+        alert.addAction(UIAlertAction(title: "send", style: .default, handler: { (action: UIAlertAction) in
+            let textField = alert.textFields?.first
+            if textField?.text != "" {
+                let title:String = (textField?.text)!
+                print(title)
+                
+                let newSweet = CKRecord(recordType: "SavePassword")
+                newSweet["title"] = title as CKRecordValue?
+                print(newSweet)
+                
+                let publicData = CKContainer.default().publicCloudDatabase
+                publicData.save(newSweet, completionHandler: { (record:CKRecord?, err:Error?) in
+                    if err == nil {
+                        print("sweet save")
+                    }else {
+                        print("no save")
+                    }
+                })
+            }
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 
     // MARK: - Table view data source
