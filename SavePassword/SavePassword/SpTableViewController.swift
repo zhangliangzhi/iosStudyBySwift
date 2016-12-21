@@ -9,9 +9,9 @@
 import UIKit
 import CloudKit
 
+var arrData: [CKRecord] = []
 class SpTableViewController: UITableViewController {
 
-    var arrData: [CKRecord] = []
     var refresh = UIRefreshControl()
     
     @IBOutlet var spTableView: UITableView!
@@ -38,9 +38,8 @@ class SpTableViewController: UITableViewController {
         query.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
         cloudData.perform(query, inZoneWith: nil) { (result:[CKRecord]?, err:Error?) in
             
-            if let arrData = result {
-                self.arrData = arrData
-                
+            if let getData = result {
+                arrData = getData
                 // 异步执行
                 DispatchQueue.main.async(execute: { 
                     self.spTableView.reloadData()
@@ -76,7 +75,7 @@ class SpTableViewController: UITableViewController {
                         DispatchQueue.main.async(execute: { 
                             print("sweet save")
                             self.spTableView.beginUpdates()
-                            self.arrData.insert(newSweet, at: 0)
+                            arrData.insert(newSweet, at: 0)
                             let indexPath = IndexPath(row: 0, section: 0)
                             self.spTableView.insertRows(at: [indexPath], with: .top)
                             self.spTableView.endUpdates()
@@ -147,7 +146,7 @@ class SpTableViewController: UITableViewController {
                     
                     // 异步回来主线程操作ui
                     DispatchQueue.main.async {
-                        self.arrData.remove(at: indexPath.row)
+                        arrData.remove(at: indexPath.row)
                         tableView.deleteRows(at: [indexPath], with: .fade)
                     }
                     
