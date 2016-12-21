@@ -12,12 +12,15 @@ import CloudKit
 class SpTableViewController: UITableViewController {
 
     var arrData: [CKRecord] = []
-    var arrData2 = [CKRecord]()
+    var refresh = UIRefreshControl()
     
     @IBOutlet var spTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        refresh.attributedTitle = NSAttributedString(string: "Pull to refresh.")
+        refresh.addTarget(self, action: #selector(SpTableViewController.loadData), for: .valueChanged)
+        spTableView.addSubview(refresh)
 
         loadData()
     }
@@ -32,6 +35,7 @@ class SpTableViewController: UITableViewController {
         let cloudData = CKContainer.default().publicCloudDatabase
         
         let query = CKQuery(recordType: "SavePassword", predicate: NSPredicate(format: "TRUEPREDICATE", argumentArray: nil ) )
+        query.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
         cloudData.perform(query, inZoneWith: nil) { (result:[CKRecord]?, err:Error?) in
             
             if let arrData = result {
@@ -40,7 +44,7 @@ class SpTableViewController: UITableViewController {
                 // 异步执行
                 DispatchQueue.main.async(execute: { 
                     self.spTableView.reloadData()
-                    
+                    self.refresh.endRefreshing()
                 })
                 
             }
@@ -68,9 +72,16 @@ class SpTableViewController: UITableViewController {
                 let publicData = CKContainer.default().publicCloudDatabase
                 publicData.save(newSweet, completionHandler: { (record:CKRecord?, err:Error?) in
                     if err == nil {
-                        print("sweet save")
+                        DispatchQueue.main.async(execute: { 
+                            print("sweet save")
+                            self.spTableView.beginUpdates()
+                            self.arrData.insert(newSweet, at: 0)
+                            let indexPath = IndexPath(row: 0, section: 0)
+                            self.spTableView.insertRows(at: [indexPath], with: .top)
+                            self.spTableView.endUpdates()
+                        })
                     }else {
-                        print("no save")
+                        print("no save", err)
                     }
                 })
             }
