@@ -200,7 +200,6 @@
                         <outlet property="sortID" destination="FXe-nx-VSt" id="fRh-QC-auY"/>
                         <outlet property="textView" destination="RON-xW-tUO" id="Mfh-CM-bSg"/>
                         <outlet property="tfTitle" destination="Eu8-K4-z5e" id="mRa-mi-i26"/>
-                        <outlet property="title" destination="Eu8-K4-z5e" id="wij-qI-fCX"/>
                         <outlet property="urltxt" destination="lMM-uK-wwl" id="owU-Dz-L8n"/>
                     </connections>
                 </viewController>
