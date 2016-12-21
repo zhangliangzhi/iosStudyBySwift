@@ -46,7 +46,8 @@ class SpTableViewController: UITableViewController {
                     self.spTableView.reloadData()
                     self.refresh.endRefreshing()
                 })
-                
+            }else {
+                print("can not content iCloud", err)
             }
         }
         
@@ -133,17 +134,33 @@ class SpTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            let one = arrData[indexPath.row]
+            CKContainer.default().publicCloudDatabase.delete(withRecordID: one.recordID, completionHandler: { (id:CKRecordID?, err:Error?) in
+                if err == nil {
+                    print("delete ok")
+                    
+                    // 异步回来主线程操作ui
+                    DispatchQueue.main.async {
+                        self.arrData.remove(at: indexPath.row)
+                        tableView.deleteRows(at: [indexPath], with: .fade)
+                    }
+                    
+                }else{
+                    print(("not del", err))
+                }
+            })
+
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
+    
 
     /*
     // Override to support rearranging the table view.
