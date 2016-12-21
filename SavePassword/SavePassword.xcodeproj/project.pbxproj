@@ -13,6 +13,7 @@
 		0B20F3E61E05D6F5008274A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B20F3E51E05D6F5008274A2 /* Assets.xcassets */; };
 		0B20F3E91E05D6F5008274A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B20F3E71E05D6F5008274A2 /* LaunchScreen.storyboard */; };
 		0B20F3F31E05D717008274A2 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B20F3F21E05D717008274A2 /* CloudKit.framework */; };
+		0B2825BC1E09B0ED0057BB44 /* AddUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2825BB1E09B0ED0057BB44 /* AddUpViewController.swift */; };
 		0B3226F61E06F4E800F46F0A /* SpTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3226F51E06F4E800F46F0A /* SpTableViewCell.swift */; };
 		0B3C97301E063C8D0014DFD1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0B3C97321E063C8D0014DFD1 /* InfoPlist.strings */; };
 		0BAD90B41E07C7150084A8BF /* SpTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BAD90B31E07C7150084A8BF /* SpTableViewController.swift */; };
@@ -28,6 +29,7 @@
 		0B20F3EA1E05D6F5008274A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B20F3F01E05D70A008274A2 /* SavePassword.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SavePassword.entitlements; sourceTree = "<group>"; };
 		0B20F3F21E05D717008274A2 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		0B2825BB1E09B0ED0057BB44 /* AddUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddUpViewController.swift; sourceTree = "<group>"; };
 		0B3226D41E06E3BA00F46F0A /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		0B3226D51E06E3D100F46F0A /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0B3226D61E06E3E000F46F0A /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				0B20F3EA1E05D6F5008274A2 /* Info.plist */,
 				0B3226F51E06F4E800F46F0A /* SpTableViewCell.swift */,
 				0BAD90B31E07C7150084A8BF /* SpTableViewController.swift */,
+				0B2825BB1E09B0ED0057BB44 /* AddUpViewController.swift */,
 			);
 			path = SavePassword;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B2825BC1E09B0ED0057BB44 /* AddUpViewController.swift in Sources */,
 				0BAD90B41E07C7150084A8BF /* SpTableViewController.swift in Sources */,
 				0B20F3E11E05D6F5008274A2 /* ViewController.swift in Sources */,
 				0B20F3DF1E05D6F5008274A2 /* AppDelegate.swift in Sources */,
