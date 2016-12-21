@@ -11,21 +11,42 @@ import CloudKit
 
 class SpTableViewController: UITableViewController {
 
+    var arrData: [CKRecord] = []
+    var arrData2 = [CKRecord]()
+    
     @IBOutlet var spTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        loadData()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func loadData() {
+        arrData = []
+        let cloudData = CKContainer.default().publicCloudDatabase
+        
+        let query = CKQuery(recordType: "SavePassword", predicate: NSPredicate(format: "TRUEPREDICATE", argumentArray: nil ) )
+        cloudData.perform(query, inZoneWith: nil) { (result:[CKRecord]?, err:Error?) in
+            
+            if let arrData = result {
+                self.arrData = arrData
+                
+                // 异步执行
+                DispatchQueue.main.async(execute: { 
+                    self.spTableView.reloadData()
+                    
+                })
+                
+            }
+        }
+        
+        
     }
     
     @IBAction func AddSwiffer(_ sender: Any) {
@@ -61,24 +82,37 @@ class SpTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        
+        return arrData.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "spcell", for: indexPath)
 
-        // Configure the cell...
+        if arrData.count == 0 {
+            return cell
+        }
+        
+        let one = arrData[indexPath.row]
+        
+        if let title = one["title"] as? String {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            let dateString = dateFormatter.string(from: one.creationDate!)
+            
+            cell.textLabel?.text = title
+            cell.detailTextLabel?.text = dateString
+        }
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
