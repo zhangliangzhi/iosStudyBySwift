@@ -14,7 +14,7 @@ class AddUpViewController: UIViewController, UITextFieldDelegate, UITextViewDele
     @IBOutlet weak var tfTitle: UITextField!
     @IBOutlet weak var urltxt: UITextField!
     @IBOutlet weak var textView: UITextView!
-    
+    var keyHeight = 50
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,6 +24,20 @@ class AddUpViewController: UIViewController, UITextFieldDelegate, UITextViewDele
         textView.delegate = self
         tfTitle.becomeFirstResponder()
         
+        textView.text = "Account: \n\nPassword:"
+        
+        // 加监听
+        NotificationCenter.default.addObserver(self, selector: #selector(tvBegin), name: .UITextViewTextDidBeginEditing, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(tvEnd), name: .UITextViewTextDidEndEditing, object: nil)
+    }
+    
+    
+    func tvBegin() {
+//        print("text view begin")
+    }
+    
+    func tvEnd() {
+//        print("text view end")
     }
     
     
@@ -52,6 +66,8 @@ class AddUpViewController: UIViewController, UITextFieldDelegate, UITextViewDele
         
         return true
     }
+    
+    
     
     @IBAction func saveAction(_ sender: Any) {
     }
