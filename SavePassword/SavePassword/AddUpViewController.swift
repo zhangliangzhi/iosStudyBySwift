@@ -43,8 +43,11 @@ class AddUpViewController: UIViewController, UITextFieldDelegate, UITextViewDele
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         
         if text == "\n" {
-            textView.resignFirstResponder()
-            
+            // 延迟1毫米 执行
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(1 * NSEC_PER_SEC))/Double(1000*NSEC_PER_SEC) , execute: {
+                self.textView.resignFirstResponder()
+            })
+          
         }
         
         return true
