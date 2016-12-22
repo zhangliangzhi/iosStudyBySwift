@@ -22,12 +22,46 @@ class SpTableViewController: UITableViewController {
         refresh.addTarget(self, action: #selector(SpTableViewController.loadData), for: .valueChanged)
         spTableView.addSubview(refresh)
 
+        setupCloudKitSubscription()
+        
+        DispatchQueue.main.async {
+            NotificationCenter.default.addObserver(self, selector: #selector(self.loadData), name: NSNotification.Name(rawValue: "peformReloaded"), object: nil)
+        }
+
+        
         loadData()
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func setupCloudKitSubscription()  {
+        let userDefault = UserDefaults.standard
+        if userDefault.bool(forKey: "subscribed") == false {
+            let predicate = NSPredicate(format: "TRUEPREDICATE", argumentArray: nil)
+            let subscription = CKSubscription(recordType: "SavePassword", predicate: predicate, options: .firesOnRecordCreation)
+            
+            let notificationInfo = CKNotificationInfo()
+            notificationInfo.alertLocalizationKey = "Save Password"
+            notificationInfo.shouldBadge = true
+            subscription.notificationInfo = notificationInfo
+            
+            let publicData = CKContainer.default().publicCloudDatabase
+            publicData.save(subscription) { (sub:CKSubscription?, err:Error?) in
+                if err != nil {
+                    print(err?.localizedDescription)
+                }else {
+                    userDefault.set(true, forKey: "subscribed")
+                    userDefault.synchronize()
+                }
+            }
+            
+        }
+        
+
     }
     
     func loadData() {
@@ -44,6 +78,7 @@ class SpTableViewController: UITableViewController {
                 DispatchQueue.main.async(execute: { 
                     self.spTableView.reloadData()
                     self.refresh.endRefreshing()
+                    self.view.layoutSubviews()
                 })
             }else {
                 print("can not content iCloud", err)
