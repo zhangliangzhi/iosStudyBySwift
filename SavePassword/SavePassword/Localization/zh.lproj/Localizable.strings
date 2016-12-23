@@ -6,6 +6,7 @@
   Copyright © 2016年 xigk. All rights reserved.
 */
 
+"name" = "保存密码";
 "IDnot" = "ID不能为空";
 "savesucess" = "保存成功";
 "IDre" = "ID不能重复";
