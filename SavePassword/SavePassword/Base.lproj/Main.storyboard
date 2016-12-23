@@ -49,7 +49,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cDr-HL-pd5">
-                                            <rect key="frame" x="194.66666666666663" y="0.0" width="209.33333333333337" height="43"/>
+                                            <rect key="frame" x="194.66666666666663" y="0.0" width="214.33333333333337" height="43"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -76,11 +76,18 @@
                                         <constraint firstItem="rFM-LU-LAi" firstAttribute="leading" secondItem="NL0-k9-l8O" secondAttribute="leading" constant="15" id="W6R-qY-n7c"/>
                                         <constraint firstAttribute="bottom" secondItem="cDr-HL-pd5" secondAttribute="bottom" id="mEx-CK-gZR"/>
                                         <constraint firstItem="tPr-cI-xn5" firstAttribute="leading" secondItem="NL0-k9-l8O" secondAttribute="leading" constant="15" id="mt9-dD-jEV"/>
-                                        <constraint firstAttribute="trailing" secondItem="cDr-HL-pd5" secondAttribute="trailing" constant="10" id="na8-Nn-qfF"/>
+                                        <constraint firstAttribute="trailing" secondItem="cDr-HL-pd5" secondAttribute="trailing" constant="5" id="na8-Nn-qfF"/>
                                         <constraint firstItem="osF-Q7-eY6" firstAttribute="top" secondItem="EUd-9V-3lg" secondAttribute="bottom" id="vaQ-1l-v2C"/>
                                         <constraint firstItem="cDr-HL-pd5" firstAttribute="top" secondItem="NL0-k9-l8O" secondAttribute="top" id="xAw-PZ-sx2"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="textView" destination="cDr-HL-pd5" id="gpP-XB-vvs"/>
+                                    <outlet property="txtDate" destination="tPr-cI-xn5" id="1CW-GI-1O3"/>
+                                    <outlet property="txtID" destination="rFM-LU-LAi" id="cwZ-vh-HWK"/>
+                                    <outlet property="txtTitle" destination="EUd-9V-3lg" id="B0B-cB-7bb"/>
+                                    <outlet property="txtURL" destination="osF-Q7-eY6" id="x5X-uU-OCr"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

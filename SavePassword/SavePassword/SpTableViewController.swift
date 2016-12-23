@@ -152,15 +152,16 @@ class SpTableViewController: UITableViewController {
         }
         
         let one = arrData[indexPath.row]
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let dateString = dateFormatter.string(from: one.modificationDate!)
         
-        if let title = one["title"] as? String {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd"
-            let dateString = dateFormatter.string(from: one.creationDate!)
-            
-//            cell.textLabel?.text = title
-//            cell.detailTextLabel?.text = dateString
-        }
+        let iID:Int64 = (one.value(forKey: "ID") as! Int64?)!
+        cell.txtID.text = String(iID)
+        cell.txtDate.text = dateString
+        cell.txtTitle.text = one.value(forKey: "title") as! String?
+        cell.txtURL.text = one.value(forKey: "url") as! String?
+        cell.textView.text = one.value(forKey: "spdata") as! String?
 
         return cell
     }

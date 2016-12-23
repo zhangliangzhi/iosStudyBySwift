@@ -10,6 +10,11 @@ import UIKit
 
 class SpTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var txtURL: UILabel!
+    @IBOutlet weak var txtTitle: UILabel!
+    @IBOutlet weak var txtDate: UILabel!
+    @IBOutlet weak var txtID: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
     }
