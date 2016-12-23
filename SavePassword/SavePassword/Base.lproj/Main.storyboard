@@ -369,9 +369,6 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QaM-6U-R5I">
                                 <rect key="frame" x="40" y="146" width="48" height="30"/>
                                 <state key="normal" title="Cancle"/>
-                                <connections>
-                                    <action selector="cancleAction:" destination="e63-lw-vVz" eventType="touchUpInside" id="loL-EL-CRx"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ks-DA-VQZ">
                                 <rect key="frame" x="194.66666666666666" y="312" width="25" height="14.666666666666686"/>
@@ -413,6 +410,11 @@
                     </view>
                     <connections>
                         <outlet property="lastUpdateTime" destination="9Ks-DA-VQZ" id="aBc-h8-jv6"/>
+                        <outlet property="localCancle" destination="QaM-6U-R5I" id="gEe-zQ-Jgj"/>
+                        <outlet property="localNote" destination="aKe-on-2E2" id="KFI-I4-lLK"/>
+                        <outlet property="localSave" destination="Fxv-gd-2Of" id="xQh-hv-Oo8"/>
+                        <outlet property="localTitle" destination="kAQ-8F-qNh" id="Gu9-aM-C0c"/>
+                        <outlet property="localURL" destination="SOZ-SH-tDi" id="ElN-mT-HTp"/>
                         <outlet property="sortID" destination="egb-NL-lrK" id="DR5-Tx-6av"/>
                         <outlet property="textView" destination="5Iq-Er-Jw9" id="Zb9-o1-QDI"/>
                         <outlet property="tfTitle" destination="GfG-zt-sgn" id="ejo-t4-5ey"/>

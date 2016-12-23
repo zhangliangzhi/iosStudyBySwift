@@ -20,7 +20,7 @@ class SpTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = NSLocalizedString("name", comment: "")
+        self.title = NSLocalizedString("SavePassword", comment: "")
         refresh.attributedTitle = NSAttributedString(string: NSLocalizedString("Pull to refresh", comment: ""))
         refresh.addTarget(self, action: #selector(SpTableViewController.loadData), for: .valueChanged)
         spTableView.addSubview(refresh)

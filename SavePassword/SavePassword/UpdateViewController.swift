@@ -11,6 +11,12 @@ import CloudKit
 
 class UpdateViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     
+    @IBOutlet weak var localCancle: UIButton!
+    @IBOutlet weak var localSave: UIButton!
+    @IBOutlet weak var localNote: UILabel!
+    @IBOutlet weak var localURL: UILabel!
+    @IBOutlet weak var localTitle: UILabel!
+    
     @IBOutlet weak var sortID: UITextField!
     @IBOutlet weak var tfTitle: UITextField!
     @IBOutlet weak var urltxt: UITextField!
@@ -32,6 +38,7 @@ class UpdateViewController: UIViewController, UITextFieldDelegate, UITextViewDel
         // init data
         urltxt.text = ""
         initSpData()
+        initLocalize()
     }
     
     func initSpData() {
@@ -47,6 +54,19 @@ class UpdateViewController: UIViewController, UITextFieldDelegate, UITextViewDel
         dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
         let update:String = dateFormatter.string(from: one.modificationDate!)
         lastUpdateTime.text = update
+    }
+    
+    func initLocalize() {
+        localTitle.text = NSLocalizedString("Title", comment: "") + ":"
+        localURL.text = NSLocalizedString("URL", comment: "") + ":"
+        localNote.text = NSLocalizedString("Note", comment: "")
+        
+        localCancle.setTitle(NSLocalizedString("Cancle", comment: ""), for: .normal)
+        localSave.setTitle(NSLocalizedString("Save", comment: ""), for: .normal)
+        
+        sortID.placeholder = NSLocalizedString("Enter Sort ID", comment: "")
+        tfTitle.placeholder = NSLocalizedString("Enter Title", comment: "")
+        urltxt.placeholder = NSLocalizedString("Enter URL", comment: "")
     }
 
     
