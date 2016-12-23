@@ -33,9 +33,7 @@
 		0B20F3F01E05D70A008274A2 /* SavePassword.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SavePassword.entitlements; sourceTree = "<group>"; };
 		0B20F3F21E05D717008274A2 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		0B2825BB1E09B0ED0057BB44 /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
-		0B3226D41E06E3BA00F46F0A /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		0B3226D51E06E3D100F46F0A /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		0B3226D61E06E3E000F46F0A /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		0B3226D71E06E40500F46F0A /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0B3226D81E06E40A00F46F0A /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0B3226D91E06E41000F46F0A /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -72,8 +70,9 @@
 		0B73CC8E1E0CD7B200AD0157 /* Toast-Swift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Toast-Swift.swift"; sourceTree = "<group>"; };
 		0B73CC931E0CE23000AD0157 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0B73CC951E0CE23200AD0157 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		0B73CC961E0CE23300AD0157 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		0B73CC971E0D8AD600AD0157 /* UpdateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateViewController.swift; sourceTree = "<group>"; };
+		0B73CC991E0DBF2500AD0157 /* zh */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zh; path = zh.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0B73CC9A1E0DBF2600AD0157 /* zh */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zh; path = zh.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0BAD90B31E07C7150084A8BF /* SpTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -195,9 +194,7 @@
 			knownRegions = (
 				en,
 				Base,
-				"zh-Hans",
 				fr,
-				"zh-Hant",
 				de,
 				ja,
 				es,
@@ -228,6 +225,7 @@
 				id,
 				ms,
 				vi,
+				zh,
 			);
 			mainGroup = 0B20F3D21E05D6F5008274A2;
 			productRefGroup = 0B20F3DC1E05D6F5008274A2 /* Products */;
@@ -293,9 +291,7 @@
 			children = (
 				0B3C97311E063C8D0014DFD1 /* en */,
 				0B3C97331E063CA00014DFD1 /* Base */,
-				0B3226D41E06E3BA00F46F0A /* zh-Hans */,
 				0B3226D51E06E3D100F46F0A /* fr */,
-				0B3226D61E06E3E000F46F0A /* zh-Hant */,
 				0B3226D71E06E40500F46F0A /* de */,
 				0B3226D81E06E40A00F46F0A /* ja */,
 				0B3226D91E06E41000F46F0A /* es */,
@@ -326,6 +322,7 @@
 				0B3226F21E06E4A100F46F0A /* id */,
 				0B3226F31E06E4A800F46F0A /* ms */,
 				0B3226F41E06E4AD00F46F0A /* vi */,
+				0B73CC991E0DBF2500AD0157 /* zh */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -335,7 +332,7 @@
 			children = (
 				0B73CC931E0CE23000AD0157 /* Base */,
 				0B73CC951E0CE23200AD0157 /* en */,
-				0B73CC961E0CE23300AD0157 /* zh-Hans */,
+				0B73CC9A1E0DBF2600AD0157 /* zh */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
