@@ -7,29 +7,129 @@
 //
 
 import UIKit
+import CloudKit
 
-class UpdateViewController: UIViewController {
+class UpdateViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
+    
+    @IBOutlet weak var sortID: UITextField!
+    @IBOutlet weak var tfTitle: UITextField!
+    @IBOutlet weak var urltxt: UITextField!
+    @IBOutlet weak var textView: UITextView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        sortID.delegate = self
+        tfTitle.delegate = self
+        urltxt.delegate = self
+        textView.delegate = self
+        textView.becomeFirstResponder()
+        
+        self.title = NSLocalizedString("Update", comment: "")
 
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        // init data
+        urltxt.text = ""
+        initSpData()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func initSpData() {
+        let one = arrData[gIndex]
+        
+        let iID:Int64 = (one.value(forKey: "ID") as! Int64?)!
+        sortID.text = String(iID)
+        tfTitle.text = one.value(forKey: "title") as! String?
+        urltxt.text = one.value(forKey: "url") as! String?
+        textView.text = one.value(forKey: "spdata") as! String?
     }
-    */
 
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == sortID {
+            tfTitle.becomeFirstResponder()
+        }else if textField == tfTitle {
+            urltxt.becomeFirstResponder()
+        }else if textField == urltxt {
+            textView.becomeFirstResponder()
+        }else{
+            
+        }
+        return true
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        
+        if text == "\n" {
+            // 延迟1毫秒 执行
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(1 * NSEC_PER_SEC))/Double(1000*NSEC_PER_SEC) , execute: {
+                self.textView.resignFirstResponder()
+            })
+            
+        }
+        
+        return true
+    }
+    
+    
+    // 保存数据
+    @IBAction func saveAction(_ sender: Any) {
+        var id:String = sortID.text!
+        var title:String = tfTitle.text!
+        var url:String = urltxt.text!
+        let spData:String = textView.text!
+        
+        id = id.trimmingCharacters(in: .whitespaces)
+        title = title.trimmingCharacters(in: .whitespaces)
+        url = url.trimmingCharacters(in: .whitespaces)
+        
+        // id 是否为空
+        if id == "" {
+            self.view.makeToast(NSLocalizedString("IDnot", comment: ""), duration: 3.0, position: .center)
+            return
+        }
+        let iID = Int64(id)
+        if iID == nil {
+            self.view.makeToast(NSLocalizedString("IDnot", comment: ""), duration: 3.0, position: .center)
+            return
+        }
+        // id是否重复
+        var icount = 0
+        for i in 0..<arrData.count {
+            let getID = arrData[i].value(forKey: "ID")
+            let igetID:Int64 = getID as! Int64
+            if iID == igetID {
+                icount += 1
+            }
+        }
+        if icount > 1 {
+            self.view.makeToast(NSLocalizedString("IDre", comment: ""), duration: 3.0, position: .center)
+            return
+        }
+        
+        let one = arrData[gIndex]
+        one["ID"] = iID as CKRecordValue?
+        one["title"] = title as CKRecordValue?
+        one["url"] = url as CKRecordValue?
+        one["spdata"] = spData as CKRecordValue?
+        CKContainer.default().publicCloudDatabase.save(one) { (record:CKRecord?, err:Error?) in
+            if err == nil {
+                print("update sucess")
+                // 保存成功
+                DispatchQueue.main.async {
+                    self.view.makeToast(NSLocalizedString("savesucess", comment: ""), duration: 3.0, position: .center)
+                    self.navigationController!.popViewController(animated: true)
+                }
+            }else {
+                // 保存不成功
+                print("update fail")
+            }
+        }
+    }
+    
+    // 取消
+    @IBAction func cancleAction(_ sender: Any) {
+        navigationController!.popViewController(animated: true)
+    }
+    
+    
+    
 }

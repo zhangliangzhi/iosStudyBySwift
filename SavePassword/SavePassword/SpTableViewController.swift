@@ -10,6 +10,8 @@ import UIKit
 import CloudKit
 
 var arrData: [CKRecord] = []
+var gIndex = 0
+
 class SpTableViewController: UITableViewController {
 
     var refresh = UIRefreshControl()
@@ -36,6 +38,10 @@ class SpTableViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        spTableView.reloadData()
     }
     
     func setupCloudKitSubscription()  {
@@ -139,7 +145,7 @@ class SpTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "spcell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "spcell", for: indexPath) as! SpTableViewCell
 
         if arrData.count == 0 {
             return cell
@@ -152,8 +158,8 @@ class SpTableViewController: UITableViewController {
             dateFormatter.dateFormat = "yyyy-MM-dd"
             let dateString = dateFormatter.string(from: one.creationDate!)
             
-            cell.textLabel?.text = title
-            cell.detailTextLabel?.text = dateString
+//            cell.textLabel?.text = title
+//            cell.detailTextLabel?.text = dateString
         }
 
         return cell
@@ -193,6 +199,12 @@ class SpTableViewController: UITableViewController {
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        gIndex = indexPath.row
+        let updateController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "updatesp") as! UpdateViewController
+        navigationController!.pushViewController(updateController, animated: true)
     }
     
 

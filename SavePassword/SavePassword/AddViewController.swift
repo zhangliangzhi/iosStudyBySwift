@@ -1,5 +1,5 @@
 //
-//  AddUpViewController.swift
+//  AddViewController.swift
 //  SavePassword
 //
 //  Created by ZhangLiangZhi on 2016/12/21.
@@ -9,7 +9,7 @@
 import UIKit
 import CloudKit
 
-class AddUpViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
+class AddViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
 
     @IBOutlet weak var sortID: UITextField!
     @IBOutlet weak var tfTitle: UITextField!
