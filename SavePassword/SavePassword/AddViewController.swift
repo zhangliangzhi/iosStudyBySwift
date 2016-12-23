@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CloudKit
 
 class AddUpViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
 
@@ -24,6 +25,8 @@ class AddUpViewController: UIViewController, UITextFieldDelegate, UITextViewDele
         textView.delegate = self
         tfTitle.becomeFirstResponder()
         
+        self.title = NSLocalizedString("Add", comment: "")
+        
         textView.text = "Account: \n\nPassword:"
         
         // 加监听
@@ -32,6 +35,10 @@ class AddUpViewController: UIViewController, UITextFieldDelegate, UITextViewDele
         
         // init data
         urltxt.text = "www."
+        initSortID()
+    }
+    
+    func initSortID() {
         if arrData.count == 0 {
             sortID.text = String(100)
         }else {
@@ -39,7 +46,6 @@ class AddUpViewController: UIViewController, UITextFieldDelegate, UITextViewDele
             sortID.text = String( lastID + 100)
         }
     }
-    
     
     func tvBegin() {
 //        print("text view begin")
@@ -79,23 +85,56 @@ class AddUpViewController: UIViewController, UITextFieldDelegate, UITextViewDele
     
     // 保存数据
     @IBAction func saveAction(_ sender: Any) {
-        let id:String = sortID.text!
-        let title:String = tfTitle.text!
-        let url:String = urltxt.text!
+        var id:String = sortID.text!
+        var title:String = tfTitle.text!
+        var url:String = urltxt.text!
         let spData:String = textView.text!
-
-        let aa:String = NSLocalizedString("teststr", comment: "")
-        print(aa)
         
+        id = id.trimmingCharacters(in: .whitespaces)
+        title = title.trimmingCharacters(in: .whitespaces)
+        url = url.trimmingCharacters(in: .whitespaces)
         
-        let tips1 = NSLocalizedString("IDnot", comment: "")
-        print(tips1)
-        print(NSLocalizedString("HIOK", comment: ""))
-        print(NSLocalizedString("idnotempty", comment: ""))
         // id 是否为空
-//        if id == "" {
+        if id == "" {
             self.view.makeToast(NSLocalizedString("IDnot", comment: ""), duration: 3.0, position: .center)
-//        }
+            initSortID()
+            return
+        }
+        let iID = Int64(id)
+        if iID == nil {
+            self.view.makeToast(NSLocalizedString("IDnot", comment: ""), duration: 3.0, position: .center)
+            initSortID()
+            return
+        }
+        // id是否重复
+        for i in 0..<arrData.count {
+            let getID = arrData[i].value(forKey: "ID")
+            let igetID:Int64 = getID as! Int64
+            if iID == igetID {
+                self.view.makeToast(NSLocalizedString("IDre", comment: ""), duration: 3.0, position: .center)
+                return
+            }
+        }
+        
+        let one = CKRecord(recordType: "SavePassword")
+        one["ID"] = iID as CKRecordValue?
+        one["title"] = title as CKRecordValue?
+        one["url"] = url as CKRecordValue?
+        one["spdata"] = spData as CKRecordValue?
+        CKContainer.default().publicCloudDatabase.save(one) { (record:CKRecord?, err:Error?) in
+            if err == nil {
+                print("save sucess")
+                // 保存成功
+                DispatchQueue.main.async {
+                    arrData.append(one)
+                    self.view.makeToast(NSLocalizedString("savesucess", comment: ""), duration: 3.0, position: .center)
+                    self.navigationController!.popViewController(animated: true)
+                }
+            }else {
+                // 保存不成功
+                print("save fail")
+            }
+        }
     }
     
     // 取消
