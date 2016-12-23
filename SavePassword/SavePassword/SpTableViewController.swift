@@ -31,7 +31,8 @@ class SpTableViewController: UITableViewController {
             NotificationCenter.default.addObserver(self, selector: #selector(self.loadData), name: NSNotification.Name(rawValue: "peformReloaded"), object: nil)
         }
 
-        
+        let a = NSLocale.preferredLanguages
+        print(a)
         loadData()
         
     }

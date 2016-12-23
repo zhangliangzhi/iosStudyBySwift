@@ -6,20 +6,21 @@
   Copyright © 2016年 xigk. All rights reserved.
 */
 
-"name" = "SavePassword";
-"IDnot" = "ID can not be empty";
-"savesucess" = "save sucess";
-"IDre" = "ID can not repeat";
-"Update" = "Update";
-"Add" = "Add";
-"Title" = "Title";
-"URL" = "URL";
-"Cancle" = "Cancle";
-"Save" = "Save";
-"Note" = "Note";
-"Account" = "Account";
-"Password" = "Password";
-"Enter Title" = "Enter Title";
-"Enter Sort ID" = "Enter Sort ID";
-"Enter URL" = "Enter URL";
-"Pull to refresh" = "Pull to refresh";
+"SavePassword" = "保存密码";
+"IDnot" = "ID不能为空";
+"savesucess" = "保存成功";
+"IDre" = "ID不能重复";
+"Update" = "更新";
+"Add" = "增加";
+"Title" = "标题";
+"URL" = "网址";
+"Cancle" = "取消";
+"Save" = "保存";
+"Note" = "记录";
+"Account" = "账号";
+"Password" = "密码";
+"Enter Title" = "输入标题";
+"Enter Sort ID" = "输入排序ID";
+"Enter URL" = "输入网址";
+"Enter URL" = "输入网址";
+"Pull to refresh" = "下拉刷新";
