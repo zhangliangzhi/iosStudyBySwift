@@ -69,7 +69,7 @@ class SpTableViewController: UITableViewController {
         let cloudData = CKContainer.default().publicCloudDatabase
         
         let query = CKQuery(recordType: "SavePassword", predicate: NSPredicate(format: "TRUEPREDICATE", argumentArray: nil ) )
-        query.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
+        query.sortDescriptors = [NSSortDescriptor(key: "ID", ascending: true)]
         cloudData.perform(query, inZoneWith: nil) { (result:[CKRecord]?, err:Error?) in
             
             if let getData = result {

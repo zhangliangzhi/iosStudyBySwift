@@ -29,6 +29,15 @@ class AddUpViewController: UIViewController, UITextFieldDelegate, UITextViewDele
         // 加监听
         NotificationCenter.default.addObserver(self, selector: #selector(tvBegin), name: .UITextViewTextDidBeginEditing, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(tvEnd), name: .UITextViewTextDidEndEditing, object: nil)
+        
+        // init data
+        urltxt.text = "www."
+        if arrData.count == 0 {
+            sortID.text = String(100)
+        }else {
+            let lastID:Int64 = arrData[arrData.count-1]["ID"] as! Int64
+            sortID.text = String( lastID + 100)
+        }
     }
     
     
@@ -57,7 +66,7 @@ class AddUpViewController: UIViewController, UITextFieldDelegate, UITextViewDele
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         
         if text == "\n" {
-            // 延迟1毫米 执行
+            // 延迟1毫秒 执行
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(1 * NSEC_PER_SEC))/Double(1000*NSEC_PER_SEC) , execute: {
                 self.textView.resignFirstResponder()
             })
@@ -68,11 +77,30 @@ class AddUpViewController: UIViewController, UITextFieldDelegate, UITextViewDele
     }
     
     
-    
+    // 保存数据
     @IBAction func saveAction(_ sender: Any) {
+        let id:String = sortID.text!
+        let title:String = tfTitle.text!
+        let url:String = urltxt.text!
+        let spData:String = textView.text!
+
+        let aa:String = NSLocalizedString("teststr", comment: "")
+        print(aa)
+        
+        
+        let tips1 = NSLocalizedString("IDnot", comment: "")
+        print(tips1)
+        print(NSLocalizedString("HIOK", comment: ""))
+        print(NSLocalizedString("idnotempty", comment: ""))
+        // id 是否为空
+//        if id == "" {
+            self.view.makeToast(NSLocalizedString("IDnot", comment: ""), duration: 3.0, position: .center)
+//        }
     }
     
+    // 取消
     @IBAction func cancleAction(_ sender: Any) {
+        navigationController!.popViewController(animated: true)
     }
 
     
