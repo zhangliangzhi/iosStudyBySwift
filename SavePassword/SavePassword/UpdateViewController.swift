@@ -112,6 +112,7 @@ class UpdateViewController: UIViewController, UITextFieldDelegate, UITextViewDel
             return
         }
         
+        self.view.isUserInteractionEnabled = false
         let one = arrData[gIndex]
         one["ID"] = iID as CKRecordValue?
         one["title"] = title as CKRecordValue?
@@ -128,6 +129,10 @@ class UpdateViewController: UIViewController, UITextFieldDelegate, UITextViewDel
             }else {
                 // 保存不成功
                 print("update fail")
+                DispatchQueue.main.async {
+                    self.view.makeToast(NSLocalizedString("savesucess", comment: ""), duration: 3.0, position: .center)
+                    self.view.isUserInteractionEnabled = true
+                }
             }
         }
     }

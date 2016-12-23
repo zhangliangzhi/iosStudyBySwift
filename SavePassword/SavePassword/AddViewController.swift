@@ -15,7 +15,7 @@ class AddViewController: UIViewController, UITextFieldDelegate, UITextViewDelega
     @IBOutlet weak var tfTitle: UITextField!
     @IBOutlet weak var urltxt: UITextField!
     @IBOutlet weak var textView: UITextView!
-    var keyHeight = 50
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -116,12 +116,15 @@ class AddViewController: UIViewController, UITextFieldDelegate, UITextViewDelega
             }
         }
         
+        self.view.isUserInteractionEnabled = false
+        
         let one = CKRecord(recordType: "SavePassword")
         one["ID"] = iID as CKRecordValue?
         one["title"] = title as CKRecordValue?
         one["url"] = url as CKRecordValue?
         one["spdata"] = spData as CKRecordValue?
         CKContainer.default().publicCloudDatabase.save(one) { (record:CKRecord?, err:Error?) in
+
             if err == nil {
                 print("save sucess")
                 // 保存成功
@@ -133,6 +136,10 @@ class AddViewController: UIViewController, UITextFieldDelegate, UITextViewDelega
             }else {
                 // 保存不成功
                 print("save fail")
+                DispatchQueue.main.async {
+                    self.view.isUserInteractionEnabled = true
+                }
+                
             }
         }
     }
