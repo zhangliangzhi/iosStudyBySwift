@@ -37,13 +37,13 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016-12-12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tPr-cI-xn5">
-                                            <rect key="frame" x="15" y="26.666666666666664" width="65.333333333333329" height="13.999999999999993"/>
+                                            <rect key="frame" x="15" y="26.666666666666664" width="65.666666666666671" height="13.999999999999993"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EUd-9V-3lg">
-                                            <rect key="frame" x="86.333333333333343" y="3" width="110.00000000000003" height="21"/>
+                                            <rect key="frame" x="86.666666666666657" y="3" width="109.99999999999997" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="110" id="Lix-Fu-ZXf"/>
                                                 <constraint firstAttribute="height" constant="21" id="j0h-vx-ILR"/>
@@ -175,10 +175,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descripte" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z6J-sN-ePT">
-                                <rect key="frame" x="147" y="194" width="120" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z6J-sN-ePT">
+                                <rect key="frame" x="107" y="194" width="200" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="Eeo-Pm-ZWn"/>
+                                    <constraint firstAttribute="width" constant="200" id="Eeo-Pm-ZWn"/>
                                     <constraint firstAttribute="height" constant="21" id="JP4-jZ-WKQ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -241,6 +241,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="localCancle" destination="l6p-nU-qnK" id="3fH-M6-Is6"/>
+                        <outlet property="localNote" destination="z6J-sN-ePT" id="rDt-5W-UD0"/>
+                        <outlet property="localSave" destination="e1v-FK-RQW" id="jeB-BD-3KV"/>
+                        <outlet property="localTitle" destination="OpV-6L-CWz" id="Ekt-eL-fnr"/>
+                        <outlet property="localURL" destination="kJL-mY-9zi" id="k3A-fS-3Pm"/>
                         <outlet property="sortID" destination="FXe-nx-VSt" id="fRh-QC-auY"/>
                         <outlet property="textView" destination="RON-xW-tUO" id="Mfh-CM-bSg"/>
                         <outlet property="tfTitle" destination="Eu8-K4-z5e" id="mRa-mi-i26"/>
@@ -333,7 +338,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descripte" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aKe-on-2E2">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aKe-on-2E2">
                                 <rect key="frame" x="147" y="150" width="120" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="8AH-5w-gnE"/>
@@ -369,7 +374,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ks-DA-VQZ">
-                                <rect key="frame" x="194.66666666666666" y="312" width="24.666666666666686" height="14.333333333333314"/>
+                                <rect key="frame" x="194.66666666666666" y="312" width="25" height="14.666666666666686"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>

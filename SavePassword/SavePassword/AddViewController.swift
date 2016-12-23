@@ -11,6 +11,12 @@ import CloudKit
 
 class AddViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
 
+    @IBOutlet weak var localTitle: UILabel!
+    @IBOutlet weak var localURL: UILabel!
+    @IBOutlet weak var localNote: UILabel!
+    @IBOutlet weak var localSave: UIButton!
+    @IBOutlet weak var localCancle: UIButton!
+    
     @IBOutlet weak var sortID: UITextField!
     @IBOutlet weak var tfTitle: UITextField!
     @IBOutlet weak var urltxt: UITextField!
@@ -18,6 +24,7 @@ class AddViewController: UIViewController, UITextFieldDelegate, UITextViewDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         sortID.delegate = self
         tfTitle.delegate = self
@@ -27,16 +34,18 @@ class AddViewController: UIViewController, UITextFieldDelegate, UITextViewDelega
         
         self.title = NSLocalizedString("Add", comment: "")
         
-        textView.text = "Account: \n\nPassword:"
-        
         // 加监听
         NotificationCenter.default.addObserver(self, selector: #selector(tvBegin), name: .UITextViewTextDidBeginEditing, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(tvEnd), name: .UITextViewTextDidEndEditing, object: nil)
         
         // init data
         urltxt.text = "www."
+//        initLocalize()
+        textView.text = NSLocalizedString("Account", comment: "") + ": \n\n" + NSLocalizedString("Password", comment: "") + ":"
         initSortID()
+        
     }
+    
     
     func initSortID() {
         if arrData.count == 0 {
@@ -45,6 +54,23 @@ class AddViewController: UIViewController, UITextFieldDelegate, UITextViewDelega
             let lastID:Int64 = arrData[arrData.count-1]["ID"] as! Int64
             sortID.text = String( lastID + 1)
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        initLocalize()
+    }
+    
+    func initLocalize() {
+        localTitle.text = NSLocalizedString("Title", comment: "") + ":"
+        localURL.text = NSLocalizedString("URL", comment: "") + ":"
+        localNote.text = NSLocalizedString("Note", comment: "")
+
+        localCancle.setTitle(NSLocalizedString("Cancle", comment: ""), for: .normal)
+        localSave.setTitle(NSLocalizedString("Save", comment: ""), for: .normal)
+        
+        sortID.placeholder = NSLocalizedString("Enter Sort ID", comment: "")
+        tfTitle.placeholder = NSLocalizedString("Enter Title", comment: "")
+        urltxt.placeholder = NSLocalizedString("Enter URL", comment: "")
     }
     
     func tvBegin() {

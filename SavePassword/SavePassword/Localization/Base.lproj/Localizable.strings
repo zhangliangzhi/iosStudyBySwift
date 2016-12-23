@@ -11,4 +11,14 @@
 "IDre" = "ID can not repeat";
 "Update" = "Update";
 "Add" = "Add";
-
+"Title" = "Title";
+"URL" = "URL";
+"Cancle" = "Cancle";
+"Save" = "Save";
+"Note" = "Note";
+"Account" = "Account";
+"Password" = "Password";
+"Enter Title" = "Enter Title";
+"Enter Sort ID" = "Enter Sort ID";
+"Enter URL" = "Enter URL";
+"Drop down update" = "Drop down update cloud";
