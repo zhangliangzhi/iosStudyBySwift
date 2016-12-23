@@ -17,6 +17,8 @@ class SpTableViewCell: UITableViewCell {
     @IBOutlet weak var txtID: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        textView.isEditable = false
     }
 
 

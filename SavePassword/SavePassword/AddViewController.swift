@@ -40,10 +40,10 @@ class AddViewController: UIViewController, UITextFieldDelegate, UITextViewDelega
     
     func initSortID() {
         if arrData.count == 0 {
-            sortID.text = String(100)
+            sortID.text = String(1)
         }else {
             let lastID:Int64 = arrData[arrData.count-1]["ID"] as! Int64
-            sortID.text = String( lastID + 100)
+            sortID.text = String( lastID + 1)
         }
     }
     
@@ -127,7 +127,7 @@ class AddViewController: UIViewController, UITextFieldDelegate, UITextViewDelega
                 // 保存成功
                 DispatchQueue.main.async {
                     arrData.append(one)
-                    self.view.makeToast(NSLocalizedString("savesucess", comment: ""), duration: 3.0, position: .center)
+//                    self.view.makeToast(NSLocalizedString("savesucess", comment: ""), duration: 3.0, position: .center)
                     self.navigationController!.popViewController(animated: true)
                 }
             }else {

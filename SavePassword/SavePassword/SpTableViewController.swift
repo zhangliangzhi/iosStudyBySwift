@@ -157,7 +157,7 @@ class SpTableViewController: UITableViewController {
         let dateString = dateFormatter.string(from: one.modificationDate!)
         
         let iID:Int64 = (one.value(forKey: "ID") as! Int64?)!
-        cell.txtID.text = String(iID)
+        cell.txtID.text = "ID:" + String(iID)
         cell.txtDate.text = dateString
         cell.txtTitle.text = one.value(forKey: "title") as! String?
         cell.txtURL.text = one.value(forKey: "url") as! String?
@@ -181,6 +181,7 @@ class SpTableViewController: UITableViewController {
         if editingStyle == .delete {
             // Delete the row from the data source
             
+            gIndex = 0
             let one = arrData[indexPath.row]
             CKContainer.default().publicCloudDatabase.delete(withRecordID: one.recordID, completionHandler: { (id:CKRecordID?, err:Error?) in
                 if err == nil {
