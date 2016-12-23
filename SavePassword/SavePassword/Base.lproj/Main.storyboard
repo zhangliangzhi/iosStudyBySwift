@@ -362,9 +362,16 @@
                                     <action selector="cancleAction:" destination="e63-lw-vVz" eventType="touchUpInside" id="loL-EL-CRx"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ks-DA-VQZ">
+                                <rect key="frame" x="194.66666666666666" y="312" width="24.666666666666686" height="14.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="9Ks-DA-VQZ" firstAttribute="centerX" secondItem="5Iq-Er-Jw9" secondAttribute="centerX" id="0wf-Ni-xzU"/>
                             <constraint firstItem="egb-NL-lrK" firstAttribute="leading" secondItem="hLQ-S3-pJX" secondAttribute="trailing" constant="10" id="1dR-v5-uB0"/>
                             <constraint firstItem="5Iq-Er-Jw9" firstAttribute="top" secondItem="aKe-on-2E2" secondAttribute="bottom" constant="5" id="3Ip-Oc-9Mp"/>
                             <constraint firstItem="Fxv-gd-2Of" firstAttribute="centerY" secondItem="aKe-on-2E2" secondAttribute="centerY" id="48A-mN-nh3"/>
@@ -388,11 +395,13 @@
                             <constraint firstItem="aTh-qE-5qR" firstAttribute="top" secondItem="GfG-zt-sgn" secondAttribute="bottom" constant="10" id="o31-20-mLM"/>
                             <constraint firstItem="aTh-qE-5qR" firstAttribute="leading" secondItem="SOZ-SH-tDi" secondAttribute="trailing" constant="10" id="opx-HE-133"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Fxv-gd-2Of" secondAttribute="trailing" constant="30" id="pc7-ay-NUb"/>
+                            <constraint firstItem="9Ks-DA-VQZ" firstAttribute="top" secondItem="5Iq-Er-Jw9" secondAttribute="bottom" constant="8" id="tSm-GL-IfW"/>
                             <constraint firstItem="QaM-6U-R5I" firstAttribute="leading" secondItem="4T2-5e-69R" secondAttribute="leadingMargin" constant="20" id="uNb-l4-CZx"/>
                             <constraint firstItem="GfG-zt-sgn" firstAttribute="height" secondItem="egb-NL-lrK" secondAttribute="height" id="zsU-tB-zhF"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="lastUpdateTime" destination="9Ks-DA-VQZ" id="aBc-h8-jv6"/>
                         <outlet property="sortID" destination="egb-NL-lrK" id="DR5-Tx-6av"/>
                         <outlet property="textView" destination="5Iq-Er-Jw9" id="Zb9-o1-QDI"/>
                         <outlet property="tfTitle" destination="GfG-zt-sgn" id="ejo-t4-5ey"/>

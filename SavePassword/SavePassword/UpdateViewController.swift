@@ -15,9 +15,11 @@ class UpdateViewController: UIViewController, UITextFieldDelegate, UITextViewDel
     @IBOutlet weak var tfTitle: UITextField!
     @IBOutlet weak var urltxt: UITextField!
     @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var lastUpdateTime: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         sortID.delegate = self
         tfTitle.delegate = self
@@ -40,6 +42,11 @@ class UpdateViewController: UIViewController, UITextFieldDelegate, UITextViewDel
         tfTitle.text = one.value(forKey: "title") as! String?
         urltxt.text = one.value(forKey: "url") as! String?
         textView.text = one.value(forKey: "spdata") as! String?
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
+        let update:String = dateFormatter.string(from: one.modificationDate!)
+        lastUpdateTime.text = update
     }
 
     
