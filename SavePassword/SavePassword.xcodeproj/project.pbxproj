@@ -49,20 +49,13 @@
 		0B3226E31E06E44E00F46F0A /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0B3226E41E06E45300F46F0A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0B3226E51E06E45900F46F0A /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		0B3226E61E06E45E00F46F0A /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0B3226E71E06E46400F46F0A /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0B3226E81E06E46900F46F0A /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0B3226E91E06E46F00F46F0A /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0B3226EA1E06E47600F46F0A /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hu; path = hu.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0B3226EB1E06E47B00F46F0A /* ca */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ca; path = ca.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		0B3226EC1E06E48100F46F0A /* hr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hr; path = hr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0B3226ED1E06E48700F46F0A /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		0B3226EE1E06E48C00F46F0A /* he */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = he; path = he.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0B3226EF1E06E49000F46F0A /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		0B3226F01E06E49600F46F0A /* sk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sk; path = sk.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		0B3226F11E06E49B00F46F0A /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		0B3226F21E06E4A100F46F0A /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = id.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		0B3226F31E06E4A800F46F0A /* ms */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ms; path = ms.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0B3226F41E06E4AD00F46F0A /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0B3226F51E06F4E800F46F0A /* SpTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpTableViewCell.swift; sourceTree = "<group>"; };
 		0B3471F21E0E67E500372F0A /* DescViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DescViewController.swift; sourceTree = "<group>"; };
@@ -225,20 +218,13 @@
 				sv,
 				ru,
 				pl,
-				tr,
 				ar,
 				th,
 				cs,
 				hu,
 				ca,
-				hr,
 				el,
-				he,
 				ro,
-				sk,
-				uk,
-				id,
-				ms,
 				vi,
 				zh,
 				"zh-Hans",
@@ -330,20 +316,13 @@
 				0B3226E31E06E44E00F46F0A /* sv */,
 				0B3226E41E06E45300F46F0A /* ru */,
 				0B3226E51E06E45900F46F0A /* pl */,
-				0B3226E61E06E45E00F46F0A /* tr */,
 				0B3226E71E06E46400F46F0A /* ar */,
 				0B3226E81E06E46900F46F0A /* th */,
 				0B3226E91E06E46F00F46F0A /* cs */,
 				0B3226EA1E06E47600F46F0A /* hu */,
 				0B3226EB1E06E47B00F46F0A /* ca */,
-				0B3226EC1E06E48100F46F0A /* hr */,
 				0B3226ED1E06E48700F46F0A /* el */,
-				0B3226EE1E06E48C00F46F0A /* he */,
 				0B3226EF1E06E49000F46F0A /* ro */,
-				0B3226F01E06E49600F46F0A /* sk */,
-				0B3226F11E06E49B00F46F0A /* uk */,
-				0B3226F21E06E4A100F46F0A /* id */,
-				0B3226F31E06E4A800F46F0A /* ms */,
 				0B3226F41E06E4AD00F46F0A /* vi */,
 				0B73CC991E0DBF2500AD0157 /* zh */,
 				0B73CC9B1E0DC77E00AD0157 /* zh-Hant */,
