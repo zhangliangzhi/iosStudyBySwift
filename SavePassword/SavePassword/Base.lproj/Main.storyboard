@@ -10,6 +10,44 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Desc View Controller-->
+        <scene sceneID="KT4-ja-ymQ">
+            <objects>
+                <viewController id="fGZ-82-cdc" customClass="DescViewController" customModule="SavePassword" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OTt-yY-ack"/>
+                        <viewControllerLayoutGuide type="bottom" id="SKQ-G2-L9b"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Hrs-yi-z6Q">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="desc" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jh8-Dm-eGA">
+                                <rect key="frame" x="40" y="168" width="334" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="g57-1s-ZZK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="jh8-Dm-eGA" secondAttribute="trailing" constant="20" id="2cJ-Z9-nkJ"/>
+                            <constraint firstItem="jh8-Dm-eGA" firstAttribute="centerX" secondItem="Hrs-yi-z6Q" secondAttribute="centerX" id="C20-tE-zwx"/>
+                            <constraint firstItem="jh8-Dm-eGA" firstAttribute="centerY" secondItem="Hrs-yi-z6Q" secondAttribute="centerY" constant="-100" id="JPl-SN-cid"/>
+                            <constraint firstItem="jh8-Dm-eGA" firstAttribute="leading" secondItem="Hrs-yi-z6Q" secondAttribute="leadingMargin" constant="20" id="tTk-Qw-dMV"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="descLabel" destination="jh8-Dm-eGA" id="2Xk-ED-a2N"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TAc-Pd-tPm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="914" y="-692"/>
+        </scene>
         <!--Swiffer-->
         <scene sceneID="rE9-kq-6Ls">
             <objects>
@@ -23,7 +61,7 @@
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MLn-mQ-x0E" id="NL0-k9-l8O">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ID:1234" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rFM-LU-LAi">
@@ -100,6 +138,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Swiffer" id="uY2-NQ-tvc">
+                        <barButtonItem key="leftBarButtonItem" image="help" style="plain" id="cds-RD-lR4">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="fGZ-82-cdc" kind="show" id="QKY-ap-O5a"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="4MK-bo-4sN">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
@@ -261,7 +305,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3xC-Qm-qer" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="F3k-iV-e0E">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="F3k-iV-e0E">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -426,4 +470,7 @@
             <point key="canvasLocation" x="845" y="665"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="help" width="20" height="20"/>
+    </resources>
 </document>
