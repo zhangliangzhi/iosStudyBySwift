@@ -64,11 +64,12 @@ class SpTableViewController: UITableViewController {
             
             let cloudData = CKContainer.default().privateCloudDatabase
             cloudData.save(subscription) { (sub:CKSubscription?, err:Error?) in
-                if err != nil {
-                    print(err?.localizedDescription)
-                }else {
+                if err == nil {
                     userDefault.set(true, forKey: "subscribed")
                     userDefault.synchronize()
+                }else {
+                    print("CloudKit error", err?.localizedDescription)
+                    self.alertUIError(err: err)
                 }
             }
             
@@ -104,7 +105,7 @@ class SpTableViewController: UITableViewController {
     
     func alertUIError(err: Error?) {
         // 弹框出错
-        let alert = UIAlertController(title: "⚠️", message: err?.localizedDescription, preferredStyle: .alert)
+        let alert = UIAlertController(title: "⚠️ iCloud ⚠️", message: err?.localizedDescription, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "ok", style: .default, handler: { (action:UIAlertAction) in
             
         }))
