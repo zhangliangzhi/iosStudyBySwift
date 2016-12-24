@@ -1,0 +1,25 @@
+/* 
+  Localizable.strings
+  SavePassword
+
+  Created by ZhangLiangZhi on 2016/12/23.
+  Copyright © 2016年 xigk. All rights reserved.
+*/
+
+"SavePassword" = "SavePassword";
+"IDnot" = "ID can not be empty";
+"savesucess" = "save sucess";
+"IDre" = "ID can not repeat";
+"Update" = "Update";
+"Add" = "Add";
+"Title" = "Title";
+"URL" = "URL";
+"Cancle" = "Cancle";
+"Save" = "Save";
+"Note" = "Note";
+"Account" = "Account";
+"Password" = "Password";
+"Enter Title" = "Enter Title";
+"Enter Sort ID" = "Enter Sort ID";
+"Enter URL" = "Enter URL";
+"Pull to refresh" = "Pull to refresh";
