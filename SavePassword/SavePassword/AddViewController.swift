@@ -161,11 +161,17 @@ class AddViewController: UIViewController, UITextFieldDelegate, UITextViewDelega
                 }
             }else {
                 // 保存不成功
-                print("save fail")
+                print("save fail", err?.localizedDescription)
                 DispatchQueue.main.async {
                     self.view.isUserInteractionEnabled = true
+                    
+                    // 弹框网络不行
+                    let alert = UIAlertController(title: "⚠️", message: err?.localizedDescription, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "ok", style: .default, handler: { (action:UIAlertAction) in
+                        
+                    }))
+                    self.present(alert, animated: true, completion: nil)
                 }
-                
             }
         }
     }

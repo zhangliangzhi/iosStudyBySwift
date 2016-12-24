@@ -95,10 +95,20 @@ class SpTableViewController: UITableViewController {
                 })
             }else {
                 print("can not content iCloud", err)
+                self.alertUIError(err: err)
             }
         }
         
         
+    }
+    
+    func alertUIError(err: Error?) {
+        // 弹框出错
+        let alert = UIAlertController(title: "⚠️", message: err?.localizedDescription, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "ok", style: .default, handler: { (action:UIAlertAction) in
+            
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
     
     @IBAction func AddSwiffer(_ sender: Any) {
@@ -203,6 +213,8 @@ class SpTableViewController: UITableViewController {
                     
                 }else{
                     print(("not del", err))
+                    // 错误弹框
+                    self.alertUIError(err: err)
                 }
                 self.view.isUserInteractionEnabled = true
             })

@@ -150,8 +150,14 @@ class UpdateViewController: UIViewController, UITextFieldDelegate, UITextViewDel
                 // 保存不成功
                 print("update fail")
                 DispatchQueue.main.async {
-                    self.view.makeToast(NSLocalizedString("savesucess", comment: ""), duration: 3.0, position: .center)
                     self.view.isUserInteractionEnabled = true
+                    
+                    // 弹框网络不行
+                    let alert = UIAlertController(title: "⚠️", message: err?.localizedDescription, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "ok", style: .default, handler: { (action:UIAlertAction) in
+                        
+                    }))
+                    self.present(alert, animated: true, completion: nil)
                 }
             }
         }
