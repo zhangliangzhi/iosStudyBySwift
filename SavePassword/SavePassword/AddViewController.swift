@@ -65,7 +65,7 @@ class AddViewController: UIViewController, UITextFieldDelegate, UITextViewDelega
         localURL.text = NSLocalizedString("URL", comment: "") + ":"
         localNote.text = NSLocalizedString("Note", comment: "")
 
-        localCancle.setTitle(NSLocalizedString("Cancle", comment: ""), for: .normal)
+        localCancle.setTitle(NSLocalizedString("Cancel", comment: ""), for: .normal)
         localSave.setTitle(NSLocalizedString("Save", comment: ""), for: .normal)
         
         sortID.placeholder = NSLocalizedString("Enter Sort ID", comment: "")
