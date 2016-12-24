@@ -31,7 +31,6 @@ class UpdateViewController: UIViewController, UITextFieldDelegate, UITextViewDel
         tfTitle.delegate = self
         urltxt.delegate = self
         textView.delegate = self
-        textView.becomeFirstResponder()
         
         self.title = NSLocalizedString("Update", comment: "")
 
@@ -39,6 +38,8 @@ class UpdateViewController: UIViewController, UITextFieldDelegate, UITextViewDel
         urltxt.text = ""
         initSpData()
         initLocalize()
+        
+        textView.becomeFirstResponder()
     }
     
     func initSpData() {
@@ -119,18 +120,18 @@ class UpdateViewController: UIViewController, UITextFieldDelegate, UITextViewDel
             return
         }
         // id是否重复
-        var icount = 0
-        for i in 0..<arrData.count {
-            let getID = arrData[i].value(forKey: "ID")
-            let igetID:Int64 = getID as! Int64
-            if iID == igetID {
-                icount += 1
-            }
-        }
-        if icount > 1 {
-            self.view.makeToast(NSLocalizedString("IDre", comment: ""), duration: 3.0, position: .center)
-            return
-        }
+//        var icount = 0
+//        for i in 0..<arrData.count {
+//            let getID = arrData[i].value(forKey: "ID")
+//            let igetID:Int64 = getID as! Int64
+//            if iID == igetID {
+//                icount += 1
+//            }
+//        }
+//        if icount > 1 {
+//            self.view.makeToast(NSLocalizedString("IDre", comment: ""), duration: 3.0, position: .center)
+//            return
+//        }
         
         self.view.isUserInteractionEnabled = false
         let one = arrData[gIndex]

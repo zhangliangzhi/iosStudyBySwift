@@ -30,7 +30,7 @@ class AddViewController: UIViewController, UITextFieldDelegate, UITextViewDelega
         tfTitle.delegate = self
         urltxt.delegate = self
         textView.delegate = self
-        tfTitle.becomeFirstResponder()
+        
         
         self.title = NSLocalizedString("Add", comment: "")
         
@@ -40,10 +40,11 @@ class AddViewController: UIViewController, UITextFieldDelegate, UITextViewDelega
         
         // init data
         urltxt.text = "www."
-//        initLocalize()
+        initLocalize()
         textView.text = NSLocalizedString("Account", comment: "") + ": \n\n" + NSLocalizedString("Password", comment: "") + ":"
         initSortID()
         
+        tfTitle.becomeFirstResponder()
     }
     
     
@@ -57,7 +58,7 @@ class AddViewController: UIViewController, UITextFieldDelegate, UITextViewDelega
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        initLocalize()
+//        initLocalize()
     }
     
     func initLocalize() {
@@ -133,14 +134,14 @@ class AddViewController: UIViewController, UITextFieldDelegate, UITextViewDelega
             return
         }
         // id是否重复
-        for i in 0..<arrData.count {
-            let getID = arrData[i].value(forKey: "ID")
-            let igetID:Int64 = getID as! Int64
-            if iID == igetID {
-                self.view.makeToast(NSLocalizedString("IDre", comment: ""), duration: 3.0, position: .center)
-                return
-            }
-        }
+//        for i in 0..<arrData.count {
+//            let getID = arrData[i].value(forKey: "ID")
+//            let igetID:Int64 = getID as! Int64
+//            if iID == igetID {
+//                self.view.makeToast(NSLocalizedString("IDre", comment: ""), duration: 3.0, position: .center)
+//                return
+//            }
+//        }
         
         self.view.isUserInteractionEnabled = false
         
