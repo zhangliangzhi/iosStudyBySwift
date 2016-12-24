@@ -10,7 +10,7 @@
 "SavePassword"      = "パスワードを保存する";
 "desc"              = "【パスワードを保存する】 - >安全で簡潔で実用的で効率的なパスワードマネージャーAPPプライベートiCloudにパスワードを保存する。";
 "IDnot"             = "IDは空ではありません";
-"savesucess"        = "save sucess";
+"savesucess"        = "成功を保存する";
 "IDre"              = "IDは繰り返せません";
 "Update"            = "更新";
 "Add"               = "追加";
@@ -23,4 +23,4 @@
 "Enter Title"       = "タイトルを入力";
 "Enter Sort ID"     = "ソートIDを入力";
 "Enter URL"         = "URLを入力してください";
-"Pull to refresh"   = 「"リフレッシュする」";
+"Pull to refresh"   = "リフレッシュする";
