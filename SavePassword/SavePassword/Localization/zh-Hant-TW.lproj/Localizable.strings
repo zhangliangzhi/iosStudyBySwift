@@ -6,6 +6,7 @@
   Copyright © 2016年 xigk. All rights reserved.
 */
 
+"URL" = "網址";
 "SavePassword" = "保存密碼";
 "desc" = "【保存密碼】安全，簡潔，實用，高效的密碼管理器。安全，使用私有iCloud保存到雲端。簡潔，介面簡單實用高效。是密碼管理的首選。";
 "IDnot" = "ID不能為空";
@@ -14,7 +15,6 @@
 "Update" = "更新";
 "Add" = "增加";
 "Title" = "標題";
-"URL" = "網址";
 "Cancle" = "取消";
 "Save" = "保存";
 "Note" = "記錄";

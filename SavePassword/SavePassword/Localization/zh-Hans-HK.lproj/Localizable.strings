@@ -6,21 +6,21 @@
   Copyright © 2016年 xigk. All rights reserved.
 */
 
-"SavePassword" = "保存密碼";
-"desc" = "【保存密碼】安全，簡潔，實用，高效的密碼管理器。安全，使用私有iCloud保存到雲端。簡潔，介面簡單實用高效。是密碼管理的首選。";
-"IDnot" = "ID不能為空";
+"URL" = "网址";
+"SavePassword" = "保存密码";
+"desc" = "【保存密码】安全，简洁，实用，高效的密码管理器。安全，使用iCloud保存到云端。简洁，界面简单实用高效。是密码管理的首选。";
+"IDnot" = "ID不能为空";
 "savesucess" = "保存成功";
-"IDre" = "ID不能重複";
+"IDre" = "ID不能重复";
 "Update" = "更新";
 "Add" = "增加";
-"Title" = "標題";
-"URL" = "網址";
+"Title" = "标题";
 "Cancle" = "取消";
 "Save" = "保存";
-"Note" = "記錄";
-"Account" = "帳號";
-"Password" = "密碼";
-"Enter Title" = "輸入標題";
+"Note" = "记录";
+"Account" = "账号";
+"Password" = "密码";
+"Enter Title" = "输入标题";
 "Enter Sort ID" = "输入排序ID";
-"Enter URL" = "輸入網址";
-"Pull to refresh" = "下拉重繪";
+"Enter URL" = "输入网址";
+"Pull to refresh" = "下拉刷新";

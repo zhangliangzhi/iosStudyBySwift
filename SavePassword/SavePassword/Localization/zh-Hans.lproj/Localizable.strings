@@ -6,6 +6,7 @@
   Copyright © 2016年 xigk. All rights reserved.
 */
 
+"URL" = "网址";
 "SavePassword" = "保存密码";
 "desc" = "【保存密码】安全，简洁，实用，高效的密码管理器。安全，使用iCloud保存到云端。简洁，界面简单实用高效。是密码管理的首选。";
 "IDnot" = "ID不能为空";
@@ -14,7 +15,6 @@
 "Update" = "更新";
 "Add" = "增加";
 "Title" = "标题";
-"URL" = "网址";
 "Cancle" = "取消";
 "Save" = "保存";
 "Note" = "记录";
