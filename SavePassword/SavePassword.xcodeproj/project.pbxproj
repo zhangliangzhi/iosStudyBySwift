@@ -77,6 +77,8 @@
 		0B73CC9C1E0DC77E00AD0157 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		0B73CC9D1E0DC79D00AD0157 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		0B73CC9E1E0DC79D00AD0157 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		0B7E7B7F1E0E545400471AA0 /* zh-Hans-CN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans-CN"; path = "zh-Hans-CN.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		0B7E7B801E0E545400471AA0 /* zh-Hans-CN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans-CN"; path = "zh-Hans-CN.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		0BAD90B31E07C7150084A8BF /* SpTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -232,6 +234,7 @@
 				zh,
 				"zh-Hans",
 				"zh-Hant",
+				"zh-Hans-CN",
 			);
 			mainGroup = 0B20F3D21E05D6F5008274A2;
 			productRefGroup = 0B20F3DC1E05D6F5008274A2 /* Products */;
@@ -331,6 +334,7 @@
 				0B73CC991E0DBF2500AD0157 /* zh */,
 				0B73CC9B1E0DC77E00AD0157 /* zh-Hant */,
 				0B73CC9D1E0DC79D00AD0157 /* zh-Hans */,
+				0B7E7B7F1E0E545400471AA0 /* zh-Hans-CN */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -343,6 +347,7 @@
 				0B73CC9A1E0DBF2600AD0157 /* zh */,
 				0B73CC9C1E0DC77E00AD0157 /* zh-Hant */,
 				0B73CC9E1E0DC79D00AD0157 /* zh-Hans */,
+				0B7E7B801E0E545400471AA0 /* zh-Hans-CN */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
