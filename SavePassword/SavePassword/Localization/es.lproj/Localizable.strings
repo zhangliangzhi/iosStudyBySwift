@@ -7,20 +7,20 @@
 */
 
 "URL"               = "URL";
-"SavePassword"      = "SavePassword";
-"desc"              = "【SavePassword】 -> Safe, Concise, Practical, Efficient Password manager APP. Save password to the  private iCloud.";
-"IDnot"             = "ID can not be empty";
-"savesucess"        = "save sucess";
-"IDre"              = "ID can not repeat";
-"Update"            = "Update";
-"Add"               = "Add";
-"Title"             = "Title";
+"SavePassword"      = "Guardar contraseña";
+"desc"              = "【Guardar Contraseña】 -> Seguro, Conciso, Práctico, Administrador de Contraseña eficiente APP. Guardar la contraseña en el iCloud privado.";
+"IDnot"             = "El ID no puede estar vacío";
+"savesucess"        = "Salvar el éxito";
+"IDre"              = "ID no puede repetirse";
+"Update"            = "Actualizar";
+"Add"               = "Añadir";
+"Title"             = "Título";
 "Cancle"            = "Cancle";
-"Save"              = "Save";
-"Note"              = "Note";
-"Account"           = "Account";
-"Password"          = "Password";
-"Enter Title"       = "Enter Title";
+"Save"              = "Salvar";
+"Note"              = "Nota";
+"Account"           = "Cuenta";
+"Password"          = "Contraseña";
+"Enter Title"       = "Introduzca el título";
 "Enter Sort ID"     = "Enter Sort ID";
-"Enter URL"         = "Enter URL";
-"Pull to refresh"   = "Pull to refresh";
+"Enter URL"         = "Introducir URL";
+"Pull to refresh"   = "Tire para refrescar";

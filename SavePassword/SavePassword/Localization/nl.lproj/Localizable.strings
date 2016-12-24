@@ -7,20 +7,20 @@
 */
 
 "URL"               = "URL";
-"SavePassword"      = "SavePassword";
-"desc"              = "【SavePassword】 -> Safe, Concise, Practical, Efficient Password manager APP. Save password to the  private iCloud.";
-"IDnot"             = "ID can not be empty";
-"savesucess"        = "save sucess";
-"IDre"              = "ID can not repeat";
-"Update"            = "Update";
-"Add"               = "Add";
-"Title"             = "Title";
+"SavePassword"      = "Wachtwoord opslaan";
+"desc"              = "【Password Save】 -> Veilig, beknopt, Praktisch, Efficiënt Password Manager APP Save wachtwoord in om de private iCloud.";
+"IDnot"             = "ID mag niet leeg zijn";
+"savesucess"        = "Save sucess";
+"IDre"              = "ID kan niet herhalen";
+"Update"            = "Bijwerken";
+"Add"               = "Toevoegen";
+"Title"             = "Titel";
 "Cancle"            = "Cancle";
-"Save"              = "Save";
-"Note"              = "Note";
+"Save"              = "Opslaan";
+"Note"              = "Notitie";
 "Account"           = "Account";
-"Password"          = "Password";
+"Password"          = "Wachtwoord";
 "Enter Title"       = "Enter Title";
-"Enter Sort ID"     = "Enter Sort ID";
-"Enter URL"         = "Enter URL";
-"Pull to refresh"   = "Pull to refresh";
+"Enter Sort ID"     = "Enter sorteren ID";
+"Enter URL"         = "URL invoeren";
+"Pull to refresh"   = "Trek op te frissen";

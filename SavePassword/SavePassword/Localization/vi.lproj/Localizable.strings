@@ -7,20 +7,20 @@
 */
 
 "URL"               = "URL";
-"SavePassword"      = "SavePassword";
-"desc"              = "【SavePassword】 -> Safe, Concise, Practical, Efficient Password manager APP. Save password to the  private iCloud.";
-"IDnot"             = "ID can not be empty";
-"savesucess"        = "save sucess";
-"IDre"              = "ID can not repeat";
-"Update"            = "Update";
-"Add"               = "Add";
-"Title"             = "Title";
+"SavePassword"      = "Lưu mật khẩu";
+"desc"              = "【Lưu Password】 -> An toàn, ngắn gọn, thiết thực, hiệu quả quản lý Password APP Lưu mật khẩu cho iCloud tin.";
+"IDnot"             = "ID không thể để trống";
+"savesucess"        = "Lưu những thành công";
+"IDre"              = "ID không thể lặp lại";
+"Update"            = "Cập nhật";
+"Add"               = "Thêm vào";
+"Title"             = "Chức vụ";
 "Cancle"            = "Cancle";
-"Save"              = "Save";
-"Note"              = "Note";
-"Account"           = "Account";
-"Password"          = "Password";
-"Enter Title"       = "Enter Title";
-"Enter Sort ID"     = "Enter Sort ID";
-"Enter URL"         = "Enter URL";
-"Pull to refresh"   = "Pull to refresh";
+"Save"              = "Tiết kiệm";
+"Note"              = "Chú thích";
+"Account"           = "Tài khoản";
+"Password"          = "Mật khẩu";
+"Enter Title"       = "Nhập Title";
+"Enter Sort ID"     = "Nhập theo ID";
+"Enter URL"         = "Nhập đường dẫn";
+"Pull to refresh"   = "Kéo để làm mới";
