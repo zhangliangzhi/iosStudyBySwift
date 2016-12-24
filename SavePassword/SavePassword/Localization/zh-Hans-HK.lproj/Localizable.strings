@@ -6,20 +6,20 @@
   Copyright © 2016年 xigk. All rights reserved.
 */
 
-"SavePassword" = "SavePassword";
-"IDnot" = "ID can not be empty";
-"savesucess" = "save sucess";
-"IDre" = "ID can not repeat";
-"Update" = "Update";
-"Add" = "Add";
-"Title" = "Title";
-"URL" = "URL";
-"Cancle" = "Cancle";
-"Save" = "Save";
-"Note" = "Note";
-"Account" = "Account";
-"Password" = "Password";
-"Enter Title" = "Enter Title";
-"Enter Sort ID" = "Enter Sort ID";
-"Enter URL" = "Enter URL";
-"Pull to refresh" = "Pull to refresh";
+"SavePassword" = "保存密碼";
+"IDnot" = "ID不能為空";
+"savesucess" = "保存成功";
+"IDre" = "ID不能重複";
+"Update" = "更新";
+"Add" = "增加";
+"Title" = "標題";
+"URL" = "網址";
+"Cancle" = "取消";
+"Save" = "保存";
+"Note" = "記錄";
+"Account" = "帳號";
+"Password" = "密碼";
+"Enter Title" = "輸入標題";
+"Enter Sort ID" = "输入排序ID";
+"Enter URL" = "輸入網址";
+"Pull to refresh" = "下拉重繪";
