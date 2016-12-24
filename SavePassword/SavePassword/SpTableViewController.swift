@@ -33,6 +33,10 @@ class SpTableViewController: UITableViewController {
 
 //        let a = NSLocale.preferredLanguages
 //        print(a)
+        
+        
+        navigationController?.navigationBar.tintColor = UIColor.white
+
 
         loadData()
         

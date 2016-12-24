@@ -28,15 +28,23 @@
                                     <constraint firstAttribute="height" constant="200" id="g57-1s-ZZK"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.058677360419999998" green="0.48906570669999999" blue="0.96694177390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email:521401@qq.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dk9-3b-Wvz">
+                                <rect key="frame" x="258" y="713.66666666666652" width="128" height="14.333333333333371"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="jh8-Dm-eGA" secondAttribute="trailing" constant="20" id="2cJ-Z9-nkJ"/>
                             <constraint firstItem="jh8-Dm-eGA" firstAttribute="centerX" secondItem="Hrs-yi-z6Q" secondAttribute="centerX" id="C20-tE-zwx"/>
+                            <constraint firstItem="SKQ-G2-L9b" firstAttribute="top" secondItem="dk9-3b-Wvz" secondAttribute="bottom" constant="8" id="IWN-hi-R6Z"/>
                             <constraint firstItem="jh8-Dm-eGA" firstAttribute="centerY" secondItem="Hrs-yi-z6Q" secondAttribute="centerY" constant="-100" id="JPl-SN-cid"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dk9-3b-Wvz" secondAttribute="trailing" constant="8" id="cbK-s7-sZa"/>
                             <constraint firstItem="jh8-Dm-eGA" firstAttribute="leading" secondItem="Hrs-yi-z6Q" secondAttribute="leadingMargin" constant="20" id="tTk-Qw-dMV"/>
                         </constraints>
                     </view>
