@@ -6,6 +6,7 @@
 build/
 DerivedData/
 azip／
+SavePassword/azip／
 
 ## Various settings
 *.pbxuser
