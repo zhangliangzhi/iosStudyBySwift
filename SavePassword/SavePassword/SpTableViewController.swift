@@ -185,6 +185,7 @@ class SpTableViewController: UITableViewController {
             // Delete the row from the data source
             
             gIndex = 0
+            self.view.isUserInteractionEnabled = false
             let one = arrData[indexPath.row]
             CKContainer.default().privateCloudDatabase.delete(withRecordID: one.recordID, completionHandler: { (id:CKRecordID?, err:Error?) in
                 if err == nil {
@@ -199,6 +200,7 @@ class SpTableViewController: UITableViewController {
                 }else{
                     print(("not del", err))
                 }
+                self.view.isUserInteractionEnabled = true
             })
 
         } else if editingStyle == .insert {
