@@ -7,7 +7,7 @@
 */
 
 "SavePassword"      = "Päästa salasõna";
-"desc"              = "【 Päästa salasõna 】 - > ohutu, lühidalt, praktiline, tõhusa salasõna juhataja app.päästa parooli, et era - icloud. ";
+"desc"              = "【Päästa salasõna】- > ohutu, lühidalt, praktiline, tõhusa salasõna juhataja app.päästa parooli, et era - icloud. ";
 "IDnot"             = "ID ei saa olla tühi";
 "savesucess"        = "päästa sucess";
 "IDre"              = "ID ei saa korrata";
