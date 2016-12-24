@@ -149,7 +149,7 @@ class AddViewController: UIViewController, UITextFieldDelegate, UITextViewDelega
         one["title"] = title as CKRecordValue?
         one["url"] = url as CKRecordValue?
         one["spdata"] = spData as CKRecordValue?
-        CKContainer.default().publicCloudDatabase.save(one) { (record:CKRecord?, err:Error?) in
+        CKContainer.default().privateCloudDatabase.save(one) { (record:CKRecord?, err:Error?) in
 
             if err == nil {
                 print("save sucess")

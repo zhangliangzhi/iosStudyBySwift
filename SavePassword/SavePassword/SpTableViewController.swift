@@ -58,8 +58,8 @@ class SpTableViewController: UITableViewController {
             notificationInfo.shouldBadge = true
             subscription.notificationInfo = notificationInfo
             
-            let publicData = CKContainer.default().publicCloudDatabase
-            publicData.save(subscription) { (sub:CKSubscription?, err:Error?) in
+            let cloudData = CKContainer.default().privateCloudDatabase
+            cloudData.save(subscription) { (sub:CKSubscription?, err:Error?) in
                 if err != nil {
                     print(err?.localizedDescription)
                 }else {
@@ -75,7 +75,7 @@ class SpTableViewController: UITableViewController {
     
     func loadData() {
         arrData = []
-        let cloudData = CKContainer.default().publicCloudDatabase
+        let cloudData = CKContainer.default().privateCloudDatabase
         
         let query = CKQuery(recordType: "SavePassword", predicate: NSPredicate(format: "TRUEPREDICATE", argumentArray: nil ) )
         query.sortDescriptors = [NSSortDescriptor(key: "ID", ascending: true)]
@@ -113,8 +113,8 @@ class SpTableViewController: UITableViewController {
                 newSweet["title"] = title as CKRecordValue?
                 print(newSweet)
                 
-                let publicData = CKContainer.default().publicCloudDatabase
-                publicData.save(newSweet, completionHandler: { (record:CKRecord?, err:Error?) in
+                let cloudData = CKContainer.default().privateCloudDatabase
+                cloudData.save(newSweet, completionHandler: { (record:CKRecord?, err:Error?) in
                     if err == nil {
                         DispatchQueue.main.async(execute: { 
                             print("sweet save")
@@ -186,7 +186,7 @@ class SpTableViewController: UITableViewController {
             
             gIndex = 0
             let one = arrData[indexPath.row]
-            CKContainer.default().publicCloudDatabase.delete(withRecordID: one.recordID, completionHandler: { (id:CKRecordID?, err:Error?) in
+            CKContainer.default().privateCloudDatabase.delete(withRecordID: one.recordID, completionHandler: { (id:CKRecordID?, err:Error?) in
                 if err == nil {
                     print("delete ok")
                     
