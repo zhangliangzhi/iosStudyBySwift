@@ -7,6 +7,7 @@
 */
 
 "SavePassword" = "SavePassword";
+"desc" = "[SavePassword] -> Safe, Concise, Practical, Efficient Password manager APP. Save password to the  private iCloud.";
 "IDnot" = "ID can not be empty";
 "savesucess" = "save sucess";
 "IDre" = "ID can not repeat";
