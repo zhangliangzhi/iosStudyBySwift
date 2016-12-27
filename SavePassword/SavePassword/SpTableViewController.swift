@@ -95,8 +95,10 @@ class SpTableViewController: UITableViewController {
                     self.view.layoutSubviews()
                 })
             }else {
-                print("can not content iCloud", err)
-                self.alertUIError(err: err)
+                DispatchQueue.main.async(execute: {
+                    print("loadData can not content iCloud", err)
+                    self.alertUIError(err: err)
+                })
             }
         }
         
@@ -107,7 +109,13 @@ class SpTableViewController: UITableViewController {
         // 弹框出错
         let alert = UIAlertController(title: "⚠️ iCloud ⚠️", message: err?.localizedDescription, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "ok", style: .default, handler: { (action:UIAlertAction) in
-            
+//            let settingsUrl = NSURL(string:UIApplicationOpenSettingsURLString) as! URL
+//            if #available(iOS 10.0, *) {
+//                UIApplication.shared.open(settingsUrl, options: [:], completionHandler: nil)
+//            } else {
+//                UIApplication.shared.openURL(settingsUrl)
+//            }
+
         }))
         self.present(alert, animated: true, completion: nil)
     }
