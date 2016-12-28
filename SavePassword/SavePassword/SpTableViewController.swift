@@ -58,7 +58,7 @@ class SpTableViewController: UITableViewController {
             let subscription = CKSubscription(recordType: "SavePassword", predicate: predicate, options: .firesOnRecordCreation)
             
             let notificationInfo = CKNotificationInfo()
-            notificationInfo.alertLocalizationKey = "Save Password"
+            notificationInfo.alertLocalizationKey = NSLocalizedString("Add", comment: "")
             notificationInfo.shouldBadge = true
             subscription.notificationInfo = notificationInfo
             
@@ -96,7 +96,7 @@ class SpTableViewController: UITableViewController {
                 })
             }else {
                 DispatchQueue.main.async(execute: {
-                    print("loadData can not content iCloud", err)
+//                    print("loadData can not content iCloud", err)
                     self.alertUIError(err: err)
                 })
             }
@@ -106,8 +106,15 @@ class SpTableViewController: UITableViewController {
     }
     
     func alertUIError(err: Error?) {
+        let strErr:String = (err?.localizedDescription)!
+        print(strErr.lengthOfBytes(using: .utf8))
+        
+        if strErr.lengthOfBytes(using: .utf8) > 100 {
+            return
+        }
+        
         // 弹框出错
-        let alert = UIAlertController(title: "⚠️ iCloud ⚠️", message: err?.localizedDescription, preferredStyle: .alert)
+        let alert = UIAlertController(title: "⚠️ iCloud ⚠️", message: strErr, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "ok", style: .default, handler: { (action:UIAlertAction) in
 //            let settingsUrl = NSURL(string:UIApplicationOpenSettingsURLString) as! URL
 //            if #available(iOS 10.0, *) {
