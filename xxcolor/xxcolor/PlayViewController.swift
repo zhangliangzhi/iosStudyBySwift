@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class PlayViewController: UIViewController {
     var _s = 0
@@ -15,6 +16,7 @@ class PlayViewController: UIViewController {
     var p = 2
     var timer:Timer!
     var iSec = 60
+    var totalScore = 0
     
 
     @IBOutlet weak var scoreLabel: UILabel!
@@ -39,7 +41,10 @@ class PlayViewController: UIViewController {
         _ss = 0
         a = 0
         p = 2
-        scoreLabel.text = "Score:0"
+        totalScore = 0
+        gScore = 0
+        
+        scoreLabel.text = "\(0)" + ":" + NSLocalizedString("point", comment: "")
         self.title = NSLocalizedString("Remaining Time", comment: "") + ":60"
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timeEverySec), userInfo: nil, repeats: true)
         iSec = 60
@@ -52,7 +57,7 @@ class PlayViewController: UIViewController {
             rv?.removeFromSuperview()
         }
         
-        scoreLabel.text = "\(self.a)"
+
         self.a += 1;
         if (self.a % 5 == 0) {
             self.p += 1;
@@ -60,6 +65,8 @@ class PlayViewController: UIViewController {
         let height = self.view.bounds.size.height / CGFloat(p)
         let width = self.view.bounds.size.width / CGFloat(p)
         
+        scoreLabel.text = "\(self.a)" + ":" + NSLocalizedString("point", comment: "")
+        totalScore = self.a
         
         
         let v:UIView = UIView(frame: CGRect(x: 0, y: 64, width: self.view.bounds.size.width, height: height*CGFloat(p)-100))
@@ -99,7 +106,14 @@ class PlayViewController: UIViewController {
         timer = nil
         self.title = ""
         
+        gScore = self.totalScore
+        
         // 保存记录
+        let one = NSEntityDescription.insertNewObject(forEntityName: "LocalRank", into: context) as! LocalRank
+        one.score = Int32(totalScore)
+        one.ptime = NSDate()
+        context.insert(one)
+        appDelegate.saveContext()
         
         // 上传GameCenter
         

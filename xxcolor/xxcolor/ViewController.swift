@@ -16,6 +16,8 @@ let context = appDelegate.persistentContainer.viewContext
 var arrGlobalSet:[CurGlobalSet] = []
 var gGlobalSet:CurGlobalSet?
 
+var gScore = 0
+
 class ViewController: UIViewController {
 
     var mainv:UIView!

@@ -7,13 +7,17 @@
 //
 
 import UIKit
+import CoreData
 
 class LocalRankViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     var tableView:UITableView!
+    var arrLocalRank:[LocalRank] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.title = NSLocalizedString("Ranking", comment: "")
         // Do any additional setup after loading the view.
         tableView = UITableView(frame: CGRect.zero)
         tableView.delegate = self
@@ -24,18 +28,35 @@ class LocalRankViewController: UIViewController, UITableViewDelegate, UITableVie
             make.edges.equalTo(self.view)
         }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        // Get coreData
+        arrLocalRank = []
+        do {
+            arrLocalRank = try context.fetch(LocalRank.fetchRequest())
+        }catch {
+            print("getting coreData error")
+        }
+    }
 
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return arrLocalRank.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = "ok"
+        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "")
+        let one = arrLocalRank[arrLocalRank.count - 1 - indexPath.row]
+        cell.textLabel?.text =  "\(one.score)" + ":" + NSLocalizedString("point", comment: "")
+        // 创建一个日期格式器
+        let dformatter = DateFormatter()
+        dformatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
+        let strTime:String = dformatter.string(from: one.ptime as! Date)
+        cell.detailTextLabel?.text = strTime
+        
         return cell
     }
 

@@ -49,10 +49,16 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aaV-mw-nkA">
                                 <rect key="frame" x="171.5" y="295" width="31" height="30"/>
                                 <state key="normal" title="确定"/>
+                                <connections>
+                                    <action selector="OKAction:" destination="mmf-NZ-KUe" eventType="touchUpInside" id="p3w-mL-mWh"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SAC-pp-rXv">
                                 <rect key="frame" x="148.5" y="359" width="77" height="30"/>
                                 <state key="normal" title="查看排行榜"/>
+                                <connections>
+                                    <action selector="ShowLocalRank:" destination="mmf-NZ-KUe" eventType="touchUpInside" id="Nzl-I6-3a5"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -65,10 +71,15 @@
                             <constraint firstItem="aaV-mw-nkA" firstAttribute="top" secondItem="mGe-ZZ-Sip" secondAttribute="bottom" constant="24" id="tpe-nx-7OM"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="bntRank" destination="SAC-pp-rXv" id="t1l-37-lKS"/>
+                        <outlet property="btnOK" destination="aaV-mw-nkA" id="jaQ-tI-yPJ"/>
+                        <outlet property="scoreLabel" destination="mGe-ZZ-Sip" id="Lu9-Pz-sVz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KNj-00-XUG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1742" y="114"/>
+            <point key="canvasLocation" x="1741.5999999999999" y="113.79310344827587"/>
         </scene>
         <!--Play View Controller-->
         <scene sceneID="oGk-Q8-XxD">
