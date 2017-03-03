@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import GameKit
 
 class PlayViewController: UIViewController {
     var _s = 0
@@ -58,7 +59,9 @@ class PlayViewController: UIViewController {
             rv?.removeFromSuperview()
         }
         
-
+        scoreLabel.text = "\(self.a)" + ":" + NSLocalizedString("point", comment: "")
+        totalScore = self.a
+        
         self.a += 1;
         if (self.a % 5 == 0) {
             self.p += 1;
@@ -66,8 +69,7 @@ class PlayViewController: UIViewController {
         let height = self.view.bounds.size.height / CGFloat(p)
         let width = self.view.bounds.size.width / CGFloat(p)
         
-        scoreLabel.text = "\(self.a)" + ":" + NSLocalizedString("point", comment: "")
-        totalScore = self.a
+
         
         
         let v:UIView = UIView(frame: CGRect(x: 0, y: 64, width: self.view.bounds.size.width, height: height*CGFloat(p)-100))
@@ -117,10 +119,21 @@ class PlayViewController: UIViewController {
         appDelegate.saveContext()
         
         // 上传GameCenter
+        saveGameCenter()
         
         // 跳转结算界面
         let page = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "resultvc") as! ResultViewController
         navigationController?.pushViewController(page, animated: false)
+    }
+    
+    func saveGameCenter() -> Void {
+        if GKLocalPlayer.localPlayer().isAuthenticated {
+            let scoreReport = GKScore(leaderboardIdentifier: "1")
+            scoreReport.value = Int64(totalScore)
+            
+            let scoreArray:[GKScore] = [scoreReport]
+            GKScore.report(scoreArray, withCompletionHandler: nil)
+        }
     }
 
 }

@@ -38,6 +38,22 @@ class LocalRankViewController: UIViewController, UITableViewDelegate, UITableVie
             print("getting coreData error")
         }
     }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // 倒序
+            let delRow = arrLocalRank.count - indexPath.row - 1
+            let one = arrLocalRank[delRow]
+            context.delete(one)
+            appDelegate.saveContext()
+            arrLocalRank.remove(at: delRow)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
 
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
