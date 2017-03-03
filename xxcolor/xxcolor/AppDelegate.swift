@@ -17,6 +17,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let obj = UMAnalyticsConfig()
+        obj.appKey = "58b98141a325116f0b001c85"
+        obj.channelId = "App Store"
+        MobClick.start(withConfigure: obj)
+        
+        // umeng统计观看次数
+        MobClick.event("UMLOGIN")
+        
+        
         return true
     }
 

@@ -65,6 +65,8 @@ class ViewController: UIViewController, GKGameCenterControllerDelegate {
     }
     
     func showGC() -> Void {
+        MobClick.event("UMGRANK")
+        
         let GCVC = GKGameCenterViewController()
         GCVC.gameCenterDelegate = self
         self.present(GCVC, animated: true, completion: nil)
@@ -93,6 +95,7 @@ class ViewController: UIViewController, GKGameCenterControllerDelegate {
     
     
     func showMyRank() -> Void {
+        MobClick.event("UMLRANK")
         navigationController?.pushViewController(LocalRankViewController(), animated: true)
     }
 

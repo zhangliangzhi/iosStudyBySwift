@@ -30,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		0B0A6EA81E62CD8200AA051E /* GcViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GcViewController.swift; sourceTree = "<group>"; };
+		0B1B41891E69BC000099D0FA /* xxcolor-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "xxcolor-Bridging-Header.h"; sourceTree = "<group>"; };
 		0B292BED1E62A98800AF37C1 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		0B693B4B1E5ADFF600AC2BEB /* xxcolor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xxcolor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B693B4E1E5ADFF600AC2BEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +111,7 @@
 				0B6DBF2C1E5BDACB0083F679 /* Localizable.strings */,
 				0B6DBF2F1E5BDAD00083F679 /* InfoPlist.strings */,
 				0B0A6EA81E62CD8200AA051E /* GcViewController.swift */,
+				0B1B41891E69BC000099D0FA /* xxcolor-Bridging-Header.h */,
 			);
 			path = xxcolor;
 			sourceTree = "<group>";
@@ -179,6 +181,7 @@
 					0B693B4A1E5ADFF600AC2BEB = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = ZNVH9D6AWM;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.GameCenter = {
@@ -437,12 +440,15 @@
 			baseConfigurationReference = 84D64D7633ECD990D92A9C38 /* Pods-xxcolor.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = ZNVH9D6AWM;
 				INFOPLIST_FILE = xxcolor/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xigk.FindColor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "xxcolor/xxcolor-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -452,12 +458,14 @@
 			baseConfigurationReference = 1FB82EDDAE5AA98ECE4CBFD7 /* Pods-xxcolor.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = ZNVH9D6AWM;
 				INFOPLIST_FILE = xxcolor/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xigk.FindColor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "xxcolor/xxcolor-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

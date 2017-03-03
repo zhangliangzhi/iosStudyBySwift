@@ -37,6 +37,8 @@ class PlayViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        MobClick.event("UMPLAY")
+        
         _s = 0
         _ss = 0
         a = 0
