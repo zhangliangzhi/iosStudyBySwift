@@ -18,9 +18,10 @@ class ResultViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.title = NSLocalizedString("Game Over", comment: "")
         scoreLabel.text = "\(gScore)" + ":" + NSLocalizedString("point", comment: "")
         btnOK.setTitle(NSLocalizedString("OK", comment: ""), for: .normal)
-        bntRank.setTitle(NSLocalizedString("Ranking", comment: ""), for: .normal)
+        bntRank.setTitle(NSLocalizedString("play again", comment: ""), for: .normal)
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,7 +38,8 @@ class ResultViewController: UIViewController {
     }
     
     @IBAction func ShowLocalRank(_ sender: Any) {
-        
+        // play again
+        navigationController?.popViewController(animated: true)
     }
     
     /*

@@ -9,7 +9,10 @@
 "Setting"       = "设置";
 "Find Color"    = "找颜色";
 "Start Game"    = "开始游戏";
+"Game Over"     = "游戏结束";
 "Score"         = "分数";
 "Ranking"       = "排行榜";
 "Remaining Time" = "剩余时间";
 "point"         = "点";
+"OK"            = "确定";
+"play again"    = "再来一次";

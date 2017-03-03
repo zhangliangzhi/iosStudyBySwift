@@ -24,7 +24,6 @@ class PlayViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        play1()
     }
     
     func timeEverySec() {
@@ -48,6 +47,8 @@ class PlayViewController: UIViewController {
         self.title = NSLocalizedString("Remaining Time", comment: "") + ":60"
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timeEverySec), userInfo: nil, repeats: true)
         iSec = 60
+        
+        play1()
     }
     
     func play1() {

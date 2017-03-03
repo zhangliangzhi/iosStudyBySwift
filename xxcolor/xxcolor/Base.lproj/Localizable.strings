@@ -9,9 +9,10 @@
 "Setting"       = "Setting";
 "Find Color"    = "Find Color";
 "Start Game"    = "Start Game";
+"Game Over"     = "Game Over";
 "Score"         = "Score";
 "Ranking"       = "Ranking";
 "Remaining Time" = "Remaining time";
 "point"         = "point";
 "OK"            = "OK";
-
+"play again"    = "play again";
