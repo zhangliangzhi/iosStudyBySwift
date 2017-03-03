@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  xxcolor
+
+  Created by ZhangLiangZhi on 2017/2/21.
+  Copyright © 2017年 xigk. All rights reserved.
+*/
+
+"Setting"       = "Setting";
+"Find Color"    = "Find Color";
+"Start Game"    = "Start Game";
+"Score"         = "Score";
+"Ranking"       = "Ranking";
+"Remaining Time" = "Remaining time";
