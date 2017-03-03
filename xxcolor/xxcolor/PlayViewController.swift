@@ -29,11 +29,11 @@ class PlayViewController: UIViewController {
     
     func timeEverySec() {
         iSec -= 1
+        self.title =  NSLocalizedString("Remaining Time", comment: "") + ":" + "\(iSec)"
+        
         if iSec <= 0 {
             GameOver()
         }
-//        print("time")
-        self.title =  NSLocalizedString("Remaining Time", comment: "") + ":" + "\(iSec)"
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -44,7 +44,7 @@ class PlayViewController: UIViewController {
         totalScore = 0
         gScore = 0
         
-        scoreLabel.text = "\(0)" + ":" + NSLocalizedString("point", comment: "")
+        scoreLabel.text = "\(0)" + " " + NSLocalizedString("point", comment: "")
         self.title = NSLocalizedString("Remaining Time", comment: "") + ":60"
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timeEverySec), userInfo: nil, repeats: true)
         iSec = 60
@@ -59,7 +59,7 @@ class PlayViewController: UIViewController {
             rv?.removeFromSuperview()
         }
         
-        scoreLabel.text = "\(self.a)" + ":" + NSLocalizedString("point", comment: "")
+        scoreLabel.text = "\(self.a)" + " " + NSLocalizedString("point", comment: "")
         totalScore = self.a
         
         self.a += 1;

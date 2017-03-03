@@ -6,4 +6,14 @@
   Copyright © 2017年 xigk. All rights reserved.
 */
 
-"Setting"       = "Setting";
+"Setting"       = "設定";
+"Find Color"    = "色を探して";
+"Start Game"    = "ゲーム」を始め";
+"Game Over"     = "オーバー」のゲー";
+"Score"         = "スコア";
+"Ranking"       = "ランキング";
+"Remaining Time" ="残り時間";
+"point"         = "点";
+"OK"            = "了解";
+"play again"    = "再び";
+"All Rank"      = "ランク";

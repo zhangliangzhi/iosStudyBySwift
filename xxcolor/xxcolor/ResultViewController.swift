@@ -19,7 +19,7 @@ class ResultViewController: UIViewController {
         super.viewDidLoad()
 
         self.title = NSLocalizedString("Game Over", comment: "")
-        scoreLabel.text = "\(gScore)" + ":" + NSLocalizedString("point", comment: "")
+        scoreLabel.text = "\(gScore)" + " " + NSLocalizedString("point", comment: "")
         btnOK.setTitle(NSLocalizedString("OK", comment: ""), for: .normal)
         bntRank.setTitle(NSLocalizedString("play again", comment: ""), for: .normal)
     }

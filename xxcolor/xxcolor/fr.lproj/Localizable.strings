@@ -6,4 +6,14 @@
   Copyright © 2017年 xigk. All rights reserved.
 */
 
-"Setting"       = "Setting";
+"Setting"       = "Cadre";
+"Find Color"    = "Trouver La Couleur";
+"Start Game"    = "Commencer";
+"Game Over"     = "Game Over";
+"Score"         = "Score";
+"Ranking"       = "Classement";
+"Remaining Time" ="Reste";
+"point"         = "Point";
+"OK"            = "OK";
+"play again"    = "Jouer";
+"All Rank"      = "All Rang";
