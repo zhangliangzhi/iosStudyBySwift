@@ -33,7 +33,7 @@ class ViewController: UIViewController, GKGameCenterControllerDelegate {
         self.title = NSLocalizedString("Find Color", comment: "")
 //        self.view.backgroundColor = UIColor.darkGray
         
-//        firstOpenAPP()
+        firstOpenAPP()
         self.mainv = UIView()
         self.view.addSubview(self.mainv)
         self.playv = UIView()
@@ -48,12 +48,12 @@ class ViewController: UIViewController, GKGameCenterControllerDelegate {
         
         let cw = self.view.frame.width/2 - 75
 
-        let btnOneSec: BootstrapBtn = BootstrapBtn(frame: CGRect(x:cw, y:190, width:150, height:40), btButtonType: .Primary)
+        let btnOneSec: BootstrapBtn = BootstrapBtn(frame: CGRect(x:cw, y:190, width:150, height:40), btButtonType: .Success)
         btnOneSec.setTitle(NSLocalizedString("Start Game", comment: ""), for: UIControlState.normal)
         btnOneSec.addTarget(self, action: #selector(playOneMin), for: .touchUpInside)
         self.view.addSubview(btnOneSec)
         
-        let btnShowLocal: BootstrapBtn = BootstrapBtn(frame: CGRect(x:cw, y:260, width:150, height:40), btButtonType: .Primary)
+        let btnShowLocal: BootstrapBtn = BootstrapBtn(frame: CGRect(x:cw, y:260, width:150, height:40), btButtonType: .Warning)
         btnShowLocal.setTitle(NSLocalizedString("Ranking", comment: ""), for: UIControlState.normal)
         btnShowLocal.addTarget(self, action: #selector(showMyRank), for: .touchUpInside)
         self.view.addSubview(btnShowLocal)

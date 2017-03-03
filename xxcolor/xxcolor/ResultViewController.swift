@@ -20,8 +20,27 @@ class ResultViewController: UIViewController {
 
         self.title = NSLocalizedString("Game Over", comment: "")
         scoreLabel.text = "\(gScore)" + " " + NSLocalizedString("point", comment: "")
+        
+        let cx = scoreLabel.center.x
+        let cy = scoreLabel.center.y
+        
+        let cw = self.view.frame.width/2 - 75
+        let oBtn: BootstrapBtn = BootstrapBtn(frame: CGRect(x:cw, y:cy+160, width:150, height:40), btButtonType: .Info)
+        self.view.addSubview(oBtn)
+        oBtn.setTitle(NSLocalizedString("OK", comment: ""), for: UIControlState.normal)
+        oBtn.addTarget(self, action: #selector(OKAction), for: .touchUpInside)
+        
+        let rBtn: BootstrapBtn = BootstrapBtn(frame: CGRect(x:cw, y:cy+80, width:150, height:40), btButtonType: .Success)
+        self.view.addSubview(rBtn)
+        rBtn.setTitle(NSLocalizedString("play again", comment: ""), for: UIControlState.normal)
+        rBtn.addTarget(self, action: #selector(ShowLocalRank), for: .touchUpInside)
+        
         btnOK.setTitle(NSLocalizedString("OK", comment: ""), for: .normal)
         bntRank.setTitle(NSLocalizedString("play again", comment: ""), for: .normal)
+        
+        btnOK.removeFromSuperview()
+        bntRank.removeFromSuperview()
+        
     }
 
     override func didReceiveMemoryWarning() {

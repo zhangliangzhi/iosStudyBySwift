@@ -67,6 +67,8 @@ class LocalRankViewController: UIViewController, UITableViewDelegate, UITableVie
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "")
         let one = arrLocalRank[arrLocalRank.count - 1 - indexPath.row]
         cell.textLabel?.text =  "\(one.score)" + " " + NSLocalizedString("point", comment: "")
+        cell.textLabel?.textColor = UIColor(red: 238/255, green: 174/255, blue: 56/255, alpha: 1)
+
         // 创建一个日期格式器
         let dformatter = DateFormatter()
         dformatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
