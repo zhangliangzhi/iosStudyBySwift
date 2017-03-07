@@ -17,7 +17,7 @@ class LocalRankViewController: UIViewController, UITableViewDelegate, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = NSLocalizedString("Ranking", comment: "")
+        self.title = NSLocalizedString("Local Ranking", comment: "")
         // Do any additional setup after loading the view.
         tableView = UITableView(frame: CGRect.zero)
         tableView.delegate = self

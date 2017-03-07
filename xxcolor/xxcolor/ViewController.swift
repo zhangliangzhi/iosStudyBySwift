@@ -54,7 +54,7 @@ class ViewController: UIViewController, GKGameCenterControllerDelegate {
         self.view.addSubview(btnOneSec)
         
         let btnShowLocal: BootstrapBtn = BootstrapBtn(frame: CGRect(x:cw, y:260, width:150, height:40), btButtonType: .Warning)
-        btnShowLocal.setTitle(NSLocalizedString("Ranking", comment: ""), for: UIControlState.normal)
+        btnShowLocal.setTitle(NSLocalizedString("Local Ranking", comment: ""), for: UIControlState.normal)
         btnShowLocal.addTarget(self, action: #selector(showMyRank), for: .touchUpInside)
         self.view.addSubview(btnShowLocal)
         
