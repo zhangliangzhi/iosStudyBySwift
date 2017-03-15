@@ -6,15 +6,15 @@
   Copyright © 2017年 xigk. All rights reserved.
 */
 
-"Setting"       = "Setting";
-"Find Color"    = "Find Color";
-"Start Game"    = "Start Game";
-"Game Over"     = "Game Over";
-"Score"         = "Score";
-"Ranking"       = "Ranking";
-"Local Ranking" = "Local Ranking";
-"Remaining Time" = "Remaining time";
-"point"         = "point";
-"OK"            = "OK";
-"play again"    = "play again";
-"All Rank"      = "All Rank";
+"Setting"       = "окружение";
+"Find Color"    = "найти цвет";
+"Start Game"    = "начать игру";
+"Game Over"     = "игра окончена";
+"Score"         = "балл";
+"Ranking"       = "рейтинг";
+"Local Ranking" = "местные рейтинг";
+"Remaining Time" ="оставшееся время";
+"point"         = "точка";
+"OK"            = "хорошо";
+"play again"    = "играть снова";
+"All Rank"      = "все";

@@ -7,14 +7,14 @@
 */
 
 "Setting"       = "Setting";
-"Find Color"    = "Find Color";
-"Start Game"    = "Start Game";
+"Find Color"    = "Buscar color";
+"Start Game"    = "Iniciar el juego";
 "Game Over"     = "Game Over";
-"Score"         = "Score";
+"Score"         = "Calificacion";
 "Ranking"       = "Ranking";
-"Local Ranking" = "Local Ranking";
-"Remaining Time" = "Remaining time";
-"point"         = "point";
-"OK"            = "OK";
-"play again"    = "play again";
-"All Rank"      = "All Rank";
+"Local Ranking" = "Ranking local";
+"Remaining Time" ="Tiempo restante";
+"point"         = "Punto";
+"OK"            = "Ok";
+"play again"    = "Jugar de nuevo";
+"All Rank"      = "Todo rango";

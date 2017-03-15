@@ -6,15 +6,15 @@
   Copyright © 2017年 xigk. All rights reserved.
 */
 
-"Setting"       = "Setting";
-"Find Color"    = "Find Color";
-"Start Game"    = "Start Game";
-"Game Over"     = "Game Over";
+"Setting"       = "Die";
+"Find Color"    = "Finden Farbe";
+"Start Game"    = "Spiel Starten";
+"Game Over"     = "Das spiel ist vorbei";
 "Score"         = "Score";
 "Ranking"       = "Ranking";
-"Local Ranking" = "Local Ranking";
-"Remaining Time" = "Remaining time";
-"point"         = "point";
+"Local Ranking" = "Die rangliste";
+"Remaining Time" ="Die verbleibende zeit";
+"point"         = "Punkt";
 "OK"            = "OK";
-"play again"    = "play again";
-"All Rank"      = "All Rank";
+"play again"    = "Wieder Spielen";
+"All Rank"      = "Rang";
