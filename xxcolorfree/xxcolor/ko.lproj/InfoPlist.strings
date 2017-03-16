@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  xxcolor
+
+  Created by ZhangLiangZhi on 2017/2/21.
+  Copyright © 2017年 xigk. All rights reserved.
+*/
+
+CFBundleDisplayName = "찾기 색";

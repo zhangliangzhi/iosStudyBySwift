@@ -1,0 +1,20 @@
+/* 
+  Localizable.strings
+  xxcolor
+
+  Created by ZhangLiangZhi on 2017/2/21.
+  Copyright © 2017年 xigk. All rights reserved.
+*/
+
+"Setting"       = "окружение";
+"Find Color"    = "найти цвет";
+"Start Game"    = "начать игру";
+"Game Over"     = "игра окончена";
+"Score"         = "балл";
+"Ranking"       = "рейтинг";
+"Local Ranking" = "местные рейтинг";
+"Remaining Time" ="оставшееся время";
+"point"         = "точка";
+"OK"            = "хорошо";
+"play again"    = "играть снова";
+"All Rank"      = "все";
