@@ -151,7 +151,7 @@ class PlayViewController: UIViewController {
     
     func saveGameCenter() -> Void {
         if GKLocalPlayer.localPlayer().isAuthenticated {
-            let scoreReport = GKScore(leaderboardIdentifier: "1")
+            let scoreReport = GKScore(leaderboardIdentifier: "Find_Color_Free_1")
             scoreReport.value = Int64(totalScore)
             
             let scoreArray:[GKScore] = [scoreReport]
