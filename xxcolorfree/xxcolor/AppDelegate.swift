@@ -27,7 +27,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // umeng统计观看次数
         MobClick.event("UMLOGIN")
         
+        // Use Firebase library to configure APIs
         FIRApp.configure()
+        // Initialize Google Mobile Ads SDK
+        GADMobileAds.configure(withApplicationID: "ca-app-pub-7431883824117566~7454586533")
         
         return true
     }

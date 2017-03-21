@@ -19,7 +19,7 @@ class PlayViewController: UIViewController {
     var p = 2
 
     var totalScore = 0
-    
+    var interstitial: GADInterstitial!
 
     @IBOutlet weak var scoreLabel: UILabel!
     
@@ -53,10 +53,12 @@ class PlayViewController: UIViewController {
         self.view.addSubview(admobbar)
         
         
-//        admobbar.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        // my id
         admobbar.adUnitID = "ca-app-pub-7431883824117566/8931319738"
         admobbar.rootViewController = self
-        admobbar.load(GADRequest())
+        let requestbar = GADRequest()
+        requestbar.testDevices = kGADSimulatorID as? [Any]
+        admobbar.load(requestbar)
         
 //        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
 //        bannerView.rootViewController = self
@@ -68,6 +70,16 @@ class PlayViewController: UIViewController {
             make.bottom.equalTo(self.view)
         }
 
+        
+        // 插页广告
+        // my id
+        interstitial = GADInterstitial(adUnitID: "ca-app-pub-7431883824117566/1408052934")
+        // test id
+//        interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
+        let request = GADRequest()
+        request.testDevices = ["2077ef9a63d2b398840261c8221a0c9b"]
+        interstitial.load(request)
+        
     }
     
     func play1() {
@@ -169,9 +181,15 @@ class PlayViewController: UIViewController {
         // 上传GameCenter
         saveGameCenter()
         
+
         // 跳转结算界面
         let page = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "resultvc") as! ResultViewController
         navigationController?.pushViewController(page, animated: false)
+        
+        // 插页广告
+        if interstitial.isReady {
+            interstitial.present(fromRootViewController: self)
+        }
     }
     
     func saveGameCenter() -> Void {
