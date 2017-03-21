@@ -9,6 +9,8 @@
 import UIKit
 import CoreData
 import GameKit
+//import Firebase
+import GoogleMobileAds
 
 class PlayViewController: UIViewController {
     var _s = 0
@@ -43,6 +45,29 @@ class PlayViewController: UIViewController {
 
         
         play1()
+        addGoogleAdmob()
+    }
+    
+    func addGoogleAdmob() -> Void {
+        let admobbar = GADBannerView(adSize: GADAdSize(size: CGSize(width: 320, height: 50), flags: 0))
+        self.view.addSubview(admobbar)
+        
+        
+//        admobbar.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        admobbar.adUnitID = "ca-app-pub-7431883824117566/8931319738"
+        admobbar.rootViewController = self
+        admobbar.load(GADRequest())
+        
+//        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+//        bannerView.rootViewController = self
+//        bannerView.loadRequest(GADRequest())
+        
+        
+        admobbar.snp.makeConstraints { (make) in
+            make.centerX.equalTo(self.view)
+            make.bottom.equalTo(self.view)
+        }
+
     }
     
     func play1() {
@@ -63,7 +88,7 @@ class PlayViewController: UIViewController {
         let v = UIView(frame: CGRect.zero)
         self.view.addSubview(v)
         v.snp.makeConstraints { (make) in
-            make.edges.equalTo(UIEdgeInsets(top: (navigationController?.navigationBar.frame.height)!, left: 0, bottom: 0, right: 0))
+            make.edges.equalTo(UIEdgeInsets(top: (navigationController?.navigationBar.frame.height)!, left: 0, bottom: 50, right: 0))
         }
         v.backgroundColor = UIColor.gray
         v.tag = 888
