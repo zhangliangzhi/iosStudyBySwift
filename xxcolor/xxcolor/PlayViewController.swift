@@ -19,6 +19,7 @@ class PlayViewController: UIViewController {
     var iSec = 60
     var totalScore = 0
     
+    var v:UIView!
 
     @IBOutlet weak var scoreLabel: UILabel!
     
@@ -56,9 +57,13 @@ class PlayViewController: UIViewController {
     
     func play1() {
         // 1. 先将原来的v移除
-        let rv = self.view.viewWithTag(888)
-        if (rv != nil) {
-            rv?.removeFromSuperview()
+//        let rv = self.view.viewWithTag(888)
+//        if (rv != nil) {
+//            rv?.removeFromSuperview()
+//        }
+        if(self.v != nil){
+            self.v.removeFromSuperview()
+            self.v = nil
         }
         
         scoreLabel.text = "\(self.a)" + " " + NSLocalizedString("point", comment: "")
@@ -74,9 +79,13 @@ class PlayViewController: UIViewController {
 
         
         
-        let v:UIView = UIView(frame: CGRect(x: 0, y: 64, width: self.view.bounds.size.width, height: height*CGFloat(p)-100))
-        v.tag = 888
+        v = UIView(frame: CGRect.zero)
         self.view.addSubview(v)
+        v.snp.makeConstraints { (make) in
+            make.edges.equalTo(UIEdgeInsets(top: (navigationController?.navigationBar.frame.height)!, left: 0, bottom: 30, right: 0))
+        }
+        v.backgroundColor = UIColor.gray
+        v.tag = 888
         
         self.view.backgroundColor = UIColor.white
         v.backgroundColor = UIColor.white
@@ -87,22 +96,55 @@ class PlayViewController: UIViewController {
         let saturation:CGFloat = ( CGFloat(arc4random() % 128) / 256.0 ) + 0.5;
         let brightness:CGFloat = ( CGFloat(arc4random() % 128) / 256.0 ) + 0.5;
         
-        for i in 0..<p*p {
-            let imageButton = UIButton(frame: CGRect(x: width*(CGFloat(i/p)+0.025), y: ((height*0.83) * CGFloat(i%p)), width: width*0.95, height: height*0.8))
-            
-            imageButton.autoresizingMask = [UIViewAutoresizing.flexibleTopMargin , UIViewAutoresizing.flexibleBottomMargin,.flexibleLeftMargin , .flexibleRightMargin]
-            
-            if (i == Int(s) ) {
-                let a2 = CGFloat(a) * 0.01
-                let a3:CGFloat = 0.5 + a2
-                imageButton.backgroundColor = UIColor(hue: hue, saturation: saturation, brightness: brightness, alpha: a3)
-                imageButton.addTarget(self, action: #selector(play1), for: .touchDown)
-            }else{
-                imageButton.backgroundColor = UIColor(hue: hue, saturation: saturation, brightness: brightness, alpha: 1)
-                imageButton.addTarget(self, action: #selector(GameOver), for: .touchDown)
+        
+        var arrBtns = [UIButton]()
+        for i in 0..<p{
+            for j in 0..<p {
+                let indexOfKeys = i*p + j
+                let btn = UIButton(type: .custom)
+                v.addSubview(btn)
+                arrBtns.append(btn)
+                
+                btn.backgroundColor = UIColor.red
+                
+                btn.layer.borderWidth = 5.0*(2.0/CGFloat(p)) + 0.5
+                btn.layer.borderColor = UIColor.white.cgColor
+                
+                
+                btn.snp.makeConstraints({ (make) in
+                    make.width.equalTo(v.snp.width).multipliedBy(1.0/Double(p))
+                    make.height.equalTo(v.snp.height).multipliedBy(1.0/Double(p))
+                    
+                    //添加垂直位置约束
+                    if i == 0{
+                        make.top.equalTo(0)
+                    }else{
+                        make.top.equalTo(arrBtns[indexOfKeys-p].snp.bottom)
+                    }
+                    
+                    //添加水平位置约束
+                    if j == 0{
+                        make.left.equalTo(0)
+                    }else{
+                        make.left.equalTo(arrBtns[indexOfKeys-1].snp.right)
+                    }
+                    
+                    
+                })
+                
+                // 添加事件
+                if (indexOfKeys == Int(s) ) {
+                    let a2 = CGFloat(a) * 0.01
+                    let a3:CGFloat = 0.5 + a2
+                    btn.backgroundColor = UIColor(hue: hue, saturation: saturation, brightness: brightness, alpha: a3)
+                    btn.addTarget(self, action: #selector(play1), for: .touchDown)
+                }else{
+                    btn.backgroundColor = UIColor(hue: hue, saturation: saturation, brightness: brightness, alpha: 1)
+                    btn.addTarget(self, action: #selector(GameOver), for: .touchDown)
+                }
             }
-            v.addSubview(imageButton)
         }
+
  
     }
     
