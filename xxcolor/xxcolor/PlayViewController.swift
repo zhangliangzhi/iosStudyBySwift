@@ -57,10 +57,6 @@ class PlayViewController: UIViewController {
     
     func play1() {
         // 1. 先将原来的v移除
-//        let rv = self.view.viewWithTag(888)
-//        if (rv != nil) {
-//            rv?.removeFromSuperview()
-//        }
         if(self.v != nil){
             self.v.removeFromSuperview()
             self.v = nil
@@ -73,9 +69,7 @@ class PlayViewController: UIViewController {
         if (self.a % 5 == 0) {
             self.p += 1;
         }
-        let height = self.view.bounds.size.height / CGFloat(p)
-        let width = self.view.bounds.size.width / CGFloat(p)
-        
+
 
         
         
