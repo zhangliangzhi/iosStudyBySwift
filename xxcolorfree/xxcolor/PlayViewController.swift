@@ -58,7 +58,7 @@ class PlayViewController: UIViewController {
         admobbar.adUnitID = "ca-app-pub-7431883824117566/8931319738"
         admobbar.rootViewController = self
         let requestbar = GADRequest()
-        requestbar.testDevices = kGADSimulatorID as? [Any]
+//        requestbar.testDevices = kGADSimulatorID as? [Any]
         admobbar.load(requestbar)
         
 //        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
