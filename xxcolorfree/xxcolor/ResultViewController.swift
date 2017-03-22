@@ -19,6 +19,7 @@ class ResultViewController: UIViewController {
         super.viewDidLoad()
 
         self.title = NSLocalizedString("Game Over", comment: "")
+        // "💎"，💵
         scoreLabel.text = "\(gScore)" + " " + NSLocalizedString("point", comment: "")
         
         let cx = scoreLabel.center.x

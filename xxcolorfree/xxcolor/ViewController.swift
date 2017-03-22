@@ -24,6 +24,7 @@ class ViewController: UIViewController, GKGameCenterControllerDelegate {
     var mainv:UIView!
     var playv:UIView!
 
+    @IBOutlet weak var lblCoin: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,6 +87,11 @@ class ViewController: UIViewController, GKGameCenterControllerDelegate {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        
+        lblCoin.text =   "\(gGlobalSet?.coin)"
+    }
+    
     func showGC() -> Void {
         MobClick.event("UMGRANK")
         
@@ -139,6 +145,7 @@ class ViewController: UIViewController, GKGameCenterControllerDelegate {
         if arrGlobalSet.count > 0 {
             gGlobalSet = arrGlobalSet[0]
         }
+        lblCoin.text = "\(gGlobalSet?.coin)"
     }
     
     // 第一次打开app，加入测试数据
@@ -154,6 +161,11 @@ class ViewController: UIViewController, GKGameCenterControllerDelegate {
         
         oneGlobalSet.openCount = 1      // 打开app次数
         oneGlobalSet.evaluate = 0       // 是否评分
+        oneGlobalSet.ads = true         // 广告
+        oneGlobalSet.coin = 0           // 金币
+        oneGlobalSet.diamon = 0         // 钻石
+        oneGlobalSet.level = 0          // 等级
+        
         
         context.insert(oneGlobalSet)
         appDelegate.saveContext()

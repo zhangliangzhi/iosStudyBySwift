@@ -50,6 +50,9 @@ class PlayViewController: UIViewController {
     }
     
     func addGoogleAdmob() -> Void {
+        if (gGlobalSet?.ads)! == false {
+            return
+        }
         let admobbar = GADBannerView(adSize: GADAdSize(size: CGSize(width: 320, height: 50), flags: 0))
         self.view.addSubview(admobbar)
         
@@ -177,20 +180,29 @@ class PlayViewController: UIViewController {
         one.score = Int32(totalScore)
         one.ptime = NSDate()
         context.insert(one)
+        
+        // 增加金币
+        gGlobalSet?.coin += gScore
+        
+        // 保持数据库
         appDelegate.saveContext()
         
         // 上传GameCenter
         saveGameCenter()
         
 
+
         // 跳转结算界面
         let page = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "resultvc") as! ResultViewController
         navigationController?.pushViewController(page, animated: false)
         
         // 插页广告
-        if interstitial.isReady {
-            interstitial.present(fromRootViewController: self)
+        if (gGlobalSet?.ads)! == true {
+            if interstitial.isReady {
+                interstitial.present(fromRootViewController: self)
+            }
         }
+
     }
     
     func saveGameCenter() -> Void {
@@ -200,6 +212,13 @@ class PlayViewController: UIViewController {
             
             let scoreArray:[GKScore] = [scoreReport]
             GKScore.report(scoreArray, withCompletionHandler: nil)
+            
+            // coin排行榜
+            let coinReport = GKScore(leaderboardIdentifier: "Find_Color_Free_coin")
+            coinReport.value = Int64((gGlobalSet?.coin)!)
+            
+            let coinArray:[GKScore] = [coinReport]
+            GKScore.report(coinArray, withCompletionHandler: nil)
         }
     }
 
