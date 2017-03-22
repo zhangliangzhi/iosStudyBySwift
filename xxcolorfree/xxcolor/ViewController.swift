@@ -89,7 +89,8 @@ class ViewController: UIViewController, GKGameCenterControllerDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         
-        lblCoin.text =   "\(gGlobalSet?.coin)"
+//        lblCoin.text =   "\(gGlobalSet?.coin)"
+        lblCoin.text = String(format: "%d", (gGlobalSet?.coin)!)
     }
     
     func showGC() -> Void {
@@ -145,7 +146,7 @@ class ViewController: UIViewController, GKGameCenterControllerDelegate {
         if arrGlobalSet.count > 0 {
             gGlobalSet = arrGlobalSet[0]
         }
-        lblCoin.text = "\(gGlobalSet?.coin)"
+        lblCoin.text = String(format: "%d", (gGlobalSet?.coin)!)
     }
     
     // 第一次打开app，加入测试数据

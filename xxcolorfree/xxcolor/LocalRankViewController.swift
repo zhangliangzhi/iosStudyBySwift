@@ -34,6 +34,9 @@ class LocalRankViewController: UIViewController, UITableViewDelegate, UITableVie
         arrLocalRank = []
         do {
             arrLocalRank = try context.fetch(LocalRank.fetchRequest())
+            arrLocalRank.sort(by: { (a, b) -> Bool in
+                a.score > b.score
+            })
         }catch {
             print("getting coreData error")
         }
@@ -45,8 +48,8 @@ class LocalRankViewController: UIViewController, UITableViewDelegate, UITableVie
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // 倒序
-            let delRow = arrLocalRank.count - indexPath.row - 1
+            // 排序了
+            let delRow = indexPath.row
             let one = arrLocalRank[delRow]
             context.delete(one)
             appDelegate.saveContext()
@@ -65,7 +68,7 @@ class LocalRankViewController: UIViewController, UITableViewDelegate, UITableVie
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "")
-        let one = arrLocalRank[arrLocalRank.count - 1 - indexPath.row]
+        let one = arrLocalRank[indexPath.row]
         cell.textLabel?.text =  "\(one.score)" + " " + NSLocalizedString("point", comment: "")
         cell.textLabel?.textColor = UIColor(red: 238/255, green: 174/255, blue: 56/255, alpha: 1)
 
