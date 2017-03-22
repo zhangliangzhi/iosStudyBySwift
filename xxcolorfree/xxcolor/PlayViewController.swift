@@ -17,7 +17,8 @@ class PlayViewController: UIViewController {
     var _ss = 0
     var a = 0
     var p = 2
-
+    var v:UIView!
+    
     var totalScore = 0
     var interstitial: GADInterstitial!
 
@@ -84,9 +85,9 @@ class PlayViewController: UIViewController {
     
     func play1() {
         // 1. 先将原来的v移除
-        let rv = self.view.viewWithTag(888)
-        if (rv != nil) {
-            rv?.removeFromSuperview()
+        if (self.v != nil) {
+            self.v.removeFromSuperview()
+            self.v = nil
         }
         
         self.title = "\(self.a)" + " " + NSLocalizedString("point", comment: "")
@@ -97,7 +98,7 @@ class PlayViewController: UIViewController {
             self.p += 1;
         }
 
-        let v = UIView(frame: CGRect.zero)
+        v = UIView(frame: CGRect.zero)
         self.view.addSubview(v)
         v.snp.makeConstraints { (make) in
             make.edges.equalTo(UIEdgeInsets(top: (navigationController?.navigationBar.frame.height)!, left: 0, bottom: 50, right: 0))
