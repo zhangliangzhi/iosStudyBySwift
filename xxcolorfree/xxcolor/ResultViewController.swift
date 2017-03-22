@@ -41,6 +41,20 @@ class ResultViewController: UIViewController {
         btnOK.removeFromSuperview()
         bntRank.removeFromSuperview()
         
+        
+        // 位置修正
+        oBtn.snp.makeConstraints { (make) in
+            make.width.equalTo(150)
+            make.height.equalTo(40)
+            make.centerX.equalTo(self.view)
+            make.centerY.equalTo(self.view).offset(-20)
+        }
+        rBtn.snp.makeConstraints { (make) in
+            make.width.equalTo(150)
+            make.height.equalTo(40)
+            make.centerX.equalTo(oBtn)
+            make.bottom.equalTo(oBtn.snp.top).offset(-30)
+        }
     }
 
     override func didReceiveMemoryWarning() {
