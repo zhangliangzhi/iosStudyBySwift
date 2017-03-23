@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         let obj = UMAnalyticsConfig()
-        obj.appKey = "58b98141a325116f0b001c85"
+        obj.appKey = "58d37a87310c9336dc000369"
         obj.channelId = "App Store"
         MobClick.start(withConfigure: obj)
         
