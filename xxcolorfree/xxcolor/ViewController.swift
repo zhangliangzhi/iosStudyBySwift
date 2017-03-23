@@ -145,8 +145,10 @@ class ViewController: UIViewController, GKGameCenterControllerDelegate {
         
         if arrGlobalSet.count > 0 {
             gGlobalSet = arrGlobalSet[0]
+            
+            lblCoin.text = String(format: "%d", (gGlobalSet?.coin)!)
         }
-        lblCoin.text = String(format: "%d", (gGlobalSet?.coin)!)
+        
     }
     
     // 第一次打开app，加入测试数据
