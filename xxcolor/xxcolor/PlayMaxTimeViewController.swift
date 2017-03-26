@@ -1,18 +1,18 @@
 //
-//  PlayViewController.swift
+//  PlayMaxTimeViewController
 //  xxcolor
 //
-//  Created by ZhangLiangZhi on 2017/2/28.
+//  Created by ZhangLiangZhi on 2017/3/26.
 //  Copyright © 2017年 xigk. All rights reserved.
 //
 
 import UIKit
 import CoreData
 import GameKit
-//import Firebase
-import GoogleMobileAds
 
-class PlayViewController: UIViewController {
+//import GoogleMobileAds
+
+class PlayMaxTimeViewController: UIViewController {
     var _s = 0
     var _ss = 0
     var a = 0
@@ -20,7 +20,6 @@ class PlayViewController: UIViewController {
     var v:UIView!
     
     var totalScore = 0
-    var interstitial: GADInterstitial!
 
     @IBOutlet weak var scoreLabel: UILabel!
     
@@ -46,45 +45,8 @@ class PlayViewController: UIViewController {
 
         
         play1()
-        addGoogleAdmob()
     }
     
-    func addGoogleAdmob() -> Void {
-        if (gGlobalSet?.ads)! == false {
-            return
-        }
-        let admobbar = GADBannerView(adSize: GADAdSize(size: CGSize(width: 320, height: 50), flags: 0))
-        self.view.addSubview(admobbar)
-        
-        
-        // my id
-        admobbar.adUnitID = "ca-app-pub-7431883824117566/8931319738"
-        admobbar.rootViewController = self
-        let requestbar = GADRequest()
-//        requestbar.testDevices = kGADSimulatorID as? [Any]
-        admobbar.load(requestbar)
-        
-//        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
-//        bannerView.rootViewController = self
-//        bannerView.loadRequest(GADRequest())
-        
-        
-        admobbar.snp.makeConstraints { (make) in
-            make.centerX.equalTo(self.view)
-            make.bottom.equalTo(self.view)
-        }
-
-        
-        // 插页广告
-        // my id
-        interstitial = GADInterstitial(adUnitID: "ca-app-pub-7431883824117566/1408052934")
-        // test id
-//        interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
-        let request = GADRequest()
-        request.testDevices = ["2077ef9a63d2b398840261c8221a0c9b"]
-        interstitial.load(request)
-        
-    }
     
     func play1() {
         // 1. 先将原来的v移除
@@ -104,10 +66,9 @@ class PlayViewController: UIViewController {
         v = UIView(frame: CGRect.zero)
         self.view.addSubview(v)
         v.snp.makeConstraints { (make) in
-            make.edges.equalTo(UIEdgeInsets(top: (navigationController?.navigationBar.frame.height)!, left: 0, bottom: 50, right: 0))
+            make.edges.equalTo(UIEdgeInsets(top: (navigationController?.navigationBar.frame.height)!, left: 0, bottom: 0, right: 0))
         }
         v.backgroundColor = UIColor.gray
-        v.tag = 888
         
         self.view.backgroundColor = UIColor.white
         v.backgroundColor = UIColor.white
@@ -176,7 +137,7 @@ class PlayViewController: UIViewController {
         gScore = self.totalScore
         
         // 保存记录
-        let one = NSEntityDescription.insertNewObject(forEntityName: "LocalRank", into: context) as! LocalRank
+        let one = NSEntityDescription.insertNewObject(forEntityName: "MaxTimeRank", into: context) as! MaxTimeRank
         one.score = Int32(totalScore)
         one.ptime = NSDate()
         context.insert(one)
@@ -196,25 +157,19 @@ class PlayViewController: UIViewController {
         let page = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "resultvc") as! ResultViewController
         navigationController?.pushViewController(page, animated: false)
         
-        // 插页广告
-        if (gGlobalSet?.ads)! == true {
-            if interstitial.isReady {
-                interstitial.present(fromRootViewController: self)
-            }
-        }
 
     }
     
     func saveGameCenter() -> Void {
         if GKLocalPlayer.localPlayer().isAuthenticated {
-            let scoreReport = GKScore(leaderboardIdentifier: "Find_Color_Free_1")
+            let scoreReport = GKScore(leaderboardIdentifier: "Find_Color_Max_1")
             scoreReport.value = Int64(totalScore)
             
             let scoreArray:[GKScore] = [scoreReport]
             GKScore.report(scoreArray, withCompletionHandler: nil)
             
             // coin排行榜
-            let coinReport = GKScore(leaderboardIdentifier: "Find_Color_Free_coin")
+            let coinReport = GKScore(leaderboardIdentifier: "Find_Color_coin")
             coinReport.value = Int64((gGlobalSet?.coin)!)
             
             let coinArray:[GKScore] = [coinReport]

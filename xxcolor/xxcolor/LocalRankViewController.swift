@@ -13,6 +13,9 @@ class LocalRankViewController: UIViewController, UITableViewDelegate, UITableVie
 
     var tableView:UITableView!
     var arrLocalRank:[LocalRank] = []
+    var arrMaxTimeRank:[MaxTimeRank] = []
+    
+    var isShowMaxTimeRank = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,15 +28,29 @@ class LocalRankViewController: UIViewController, UITableViewDelegate, UITableVie
         self.view.addSubview(tableView)
         
         tableView.snp.makeConstraints { (make) in
-            make.edges.equalTo(self.view)
+            make.edges.equalTo(UIEdgeInsets(top: 30, left: 0, bottom: 0, right: 0))
         }
+    }
+    
+    func showMaxTimeRank() {
+        isShowMaxTimeRank = true
+        tableView.reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         // Get coreData
         arrLocalRank = []
+        arrMaxTimeRank = []
         do {
             arrLocalRank = try context.fetch(LocalRank.fetchRequest())
+            arrMaxTimeRank = try context.fetch(MaxTimeRank.fetchRequest())
+            
+            arrLocalRank.sort(by: { (a, b) -> Bool in
+                return a.score > b.score
+            })
+            arrMaxTimeRank.sort(by: { (a, b) -> Bool in
+                return a.score > b.score
+            })
         }catch {
             print("getting coreData error")
         }
@@ -45,12 +62,20 @@ class LocalRankViewController: UIViewController, UITableViewDelegate, UITableVie
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // 倒序
-            let delRow = arrLocalRank.count - indexPath.row - 1
-            let one = arrLocalRank[delRow]
-            context.delete(one)
-            appDelegate.saveContext()
-            arrLocalRank.remove(at: delRow)
+            
+            let delRow = indexPath.row
+            if isShowMaxTimeRank {
+                let one = arrMaxTimeRank[delRow]
+                context.delete(one)
+                appDelegate.saveContext()
+                arrMaxTimeRank.remove(at: delRow)
+            } else {
+                let one = arrLocalRank[delRow]
+                context.delete(one)
+                appDelegate.saveContext()
+                arrLocalRank.remove(at: delRow)
+            }
+
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
@@ -60,21 +85,34 @@ class LocalRankViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrLocalRank.count
+        if isShowMaxTimeRank {
+            return arrMaxTimeRank.count
+        } else {
+            return arrLocalRank.count
+        }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "")
-        let one = arrLocalRank[arrLocalRank.count - 1 - indexPath.row]
-        cell.textLabel?.text =  "\(one.score)" + " " + NSLocalizedString("point", comment: "")
-        cell.textLabel?.textColor = UIColor(red: 238/255, green: 174/255, blue: 56/255, alpha: 1)
-
+        
         // 创建一个日期格式器
         let dformatter = DateFormatter()
         dformatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
-        let strTime:String = dformatter.string(from: one.ptime as! Date)
-        cell.detailTextLabel?.text = strTime
         
+        if isShowMaxTimeRank {
+            let one = arrMaxTimeRank[indexPath.row]
+            cell.textLabel?.text =  "\(one.score)" + " " + NSLocalizedString("point", comment: "")
+            cell.textLabel?.textColor = UIColor(red: 238/255, green: 174/255, blue: 56/255, alpha: 1)
+            let strTime:String = dformatter.string(from: one.ptime as! Date)
+            cell.detailTextLabel?.text = strTime
+        } else {
+            let one = arrLocalRank[indexPath.row]
+            cell.textLabel?.text =  "\(one.score)" + " " + NSLocalizedString("point", comment: "")
+            cell.textLabel?.textColor = UIColor(red: 238/255, green: 174/255, blue: 56/255, alpha: 1)
+            let strTime:String = dformatter.string(from: one.ptime as! Date)
+            cell.detailTextLabel?.text = strTime
+        }
+
         return cell
     }
 

@@ -62,6 +62,42 @@ class ViewController: UIViewController, GKGameCenterControllerDelegate {
         gcBtn.setTitle(NSLocalizedString("All Rank", comment: ""), for: UIControlState.normal)
         gcBtn.addTarget(self, action: #selector(showGC), for: .touchUpInside)
         self.view.addSubview(gcBtn)
+        
+        let btnPlayMaxTime: BootstrapBtn = BootstrapBtn(frame: CGRect(x: cw, y: 430, width: 150, height: 40), btButtonType: .Success)
+        self.view.addSubview(btnPlayMaxTime)
+        btnPlayMaxTime.addTarget(self, action: #selector(playMaxTime), for: .touchUpInside)
+        btnPlayMaxTime.setTitle(NSLocalizedString("Play MaxTime", comment: ""), for: .normal)
+        
+        // 位置修正
+        btnShowLocal.snp.makeConstraints { (make) in
+            make.width.equalTo(150)
+            make.height.equalTo(40)
+            make.centerX.equalTo(self.view)
+            make.centerY.equalTo(self.view).offset(-30)
+        }
+        
+        btnOneSec.snp.makeConstraints { (make) in
+            make.width.equalTo(150)
+            make.height.equalTo(40)
+            make.centerX.equalTo(btnShowLocal)
+            make.bottom.equalTo(btnShowLocal.snp.top).offset(-30)
+        }
+        gcBtn.snp.makeConstraints { (make) in
+            make.width.equalTo(150)
+            make.height.equalTo(40)
+            make.centerX.equalTo(btnShowLocal)
+            make.top.equalTo(btnShowLocal.snp.bottom).offset(30)
+        }
+        btnPlayMaxTime.snp.makeConstraints { (make) in
+            make.width.equalTo(150)
+            make.height.equalTo(40)
+            make.centerX.equalTo(btnShowLocal)
+            make.top.equalTo(gcBtn.snp.bottom).offset(30)
+        }
+    }
+    
+    func playMaxTime() {
+        navigationController?.pushViewController(PlayMaxTimeViewController(), animated: true)
     }
     
     func showGC() -> Void {
@@ -132,6 +168,10 @@ class ViewController: UIViewController, GKGameCenterControllerDelegate {
         
         oneGlobalSet.openCount = 1      // 打开app次数
         oneGlobalSet.evaluate = 0       // 是否评分
+        oneGlobalSet.coin = 0
+        oneGlobalSet.diamon = 0
+        oneGlobalSet.exp = 0
+        oneGlobalSet.mainLevel = 0
         
         context.insert(oneGlobalSet)
         appDelegate.saveContext()

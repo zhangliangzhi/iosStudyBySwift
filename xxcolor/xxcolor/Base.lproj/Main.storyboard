@@ -40,15 +40,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aaV-mw-nkA">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aaV-mw-nkA">
                                 <rect key="frame" x="171.5" y="226.5" width="31" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="确定"/>
                                 <connections>
                                     <action selector="OKAction:" destination="mmf-NZ-KUe" eventType="touchUpInside" id="p3w-mL-mWh"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SAC-pp-rXv">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SAC-pp-rXv">
                                 <rect key="frame" x="148.5" y="271.5" width="77" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="查看排行榜"/>
                                 <connections>
                                     <action selector="ShowLocalRank:" destination="mmf-NZ-KUe" eventType="touchUpInside" id="Nzl-I6-3a5"/>
@@ -63,12 +65,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="mGe-ZZ-Sip" firstAttribute="top" secondItem="twj-Uz-4p5" secondAttribute="bottom" constant="150" id="1hc-UF-rNz"/>
-                            <constraint firstItem="SAC-pp-rXv" firstAttribute="centerX" secondItem="mGe-ZZ-Sip" secondAttribute="centerX" id="EN2-2S-6O6"/>
-                            <constraint firstItem="aaV-mw-nkA" firstAttribute="centerX" secondItem="mGe-ZZ-Sip" secondAttribute="centerX" id="O15-NQ-za9"/>
-                            <constraint firstItem="mGe-ZZ-Sip" firstAttribute="centerX" secondItem="jcW-9A-SOe" secondAttribute="centerX" id="dba-1u-jXv"/>
-                            <constraint firstItem="SAC-pp-rXv" firstAttribute="top" secondItem="mGe-ZZ-Sip" secondAttribute="bottom" constant="70" id="dpT-sC-q2M"/>
-                            <constraint firstItem="aaV-mw-nkA" firstAttribute="top" secondItem="mGe-ZZ-Sip" secondAttribute="bottom" constant="25" id="tpe-nx-7OM"/>
+                            <constraint firstItem="mGe-ZZ-Sip" firstAttribute="centerX" secondItem="jcW-9A-SOe" secondAttribute="centerX" id="LQg-mc-3rn"/>
+                            <constraint firstItem="mGe-ZZ-Sip" firstAttribute="top" secondItem="twj-Uz-4p5" secondAttribute="bottom" constant="150" id="QyP-Dn-P4V"/>
                         </constraints>
                     </view>
                     <connections>
