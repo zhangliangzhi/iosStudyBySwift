@@ -18,4 +18,5 @@
 "OK"            = "OK";
 "play again"    = "Play Again";
 "All Rank"      = "All Rank";
-"Play MaxTime"  = "Play MaxTime";
+"Play MaxTime"  = "Unlimited Time Mode";
+"Rank"          = "Rank";

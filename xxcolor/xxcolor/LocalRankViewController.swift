@@ -28,8 +28,30 @@ class LocalRankViewController: UIViewController, UITableViewDelegate, UITableVie
         self.view.addSubview(tableView)
         
         tableView.snp.makeConstraints { (make) in
-            make.edges.equalTo(UIEdgeInsets(top: 30, left: 0, bottom: 0, right: 0))
+            make.edges.equalTo(UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0))
         }
+        
+        /*
+        // 排行的标题
+        let topTitleView = UIView()
+        self.view.addSubview(topTitleView)
+        topTitleView.snp.makeConstraints { (make) in
+            make.width.equalTo(self.view)
+            make.height.equalTo(40)
+            make.centerX.equalTo(self.view)
+            make.top.equalTo(self.view.snp.top).offset((navigationController?.navigationBar.frame.height)!)
+        }
+        topTitleView.backgroundColor = UIColor.gray
+        let titleRank = UILabel(frame: CGRect(x: 0, y: 0, width: 150, height: 40))
+        topTitleView.addSubview(titleRank)
+        titleRank.text = NSLocalizedString("Rank", comment: "")
+        titleRank.snp.makeConstraints { (make) in
+            make.left.equalTo(topTitleView.snp.left).offset(8)
+            make.centerY.equalTo(topTitleView)
+        }
+ */
+        
+//        navigationController?.navigationItem.rightBarButtonItems = [UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(showMaxTimeRank)) ]
     }
     
     func showMaxTimeRank() {
