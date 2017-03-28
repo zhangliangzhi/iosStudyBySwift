@@ -63,10 +63,16 @@ class ViewController: UIViewController, GKGameCenterControllerDelegate {
         gcBtn.addTarget(self, action: #selector(showGC), for: .touchUpInside)
         self.view.addSubview(gcBtn)
         
-        let btnPlayMaxTime: BootstrapBtn = BootstrapBtn(frame: CGRect(x: cw, y: 430, width: 150, height: 40), btButtonType: .Success)
+        let btnPlayMaxTime: BootstrapBtn = BootstrapBtn(frame: CGRect(x: 0, y: 0, width: 250, height: 40), btButtonType: .Success)
         self.view.addSubview(btnPlayMaxTime)
         btnPlayMaxTime.addTarget(self, action: #selector(playMaxTime), for: .touchUpInside)
         btnPlayMaxTime.setTitle(NSLocalizedString("Play MaxTime", comment: ""), for: .normal)
+        
+        // 排行榜 经典1分钟模式
+        
+        
+        // 排行榜2 无限时间模式
+        
         
         // 位置修正
         btnShowLocal.snp.makeConstraints { (make) in
@@ -89,7 +95,7 @@ class ViewController: UIViewController, GKGameCenterControllerDelegate {
             make.top.equalTo(btnShowLocal.snp.bottom).offset(30)
         }
         btnPlayMaxTime.snp.makeConstraints { (make) in
-            make.width.equalTo(150)
+            make.width.equalTo(250)
             make.height.equalTo(40)
             make.centerX.equalTo(btnShowLocal)
             make.top.equalTo(gcBtn.snp.bottom).offset(30)
