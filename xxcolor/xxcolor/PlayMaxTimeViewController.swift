@@ -143,7 +143,7 @@ class PlayMaxTimeViewController: UIViewController {
         context.insert(one)
         
         // 增加金币
-        gGlobalSet?.coin += gScore
+//        gGlobalSet?.coin += gScore
         
         // 保持数据库
         appDelegate.saveContext()
@@ -169,11 +169,11 @@ class PlayMaxTimeViewController: UIViewController {
             GKScore.report(scoreArray, withCompletionHandler: nil)
             
             // coin排行榜
-            let coinReport = GKScore(leaderboardIdentifier: "Find_Color_coin")
-            coinReport.value = Int64((gGlobalSet?.coin)!)
+//            let coinReport = GKScore(leaderboardIdentifier: "Find_Color_coin")
+//            coinReport.value = Int64((gGlobalSet?.coin)!)
             
-            let coinArray:[GKScore] = [coinReport]
-            GKScore.report(coinArray, withCompletionHandler: nil)
+//            let coinArray:[GKScore] = [coinReport]
+//            GKScore.report(coinArray, withCompletionHandler: nil)
         }
     }
 

@@ -68,10 +68,7 @@ class ViewController: UIViewController, GKGameCenterControllerDelegate {
         btnPlayMaxTime.addTarget(self, action: #selector(playMaxTime), for: .touchUpInside)
         btnPlayMaxTime.setTitle(NSLocalizedString("Play MaxTime", comment: ""), for: .normal)
         
-        // 排行榜 经典1分钟模式
-        
-        
-        // 排行榜2 无限时间模式
+        // 金币
         
         
         // 位置修正
