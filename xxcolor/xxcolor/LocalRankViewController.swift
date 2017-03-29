@@ -32,7 +32,7 @@ class LocalRankViewController: UIViewController, UITableViewDelegate, UITableVie
         }
         
         // 在右侧添加一个按钮
-        let barButtonItem = UIBarButtonItem(title: "Next", style: UIBarButtonItemStyle.plain, target: self, action: #selector(showMaxTimeRank))
+        let barButtonItem = UIBarButtonItem(title: NSLocalizedString("Next", comment: ""), style: UIBarButtonItemStyle.plain, target: self, action: #selector(showMaxTimeRank))
         self.navigationItem.rightBarButtonItem = barButtonItem
     }
     
