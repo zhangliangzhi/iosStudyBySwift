@@ -87,9 +87,13 @@ class ViewController: UIViewController, GKGameCenterControllerDelegate {
         }
     }
     
+    func add100Level() {
+        
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         
-//        lblCoin.text =   "\(gGlobalSet?.coin)"
+        //        lblCoin.text =   "\(gGlobalSet?.coin)"
         lblCoin.text = String(format: "%d", (gGlobalSet?.coin)!)
     }
     
