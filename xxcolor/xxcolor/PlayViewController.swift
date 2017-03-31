@@ -54,6 +54,10 @@ class PlayViewController: UIViewController {
         
         play1()
     }
+
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
     
     func play1() {
         // 1. 先将原来的v移除
@@ -70,9 +74,6 @@ class PlayViewController: UIViewController {
             self.p += 1;
         }
 
-
-        
-        
         v = UIView(frame: CGRect.zero)
         self.view.addSubview(v)
         v.snp.makeConstraints { (make) in
