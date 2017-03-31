@@ -21,7 +21,7 @@ class ResultViewController: UIViewController {
         scoreLabel.text = "\(gScore)" + " " + NSLocalizedString("point", comment: "")
         
 
-        let oBtn: BootstrapBtn = BootstrapBtn(frame: CGRect(x:0, y:0, width:150, height:40), btButtonType: .Info)
+        let oBtn: BootstrapBtn = BootstrapBtn(frame: CGRect(x:0, y:0, width:150, height:40), btButtonType: .Danger)
         self.view.addSubview(oBtn)
         oBtn.setTitle(NSLocalizedString("OK", comment: ""), for: UIControlState.normal)
         oBtn.addTarget(self, action: #selector(OKAction), for: .touchUpInside)
