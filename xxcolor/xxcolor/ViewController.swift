@@ -124,6 +124,7 @@ class ViewController: UIViewController, GKGameCenterControllerDelegate {
     }
     
     func playMaxTime() {
+        MobClick.event("UMWXMS")
         navigationController?.pushViewController(PlayMaxTimeViewController(), animated: true)
     }
     
