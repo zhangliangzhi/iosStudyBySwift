@@ -19,6 +19,11 @@ class PlayMaxTimeViewController: UIViewController {
     var p = 2
     var v:UIView!
     
+    var buyView:UIView!
+    var arrBtns = [UIButton]()
+    var curBtnIndex = 0
+    var isPause = false
+    
     var totalScore = 0
 
     @IBOutlet weak var scoreLabel: UILabel!
@@ -26,6 +31,8 @@ class PlayMaxTimeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let barItem = UIBarButtonItem(title: NSLocalizedString("Use Diamond", comment: ""), style: .plain, target: self, action: #selector(goHelpTips))
+        navigationItem.rightBarButtonItem = barItem
     }
     
 
@@ -49,6 +56,9 @@ class PlayMaxTimeViewController: UIViewController {
     
     
     func play1() {
+        if isPause {
+            return
+        }
         // 1. 先将原来的v移除
         if (self.v != nil) {
             self.v.removeFromSuperview()
@@ -80,7 +90,7 @@ class PlayMaxTimeViewController: UIViewController {
         let brightness:CGFloat = ( CGFloat(arc4random() % 128) / 256.0 ) + 0.5;
 
         
-        var arrBtns = [UIButton]()
+        arrBtns = []
         for i in 0..<p{
             for j in 0..<p {
                 let indexOfKeys = i*p + j
@@ -115,6 +125,7 @@ class PlayMaxTimeViewController: UIViewController {
                     
                 })
                 
+                curBtnIndex = Int(s)
                 // 添加事件
                 if (indexOfKeys == Int(s) ) {
                     let a2 = CGFloat(a) * 0.01
@@ -131,7 +142,9 @@ class PlayMaxTimeViewController: UIViewController {
     }
     
     func GameOver() -> Void {
-
+        if isPause {
+            return
+        }
         self.title = ""
         
         gScore = self.totalScore
@@ -179,5 +192,87 @@ class PlayMaxTimeViewController: UIViewController {
 
     override var prefersStatusBarHidden: Bool{
         return true
+    }
+    
+    func goHelpTips() -> Void {
+        MobClick.event("UMSHOPUSEX")
+        closeBuyView2()
+        isPause = true
+        buyView = UIView()
+        self.view.addSubview(buyView)
+        buyView.snp.makeConstraints { (make) in
+            make.center.equalTo(self.view)
+            make.width.equalTo(self.view).multipliedBy(0.85)
+            make.height.equalTo(150)
+        }
+        buyView.backgroundColor = UIColor.white
+        
+        let closeBtn = UIButton(type: .custom)
+        closeBtn.setImage(UIImage(named: "close"), for: .normal)
+        buyView.addSubview(closeBtn)
+        closeBtn.snp.makeConstraints { (make) in
+            make.left.equalTo(buyView.snp.left).offset(-10)
+            make.top.equalTo(buyView.snp.top).offset(-10)
+        }
+        closeBtn.addTarget(self, action: #selector(closeBuyView1), for: .touchUpInside)
+
+        
+        // tell me which one buttom
+        let btnShowme = BootstrapBtn(frame: CGRect(x: 0, y: 0, width: 250, height: 50), btButtonType: .Success)
+        buyView.addSubview(btnShowme)
+        btnShowme.addTarget(self, action: #selector(showMeWhichOne), for: .touchUpInside)
+        btnShowme.setTitle(NSLocalizedString("showme", comment: ""), for: .normal)
+        btnShowme.snp.makeConstraints { (make) in
+            make.centerX.equalTo(buyView)
+            make.centerY.equalTo(buyView)
+        }
+        
+        // have total diamond
+        let dia = String(format: "%d", (gGlobalSet?.diamon)!) + " "
+        let strDiamond = dia + strzs
+        
+        let lblDiamond = UILabel()
+        buyView.addSubview(lblDiamond)
+        lblDiamond.text = strDiamond
+        lblDiamond.textColor = UIColor.black
+        lblDiamond.font = UIFont(name: "Arial-BoldMT", size: 20)
+        lblDiamond.textAlignment = .center //文字中心对齐
+        lblDiamond.snp.makeConstraints { (make) in
+            make.centerX.equalTo(buyView)
+            make.top.equalTo(buyView)
+        }
+    }
+    
+    func closeBuyView1() {
+        MobClick.event("UMSHOPCLOSEX")
+        if buyView != nil {
+            buyView.removeFromSuperview()
+            buyView = nil
+        }
+        isPause = false
+    }
+    func closeBuyView2() {
+        if buyView != nil {
+            buyView.removeFromSuperview()
+            buyView = nil
+        }
+        isPause = false
+    }
+    
+    
+    // tell me which one. -30 diamond
+    func showMeWhichOne() {
+        MobClick.event("UMSHOP30X")
+        if (gGlobalSet?.diamon)! < 30 {
+            TipsSwift.showCenterWithText(NSLocalizedString("nodiamond", comment: ""))
+            return
+        }
+        MobClick.event("UMSHOP30GOX")
+        gGlobalSet?.diamon -= 30
+        appDelegate.saveContext()
+        closeBuyView2()
+        let btn = arrBtns[curBtnIndex]
+        btn.layer.borderColor = UIColor.black.cgColor
+        TipsSwift.showCenterWithText("-30💎")
     }
 }
