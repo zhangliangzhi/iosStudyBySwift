@@ -26,15 +26,15 @@ class ShopViewController: UIViewController {
     func addDiamonView() -> Void {
         let btn60 = UIButton()
         self.view.addSubview(btn60)
-        btn60.addTarget(self, action: #selector(buyDiamond60), for: .touchDown)
+        btn60.addTarget(self, action: #selector(buyDiamond60), for: .touchUpInside)
         
         let btn320 = UIButton()
         self.view.addSubview(btn320)
-        btn320.addTarget(self, action: #selector(buyDiamond60), for: .touchDown)
+        btn320.addTarget(self, action: #selector(buyDiamond60), for: .touchUpInside)
         
         let btn3800 = UIButton()
         self.view.addSubview(btn3800)
-        btn3800.addTarget(self, action: #selector(buyDiamond60), for: .touchDown)
+        btn3800.addTarget(self, action: #selector(buyDiamond60), for: .touchUpInside)
         
         btn60.setTitleColor(UIColor.white, for: .normal)
         btn60.layer.borderColor = UIColor(red: 80/255, green: 183/255, blue: 221/255, alpha: 1).cgColor
@@ -153,7 +153,7 @@ class ShopViewController: UIViewController {
         lblnum60.font = UIFont(name: "Arial-BoldMT", size: 25)
         lblnum60.textAlignment = .center //文字中心对齐
         lblnum60.snp.makeConstraints { (make) in
-            make.right.equalTo(img60.snp.left).offset(-10)
+            make.right.equalTo(img60.snp.left).offset(-5)
             make.centerY.equalTo(img60)
         }
         
@@ -164,7 +164,7 @@ class ShopViewController: UIViewController {
         lblnum320.font = UIFont(name: "Arial-BoldMT", size: 25)
         lblnum320.textAlignment = .center //文字中心对齐
         lblnum320.snp.makeConstraints { (make) in
-            make.right.equalTo(img320.snp.left).offset(-10)
+            make.right.equalTo(img320.snp.left).offset(-5)
             make.centerY.equalTo(img320)
         }
         
@@ -175,8 +175,8 @@ class ShopViewController: UIViewController {
         lblnum3800.font = UIFont(name: "Arial-BoldMT", size: 25)
         lblnum3800.textAlignment = .center //文字中心对齐
         lblnum3800.snp.makeConstraints { (make) in
-            make.right.equalTo(img3a.snp.left).offset(-10)
-            make.centerY.equalTo(img3a)
+            make.right.equalTo(img3b.snp.left).offset(-5)
+            make.centerY.equalTo(img3b)
         }
         
         // 钻石, 在右侧添加一个按钮
@@ -191,7 +191,7 @@ class ShopViewController: UIViewController {
     }
     
     func descDiamon() {
-        let dia = String(format: "%d", (gGlobalSet?.diamon)!) + " "
+        let dia = " " + String(format: "%d", (gGlobalSet?.diamon)!) + " "
         let strShow = NSLocalizedString("You have", comment: "") + dia + strzs
         TipsSwift.showTopWithText(strShow)
     }

@@ -20,12 +20,16 @@ class PlayViewController: UIViewController {
     var totalScore = 0
     
     var v:UIView!
+    
+    var buyView:UIView!
 
     @IBOutlet weak var scoreLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let barItem = UIBarButtonItem(title: NSLocalizedString("Use Diamond", comment: ""), style: .plain, target: self, action: #selector(goHelpTips))
+        navigationItem.rightBarButtonItem = barItem
     }
     
     func timeEverySec() {
@@ -175,4 +179,31 @@ class PlayViewController: UIViewController {
         }
     }
 
+    func goHelpTips() -> Void {
+        closeBuyView()
+        buyView = UIView()
+        self.view.addSubview(buyView)
+        buyView.snp.makeConstraints { (make) in
+            make.center.equalTo(self.view)
+            make.width.equalTo(self.view).multipliedBy(0.618)
+            make.height.equalTo(150)
+        }
+        buyView.backgroundColor = UIColor.gray
+        
+        let closeBtn = UIButton(type: .custom)
+        closeBtn.setImage(UIImage(named: "close"), for: .normal)
+        buyView.addSubview(closeBtn)
+        closeBtn.snp.makeConstraints { (make) in
+            make.left.equalTo(buyView.snp.left).offset(-10)
+            make.top.equalTo(buyView.snp.top).offset(-10)
+        }
+        closeBtn.addTarget(self, action: #selector(closeBuyView), for: .touchUpInside)
+    }
+    
+    func closeBuyView() {
+        if buyView != nil {
+            buyView.removeFromSuperview()
+            buyView = nil
+        }
+    }
 }
