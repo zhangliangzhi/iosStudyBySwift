@@ -26,6 +26,9 @@
 		0BDFE3EE1E65174B00672939 /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDFE3ED1E65174B00672939 /* PlayViewController.swift */; };
 		0BDFE3F01E65457800672939 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDFE3EF1E65457800672939 /* ResultViewController.swift */; };
 		0BDFE3F21E65459500672939 /* LocalRankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDFE3F11E65459500672939 /* LocalRankViewController.swift */; };
+		0BE010991E940D12000C2963 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE010981E940D12000C2963 /* ShopViewController.swift */; };
+		0BE0109B1E94290A000C2963 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BE0109A1E94290A000C2963 /* StoreKit.framework */; };
+		0BE0109D1E94BC39000C2963 /* TipsSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE0109C1E94BC39000C2963 /* TipsSwift.swift */; };
 		BBB4C6CDD93040EE5315B8DE /* Pods_xxcolor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AECDE0F1113C7BF1E6585B12 /* Pods_xxcolor.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +70,9 @@
 		0BDFE3ED1E65174B00672939 /* PlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
 		0BDFE3EF1E65457800672939 /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		0BDFE3F11E65459500672939 /* LocalRankViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalRankViewController.swift; sourceTree = "<group>"; };
+		0BE010981E940D12000C2963 /* ShopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
+		0BE0109A1E94290A000C2963 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		0BE0109C1E94BC39000C2963 /* TipsSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipsSwift.swift; sourceTree = "<group>"; };
 		1FB82EDDAE5AA98ECE4CBFD7 /* Pods-xxcolor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-xxcolor.release.xcconfig"; path = "Pods/Target Support Files/Pods-xxcolor/Pods-xxcolor.release.xcconfig"; sourceTree = "<group>"; };
 		84D64D7633ECD990D92A9C38 /* Pods-xxcolor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-xxcolor.debug.xcconfig"; path = "Pods/Target Support Files/Pods-xxcolor/Pods-xxcolor.debug.xcconfig"; sourceTree = "<group>"; };
 		AECDE0F1113C7BF1E6585B12 /* Pods_xxcolor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_xxcolor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BE0109B1E94290A000C2963 /* StoreKit.framework in Frameworks */,
 				BBB4C6CDD93040EE5315B8DE /* Pods_xxcolor.framework in Frameworks */,
 				0B292BEE1E62A98800AF37C1 /* GameKit.framework in Frameworks */,
 			);
@@ -106,6 +113,8 @@
 		0B693B4D1E5ADFF600AC2BEB /* xxcolor */ = {
 			isa = PBXGroup;
 			children = (
+				0BE010981E940D12000C2963 /* ShopViewController.swift */,
+				0BE0109C1E94BC39000C2963 /* TipsSwift.swift */,
 				0BDFE3EF1E65457800672939 /* ResultViewController.swift */,
 				0BDFE3ED1E65174B00672939 /* PlayViewController.swift */,
 				0B5AEA131E87CA9000729A37 /* PlayMaxTimeViewController.swift */,
@@ -150,6 +159,7 @@
 		F8450AC36545CF8943A5940F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0BE0109A1E94290A000C2963 /* StoreKit.framework */,
 				0B292BED1E62A98800AF37C1 /* GameKit.framework */,
 				AECDE0F1113C7BF1E6585B12 /* Pods_xxcolor.framework */,
 			);
@@ -196,6 +206,9 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.GameCenter = {
+								enabled = 1;
+							};
+							com.apple.InAppPurchase = {
 								enabled = 1;
 							};
 						};
@@ -297,6 +310,7 @@
 			files = (
 				0B693B6A1E5AE05600AC2BEB /* INSPersistentStoreDescription.swift in Sources */,
 				0B693B691E5AE05600AC2BEB /* INSPersistentContainer.swift in Sources */,
+				0BE0109D1E94BC39000C2963 /* TipsSwift.swift in Sources */,
 				0B693B6B1E5AE05600AC2BEB /* NSManagedObjectContext+iOS10Additions.swift in Sources */,
 				0B693B511E5ADFF600AC2BEB /* ViewController.swift in Sources */,
 				0B693B571E5ADFF600AC2BEB /* xxcolor.xcdatamodeld in Sources */,
@@ -307,6 +321,7 @@
 				0B693B4F1E5ADFF600AC2BEB /* AppDelegate.swift in Sources */,
 				0B693B681E5AE05600AC2BEB /* INSDataStackContainer.swift in Sources */,
 				0B6DBF251E5BD7C60083F679 /* BootstrapBtn.swift in Sources */,
+				0BE010991E940D12000C2963 /* ShopViewController.swift in Sources */,
 				0BDFE3F01E65457800672939 /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

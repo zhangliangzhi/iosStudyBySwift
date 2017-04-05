@@ -6,6 +6,9 @@
   Copyright © 2017年 xigk. All rights reserved.
 */
 
+"money1"        = "¥120";
+"money5"        = "¥600";
+"money50"       = "¥6,000";
 "Setting"       = "設定";
 "Find Color"    = "色を探して";
 "Start Game"    = "ゲーム」を始め";

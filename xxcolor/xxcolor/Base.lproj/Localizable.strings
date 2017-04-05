@@ -6,6 +6,9 @@
   Copyright © 2017年 xigk. All rights reserved.
 */
 
+"money1"        = "$0.99";
+"money5"        = "$4.99";
+"money50"       = "$49.99";
 "Setting"       = "Setting";
 "Find Color"    = "Find Color";
 "Start Game"    = "Start Game";
@@ -21,3 +24,9 @@
 "Play MaxTime"  = "Unlimited Time Mode";
 "Rank"          = "Rank";
 "Next"          = "Next";
+"Shop"          = "Shop";
+"Diamond"       = "Diamond";
+"Coin"          = "Coin";
+"Buy Diamond"   = "Buy Diamond";
+"You have"      = "You have";
+

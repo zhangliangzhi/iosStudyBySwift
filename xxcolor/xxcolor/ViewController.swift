@@ -18,6 +18,7 @@ var arrGlobalSet:[CurGlobalSet] = []
 var gGlobalSet:CurGlobalSet?
 
 var gScore = 0
+let strzs = "💎";
 
 class ViewController: UIViewController, GKGameCenterControllerDelegate {
 
@@ -68,6 +69,18 @@ class ViewController: UIViewController, GKGameCenterControllerDelegate {
         btnPlayMaxTime.addTarget(self, action: #selector(playMaxTime), for: .touchUpInside)
         btnPlayMaxTime.setTitle(NSLocalizedString("Play MaxTime", comment: ""), for: .normal)
         
+        // shop按钮
+        let btnShop = BootstrapBtn(frame: CGRect(x:cw, y:330, width:150, height:40), btButtonType: .Primary)
+        self.view.addSubview(btnShop)
+        btnShop.setTitle(NSLocalizedString("Shop", comment: ""), for: .normal)
+        btnShop.addTarget(self, action: #selector(goShopView), for: .touchUpInside)
+        
+        // 钻石, 在右侧添加一个按钮
+        let barButtonItem = UIBarButtonItem(title: "0 "+strzs, style: UIBarButtonItemStyle.plain, target: self, action: #selector(goShopView))
+        self.navigationItem.rightBarButtonItem = barButtonItem
+        
+
+        
         // 金币
         
         
@@ -97,6 +110,17 @@ class ViewController: UIViewController, GKGameCenterControllerDelegate {
             make.centerX.equalTo(btnShowLocal)
             make.top.equalTo(gcBtn.snp.bottom).offset(30)
         }
+        btnShop.snp.makeConstraints { (make) in
+            make.width.height.equalTo(btnPlayMaxTime)
+            make.centerX.equalTo(btnShowLocal)
+            make.top.equalTo(btnPlayMaxTime.snp.bottom).offset(30)
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let dia = String(format: "%d", (gGlobalSet?.diamon)!) + " "
+        self.navigationItem.rightBarButtonItem?.title = dia + strzs
+        
     }
     
     func playMaxTime() {
@@ -180,6 +204,11 @@ class ViewController: UIViewController, GKGameCenterControllerDelegate {
         appDelegate.saveContext()
         
         getCoreData()
+    }
+    
+    func goShopView() {
+        MobClick.event("UMSHOPOPEN")
+        navigationController?.pushViewController(ShopViewController(), animated: true)
     }
     
 }

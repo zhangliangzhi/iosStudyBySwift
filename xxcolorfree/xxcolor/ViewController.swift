@@ -10,6 +10,10 @@ import UIKit
 import CoreData
 import SnapKit
 import GameKit
+import AdSupport
+
+
+//let idfa = ASIdentifierManager.shared().advertisingIdentifier.uuidString
 
 let appDelegate = UIApplication.shared.delegate as! AppDelegate
 let context = appDelegate.persistentContainer.viewContext
@@ -34,6 +38,7 @@ class ViewController: UIViewController, GKGameCenterControllerDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
 
+        print("gogogo",idfa)
         //test
 //        autoPlayer()
         self.title = NSLocalizedString("Find Color", comment: "")
@@ -245,7 +250,6 @@ class ViewController: UIViewController, GKGameCenterControllerDelegate {
                     }else{
                         make.top.equalTo(arrBtns[indexOfKeys-ikuan].snp.bottom)
                     }
-                    print(j)
                     //添加水平位置约束
                     if j == 0{
                         make.left.equalTo(0)

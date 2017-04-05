@@ -6,6 +6,9 @@
   Copyright © 2017年 xigk. All rights reserved.
 */
 
+"money1"        = "￥6.00";
+"money5"        = "￥30.00";
+"money50"       = "￥328.00";
 "Setting"       = "设置";
 "Find Color"    = "找颜色";
 "Start Game"    = "开始游戏";
@@ -21,3 +24,8 @@
 "Play MaxTime"  = "无限时间模式";
 "Rank"          = "排名";
 "Next"          = "下一个";
+"Shop"          = "商店";
+"Diamond"       = "钻石";
+"Coin"          = "金币";
+"Buy Diamond"   = "购买钻石";
+"You have"      = "你有";

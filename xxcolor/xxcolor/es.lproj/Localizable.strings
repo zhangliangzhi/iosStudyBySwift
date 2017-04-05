@@ -6,6 +6,9 @@
   Copyright © 2017年 xigk. All rights reserved.
 */
 
+"money1"        = "0,99 €";
+"money5"        = "4,99 €";
+"money50"       = "49.99€";
 "Setting"       = "Setting";
 "Find Color"    = "Buscar color";
 "Start Game"    = "Iniciar el juego";

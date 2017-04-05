@@ -6,6 +6,9 @@
   Copyright © 2017年 xigk. All rights reserved.
 */
 
+"money1"        = "$1.09";
+"money5"        = "$5.49";
+"money50"       = "$54.99";
 "Setting"       = "설정";
 "Find Color"    = "찾기 색";
 "Start Game"    = "경기 시작";

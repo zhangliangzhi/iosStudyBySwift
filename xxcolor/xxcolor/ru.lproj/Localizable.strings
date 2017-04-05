@@ -6,6 +6,9 @@
   Copyright © 2017年 xigk. All rights reserved.
 */
 
+"money1"        = "75 р.";
+"money5"        = "379 р.";
+"money50"       = "3 790 р.";
 "Setting"       = "окружение";
 "Find Color"    = "найти цвет";
 "Start Game"    = "начать игру";
