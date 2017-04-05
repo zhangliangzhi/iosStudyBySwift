@@ -272,7 +272,7 @@ class PlayMaxTimeViewController: UIViewController {
         appDelegate.saveContext()
         closeBuyView2()
         let btn = arrBtns[curBtnIndex]
-        btn.layer.borderColor = UIColor.black.cgColor
+        btn.layer.borderColor = UIColor.orange.cgColor
         TipsSwift.showCenterWithText("-30💎")
     }
 }

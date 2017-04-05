@@ -24,17 +24,17 @@ class ShopViewController: UIViewController {
     }
     
     func addDiamonView() -> Void {
-        let btn60 = UIButton()
+        let btn60 = UIButton(type: .custom)
         self.view.addSubview(btn60)
         btn60.addTarget(self, action: #selector(buyDiamond60), for: .touchUpInside)
         
         let btn320 = UIButton()
         self.view.addSubview(btn320)
-        btn320.addTarget(self, action: #selector(buyDiamond60), for: .touchUpInside)
+        btn320.addTarget(self, action: #selector(buyDiamond320), for: .touchUpInside)
         
         let btn3800 = UIButton()
         self.view.addSubview(btn3800)
-        btn3800.addTarget(self, action: #selector(buyDiamond60), for: .touchUpInside)
+        btn3800.addTarget(self, action: #selector(buyDiamond3800), for: .touchUpInside)
         
         btn60.setTitleColor(UIColor.white, for: .normal)
         btn60.layer.borderColor = UIColor(red: 80/255, green: 183/255, blue: 221/255, alpha: 1).cgColor
@@ -185,9 +185,11 @@ class ShopViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        reSetDiamond()
+    }
+    func reSetDiamond() {
         let dia = String(format: "%d", (gGlobalSet?.diamon)!) + " "
         self.navigationItem.rightBarButtonItem?.title = dia + strzs
-        
     }
     
     func descDiamon() {
@@ -195,16 +197,23 @@ class ShopViewController: UIViewController {
         let strShow = NSLocalizedString("You have", comment: "") + dia + strzs
         TipsSwift.showTopWithText(strShow)
     }
+
     
     func buyDiamond60() {
-        
+        gGlobalSet?.diamon += 60
+        appDelegate.saveContext()
+        reSetDiamond()
     }
     
     func buyDiamond320() {
-        
+        gGlobalSet?.diamon += 320
+        appDelegate.saveContext()
+        reSetDiamond()
     }
     
-    func buyDiamond380() {
-        
+    func buyDiamond3800() {
+        gGlobalSet?.diamon += 3800
+        appDelegate.saveContext()
+        reSetDiamond()
     }
 }
