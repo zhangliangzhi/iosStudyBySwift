@@ -149,7 +149,7 @@ class PlayViewController: UIViewController {
                     let a2 = CGFloat(a) * 0.01
                     var a3:CGFloat = 0.5 + a2
 //                    print(self.totalScore, "OKhere",a3)
-                    if a >= 47 {
+                    if a >= 45 {
                         let mindex:Int = Int( arc4random() % UInt32(ARR_MAX_COLOR.count - 2) )
                         print(mindex)
                         a3 = CGFloat(ARR_MAX_COLOR[mindex] )
@@ -305,6 +305,9 @@ class PlayViewController: UIViewController {
         closeBuyView2()
         let btn = arrBtns[curBtnIndex]
         btn.layer.borderColor = UIColor.orange.cgColor
+        if self.totalScore >= 47 {
+            btn.layer.borderColor = UIColor.black.cgColor
+        }
         TipsSwift.showCenterWithText("-30💎")
     }
     
