@@ -206,18 +206,21 @@ class ShopViewController: UIViewController {
         gGlobalSet?.diamon += 60
         appDelegate.saveContext()
         reSetDiamond()
+        MobClick.event("UMSHOPBUY60")
     }
     
     func callbackBuyDiamond320() {
         gGlobalSet?.diamon += 320
         appDelegate.saveContext()
         reSetDiamond()
+        MobClick.event("UMSHOPBUY320")
     }
     
     func callbackBuyDiamond3800() {
         gGlobalSet?.diamon += 3800
         appDelegate.saveContext()
         reSetDiamond()
+        MobClick.event("UMSHOPBUY3800")
     }
     
     func shopJS() -> Void {
@@ -238,6 +241,7 @@ class ShopViewController: UIViewController {
     }
     
     func btnBuyDiamond60() {
+        MobClick.event("UMSHOPWANTBUY60")
         SwiftyStoreKit.purchaseProduct("2", atomically: true) { result in
             switch result {
             case .success(let product):
@@ -259,6 +263,7 @@ class ShopViewController: UIViewController {
     }
     
     func btnBuyDiamond320() {
+        MobClick.event("UMSHOPWANTBUY320")
         SwiftyStoreKit.purchaseProduct("3", atomically: true) { result in
             switch result {
             case .success(let product):
@@ -280,6 +285,7 @@ class ShopViewController: UIViewController {
     }
     
     func btnBuyDiamond3800() {
+        MobClick.event("UMSHOPWANTBUY3800")
         SwiftyStoreKit.purchaseProduct("4", atomically: true) { result in
             switch result {
             case .success(let product):
