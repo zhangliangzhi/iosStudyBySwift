@@ -31,14 +31,27 @@ class PlayMaxTimeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let dItem = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(descDiamon))
+        navigationItem.leftBarButtonItem = dItem
+        
         let barItem = UIBarButtonItem(title: NSLocalizedString("Use Diamond", comment: ""), style: .plain, target: self, action: #selector(goHelpTips))
         navigationItem.rightBarButtonItem = barItem
     }
     
-
+    func descDiamon() {
+        let dia = " " + String(format: "%d", (gGlobalSet?.diamon)!) + " "
+        let strShow = NSLocalizedString("You have", comment: "") + dia + strzs
+        TipsSwift.showTopWithText(strShow)
+    }
+    
+    func reSetDiamond() {
+        let dia = String(format: "%d", (gGlobalSet?.diamon)!) + " "
+        self.navigationItem.leftBarButtonItem?.title = dia + strzs
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         MobClick.event("UMPLAY")
+        reSetDiamond()
         
         _s = 0
         _ss = 0
@@ -259,6 +272,7 @@ class PlayMaxTimeViewController: UIViewController {
             buyView = nil
         }
         isPause = false
+        reSetDiamond()
     }
     func closeBuyView2() {
         if buyView != nil {
@@ -266,6 +280,7 @@ class PlayMaxTimeViewController: UIViewController {
             buyView = nil
         }
         isPause = false
+        reSetDiamond()
     }
     
     
