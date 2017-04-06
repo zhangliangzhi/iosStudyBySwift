@@ -19,7 +19,7 @@ var gGlobalSet:CurGlobalSet?
 
 var gScore = 0
 let strzs = "💎";
-let ARR_MAX_COLOR = [0.95,0.95,0.95,0.95,0.95,0.95,0.95,0.96,0.96,0.96,0.96,0.96,0.96, 0.97, 0.97, 0.98, 0.99]
+let ARR_MAX_COLOR = [0.95,0.95,0.95,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96,0.96, 0.97, 0.97, 0.97, 0.98, 0.99]
 
 class ViewController: UIViewController, GKGameCenterControllerDelegate {
 
