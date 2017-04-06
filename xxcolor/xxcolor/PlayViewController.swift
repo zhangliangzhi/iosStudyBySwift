@@ -25,6 +25,7 @@ class PlayViewController: UIViewController {
     var isPause = false
     var arrBtns = [UIButton]()
     var curBtnIndex = 0
+    var vipUseCount = 0
 
     @IBOutlet weak var scoreLabel: UILabel!
     
@@ -66,7 +67,7 @@ class PlayViewController: UIViewController {
         MobClick.event("UMPLAY")
         
         reSetDiamond()
-        
+        vipUseCount = 0
         _s = 0
         _ss = 0
         a = 0
@@ -211,7 +212,11 @@ class PlayViewController: UIViewController {
     
     func saveGameCenter() -> Void {
         if GKLocalPlayer.localPlayer().isAuthenticated {
-            let scoreReport = GKScore(leaderboardIdentifier: "1")
+            var strID = "1"
+            if vipUseCount > 0 {
+                strID = "Find_Color_IN_Time"
+            }
+            let scoreReport = GKScore(leaderboardIdentifier: strID)
             scoreReport.value = Int64(totalScore)
             
             let scoreArray:[GKScore] = [scoreReport]
@@ -330,6 +335,7 @@ class PlayViewController: UIViewController {
         }
         
         TipsSwift.showCenterWithText("-" + "\(takeDiamond)" + "💎")
+        vipUseCount += 1
     }
     
 }

@@ -25,6 +25,7 @@ class PlayMaxTimeViewController: UIViewController {
     var isPause = false
     
     var totalScore = 0
+    var vipUseCount = 0
 
     @IBOutlet weak var scoreLabel: UILabel!
     
@@ -53,6 +54,7 @@ class PlayMaxTimeViewController: UIViewController {
         MobClick.event("UMPLAY")
         reSetDiamond()
         
+        vipUseCount = 0
         _s = 0
         _ss = 0
         a = 0
@@ -196,7 +198,11 @@ class PlayMaxTimeViewController: UIViewController {
     
     func saveGameCenter() -> Void {
         if GKLocalPlayer.localPlayer().isAuthenticated {
-            let scoreReport = GKScore(leaderboardIdentifier: "Find_Color_Max_1")
+            var strID = "Find_Color_Max_1"
+            if vipUseCount > 0 {
+                strID = "Find_Color_UN_Time"
+            }
+            let scoreReport = GKScore(leaderboardIdentifier: strID)
             scoreReport.value = Int64(totalScore)
             
             let scoreArray:[GKScore] = [scoreReport]
@@ -302,5 +308,6 @@ class PlayMaxTimeViewController: UIViewController {
             btn.layer.borderColor = UIColor.black.cgColor
         }
         TipsSwift.showCenterWithText("-" + "\(takeDiamond)" + "💎")
+        vipUseCount += 1
     }
 }
