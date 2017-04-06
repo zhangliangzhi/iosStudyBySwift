@@ -1,15 +1,18 @@
 PODS:
   - SnapKit (3.2.0)
+  - SwiftyStoreKit (0.8.4)
   - UMengAnalytics-NO-IDFA (4.2.5)
 
 DEPENDENCIES:
   - SnapKit (~> 3.2.0)
+  - SwiftyStoreKit
   - UMengAnalytics-NO-IDFA
 
 SPEC CHECKSUMS:
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
+  SwiftyStoreKit: b235756bd6e541cafbed6e75d28b29b8a1c1caef
   UMengAnalytics-NO-IDFA: 16666e32edce5be44ae5b14aaaa7f3582e09d6ab
 
-PODFILE CHECKSUM: 807f03e0cac98f4d11437452aae4ccdc1b5673d2
+PODFILE CHECKSUM: 87b949051550ab194f79f39efbd9e73cc4a07f43
 
 COCOAPODS: 1.2.0

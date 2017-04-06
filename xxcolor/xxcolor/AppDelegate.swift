@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import SwiftyStoreKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -26,7 +27,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // umeng统计观看次数
         MobClick.event("UMLOGIN")
         
-        
+//        print("----------")
+        // 商店
+        SwiftyStoreKit.completeTransactions(atomically: true) { products in
+            for product in products {
+                if product.transaction.transactionState == .purchased || product.transaction.transactionState == .restored {
+                    if product.needsFinishTransaction {
+                        // Deliver content from server, then:
+                        SwiftyStoreKit.finishTransaction(product.transaction)
+                    }
+//                    print("purchased: \(product)")
+                }
+            }
+        }
         return true
     }
 

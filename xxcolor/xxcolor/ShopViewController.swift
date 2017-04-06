@@ -8,6 +8,8 @@
 
 import UIKit
 import SnapKit
+import StoreKit
+import SwiftyStoreKit
 
 class ShopViewController: UIViewController {
 
@@ -21,20 +23,21 @@ class ShopViewController: UIViewController {
         self.title = NSLocalizedString("Buy Diamond", comment: "")
         
         addDiamonView()
+//        shopJS()
     }
     
     func addDiamonView() -> Void {
         let btn60 = UIButton(type: .custom)
         self.view.addSubview(btn60)
-        btn60.addTarget(self, action: #selector(buyDiamond60), for: .touchUpInside)
+        btn60.addTarget(self, action: #selector(btnBuyDiamond60), for: .touchUpInside)
         
         let btn320 = UIButton()
         self.view.addSubview(btn320)
-        btn320.addTarget(self, action: #selector(buyDiamond320), for: .touchUpInside)
+        btn320.addTarget(self, action: #selector(btnBuyDiamond320), for: .touchUpInside)
         
         let btn3800 = UIButton()
         self.view.addSubview(btn3800)
-        btn3800.addTarget(self, action: #selector(buyDiamond3800), for: .touchUpInside)
+        btn3800.addTarget(self, action: #selector(btnBuyDiamond3800), for: .touchUpInside)
         
         btn60.setTitleColor(UIColor.white, for: .normal)
         btn60.layer.borderColor = UIColor(red: 80/255, green: 183/255, blue: 221/255, alpha: 1).cgColor
@@ -199,21 +202,101 @@ class ShopViewController: UIViewController {
     }
 
     
-    func buyDiamond60() {
+    func callbackBuyDiamond60() {
         gGlobalSet?.diamon += 60
         appDelegate.saveContext()
         reSetDiamond()
     }
     
-    func buyDiamond320() {
+    func callbackBuyDiamond320() {
         gGlobalSet?.diamon += 320
         appDelegate.saveContext()
         reSetDiamond()
     }
     
-    func buyDiamond3800() {
+    func callbackBuyDiamond3800() {
         gGlobalSet?.diamon += 3800
         appDelegate.saveContext()
         reSetDiamond()
+    }
+    
+    func shopJS() -> Void {
+        SwiftyStoreKit.retrieveProductsInfo(["2"]) { result in
+            if let product = result.retrievedProducts.first {
+                let priceString = product.localizedPrice!
+                print("Product: \(product.localizedDescription), price: \(priceString)")
+            }
+            else if let invalidProductId = result.invalidProductIDs.first {
+
+                print("Could not retrieve product info")
+                return
+            }
+            else {
+                print("Error: \(result.error)")
+            }
+        }
+    }
+    
+    func btnBuyDiamond60() {
+        SwiftyStoreKit.purchaseProduct("2", atomically: true) { result in
+            switch result {
+            case .success(let product):
+                print("Purchase Success: \(product.productId)")
+                self.callbackBuyDiamond60()
+            case .error(let error):
+                switch error.code {
+                case .unknown: print("Unknown error. Please contact support")
+                case .clientInvalid: print("Not allowed to make the payment")
+                case .paymentCancelled: break
+                case .paymentInvalid: print("The purchase identifier was invalid")
+                case .paymentNotAllowed: print("The device is not allowed to make the payment")
+                case .storeProductNotAvailable: print("The product is not available in the current storefront")
+                case .cloudServicePermissionDenied: print("Access to cloud service information is not allowed")
+                case .cloudServiceNetworkConnectionFailed: print("Could not connect to the network")
+                }
+            }
+        }
+    }
+    
+    func btnBuyDiamond320() {
+        SwiftyStoreKit.purchaseProduct("3", atomically: true) { result in
+            switch result {
+            case .success(let product):
+                print("Purchase Success: \(product.productId)")
+                self.callbackBuyDiamond320()
+            case .error(let error):
+                switch error.code {
+                case .unknown: print("Unknown error. Please contact support")
+                case .clientInvalid: print("Not allowed to make the payment")
+                case .paymentCancelled: break
+                case .paymentInvalid: print("The purchase identifier was invalid")
+                case .paymentNotAllowed: print("The device is not allowed to make the payment")
+                case .storeProductNotAvailable: print("The product is not available in the current storefront")
+                case .cloudServicePermissionDenied: print("Access to cloud service information is not allowed")
+                case .cloudServiceNetworkConnectionFailed: print("Could not connect to the network")
+                }
+            }
+        }
+    }
+    
+    func btnBuyDiamond3800() {
+        SwiftyStoreKit.purchaseProduct("4", atomically: true) { result in
+            switch result {
+            case .success(let product):
+                print("Purchase Success: \(product.productId)")
+                self.callbackBuyDiamond3800()
+            case .error(let error):
+                switch error.code {
+                case .unknown: print("Unknown error. Please contact support")
+                case .clientInvalid: print("Not allowed to make the payment")
+                case .paymentCancelled: break
+                case .paymentInvalid: print("The purchase identifier was invalid")
+                case .paymentNotAllowed: print("The device is not allowed to make the payment")
+                case .storeProductNotAvailable: print("The product is not available in the current storefront")
+                case .cloudServicePermissionDenied: print("Access to cloud service information is not allowed")
+                case .cloudServiceNetworkConnectionFailed: print("Could not connect to the network")
+                }
+            }
+        }
     }
 }
