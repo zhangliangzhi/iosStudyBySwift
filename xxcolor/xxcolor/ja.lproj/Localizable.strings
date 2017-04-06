@@ -23,3 +23,14 @@
 "All Rank"      = "ランク";
 "Play MaxTime"  = "無制限の時間モード";
 "Rank"          = "ランク";
+"Next"          = "次";
+"Shop"          = "ショップ";
+"Diamond"       = "ダイヤモンド";
+"Coin"          = "ゴールド";
+"Buy Diamond"   = "ダイヤモンドを買います";
+"You have"      = "あなたは持っています";
+"Use Diamond"   = "使用";
+"addsec"        = "10秒で増加した。-10";
+"showme"        = "同番組はどのではないでしょうか？";
+"nodiamond"     = "十分なダイヤモンドはありません";
+"Sucess"        = "成功";

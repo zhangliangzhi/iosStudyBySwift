@@ -34,7 +34,7 @@ class PlayMaxTimeViewController: UIViewController {
         let dItem = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(descDiamon))
         navigationItem.leftBarButtonItem = dItem
         
-        let barItem = UIBarButtonItem(title: NSLocalizedString("Use Diamond", comment: ""), style: .plain, target: self, action: #selector(goHelpTips))
+        let barItem = UIBarButtonItem(title: NSLocalizedString("Use Diamond", comment: "")+strzs, style: .plain, target: self, action: #selector(goHelpTips))
         navigationItem.rightBarButtonItem = barItem
     }
     

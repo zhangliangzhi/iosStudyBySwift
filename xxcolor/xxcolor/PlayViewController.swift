@@ -34,7 +34,7 @@ class PlayViewController: UIViewController {
         let dItem = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(descDiamon))
         navigationItem.leftBarButtonItem = dItem
         
-        let barItem = UIBarButtonItem(title: NSLocalizedString("Use Diamond", comment: ""), style: .plain, target: self, action: #selector(goHelpTips))
+        let barItem = UIBarButtonItem(title: NSLocalizedString("Use Diamond", comment: "")+strzs, style: .plain, target: self, action: #selector(goHelpTips))
         navigationItem.rightBarButtonItem = barItem
     }
 
@@ -245,7 +245,7 @@ class PlayViewController: UIViewController {
         let btnAddSec = BootstrapBtn(frame: CGRect(x: 0, y: 0, width: 250, height: 50), btButtonType: .Success)
         buyView.addSubview(btnAddSec)
         btnAddSec.addTarget(self, action: #selector(addSecond), for: .touchUpInside)
-        btnAddSec.setTitle(NSLocalizedString("addsec", comment: ""), for: .normal)
+        btnAddSec.setTitle(NSLocalizedString("addsec", comment: "")+strzs, for: .normal)
         btnAddSec.snp.makeConstraints { (make) in
             make.centerX.equalTo(buyView)
             make.centerY.equalTo(buyView).offset(-20)

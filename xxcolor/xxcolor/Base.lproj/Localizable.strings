@@ -29,8 +29,8 @@
 "Coin"          = "Coin";
 "Buy Diamond"   = "Buy Diamond";
 "You have"      = "You have";
-"Use Diamond"   = "Use💎";
-"addsec"        = "Add 10 Second. -10💎";
+"Use Diamond"   = "Use";
+"addsec"        = "Add 10 Second. -10";
 "showme"        = "Show me which one? ";
 "nodiamond"     = "Not enough diamonds";
 "Sucess"        = "Sucess";
