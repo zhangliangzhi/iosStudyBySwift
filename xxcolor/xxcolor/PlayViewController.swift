@@ -147,7 +147,15 @@ class PlayViewController: UIViewController {
                 curBtnIndex = Int(s)
                 if (indexOfKeys == Int(s) ) {
                     let a2 = CGFloat(a) * 0.01
-                    let a3:CGFloat = 0.5 + a2
+                    var a3:CGFloat = 0.5 + a2
+//                    print(self.totalScore, "OKhere",a3)
+                    if a3 >= 0.97 {
+                        let mindex:Int = Int( arc4random() % UInt32(ARR_MAX_COLOR.count) )
+                        print(mindex)
+                        a3 = CGFloat(ARR_MAX_COLOR[mindex] )
+                    }
+//                    print(self.totalScore, "OKhere",a3)
+                    
                     btn.backgroundColor = UIColor(hue: hue, saturation: saturation, brightness: brightness, alpha: a3)
                     btn.addTarget(self, action: #selector(play1), for: .touchDown)
                 }else{
