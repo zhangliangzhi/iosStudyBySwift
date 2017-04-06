@@ -235,11 +235,12 @@ class PlayViewController: UIViewController {
             make.centerY.equalTo(buyView).offset(-20)
         }
         
+        let takeDiamond = Int32(self.totalScore)
         // tell me which one buttom
         let btnShowme = BootstrapBtn(frame: CGRect(x: 0, y: 0, width: 250, height: 50), btButtonType: .Success)
         buyView.addSubview(btnShowme)
         btnShowme.addTarget(self, action: #selector(showMeWhichOne), for: .touchUpInside)
-        btnShowme.setTitle(NSLocalizedString("showme", comment: ""), for: .normal)
+        btnShowme.setTitle(NSLocalizedString("showme", comment: "") + ("-" + "\(takeDiamond)" + "💎"), for: .normal)
         btnShowme.snp.makeConstraints { (make) in
             make.centerX.equalTo(buyView)
             make.centerY.equalTo(buyView).offset(20)
@@ -295,12 +296,13 @@ class PlayViewController: UIViewController {
     // tell me which one. -30 diamond
     func showMeWhichOne() {
         MobClick.event("UMSHOP30")
-        if (gGlobalSet?.diamon)! < 30 {
+        let takeDiamond = Int32(self.totalScore)
+        if (gGlobalSet?.diamon)! < takeDiamond {
             TipsSwift.showCenterWithText(NSLocalizedString("nodiamond", comment: ""))
             return
         }
         MobClick.event("UMSHOP30GO")
-        gGlobalSet?.diamon -= 30
+        gGlobalSet?.diamon -= takeDiamond
         appDelegate.saveContext()
         closeBuyView2()
         let btn = arrBtns[curBtnIndex]
@@ -308,7 +310,8 @@ class PlayViewController: UIViewController {
         if self.totalScore >= 47 {
             btn.layer.borderColor = UIColor.black.cgColor
         }
-        TipsSwift.showCenterWithText("-30💎")
+        
+        TipsSwift.showCenterWithText("-" + "\(takeDiamond)" + "💎")
     }
     
 }
