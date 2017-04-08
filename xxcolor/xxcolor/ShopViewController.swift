@@ -13,7 +13,7 @@ import SwiftyStoreKit
 
 class ShopViewController: UIViewController {
 
-    
+    var contactShop:UIView! // 正在连接商店的提示
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -242,6 +242,7 @@ class ShopViewController: UIViewController {
     
     func btnBuyDiamond60() {
         MobClick.event("UMSHOPWANTBUY60")
+        showConDec()
         SwiftyStoreKit.purchaseProduct("2", atomically: true) { result in
             switch result {
             case .success(let product):
@@ -264,6 +265,7 @@ class ShopViewController: UIViewController {
     
     func btnBuyDiamond320() {
         MobClick.event("UMSHOPWANTBUY320")
+        showConDec()
         SwiftyStoreKit.purchaseProduct("3", atomically: true) { result in
             switch result {
             case .success(let product):
@@ -286,6 +288,7 @@ class ShopViewController: UIViewController {
     
     func btnBuyDiamond3800() {
         MobClick.event("UMSHOPWANTBUY3800")
+        showConDec()
         SwiftyStoreKit.purchaseProduct("4", atomically: true) { result in
             switch result {
             case .success(let product):
@@ -303,6 +306,27 @@ class ShopViewController: UIViewController {
                 case .cloudServiceNetworkConnectionFailed: print("Could not connect to the network")
                 }
             }
+        }
+    }
+    
+    func showConDec() {
+        TipsSwift.showCenterWithText(NSLocalizedString("content shop", comment: ""), duration: 2)
+    }
+    
+    func showContactShop() {
+        contactShop = UIView()
+        self.view.addSubview(contactShop)
+        contactShop.snp.makeConstraints { (make) in
+            make.center.equalTo(self.view)
+            make.width.equalTo(self.view).multipliedBy(0.8)
+            make.height.equalTo(self.view).multipliedBy(0.5)
+        }
+    }
+    
+    func closeContactShop() {
+        if contactShop != nil {
+            contactShop.removeFromSuperview()
+            contactShop = nil
         }
     }
 }
