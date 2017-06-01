@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0BC5F60D1EBA59A200CA4FB6 /* ocr.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BC5F60C1EBA59A200CA4FB6 /* ocr.m */; };
 		0BC8178F1EB8F36400A02732 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC8178E1EB8F36400A02732 /* AppDelegate.swift */; };
 		0BC817911EB8F36400A02732 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC817901EB8F36400A02732 /* ViewController.swift */; };
 		0BC817941EB8F36400A02732 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BC817921EB8F36400A02732 /* Main.storyboard */; };
@@ -15,6 +16,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0BC5F60B1EBA59A200CA4FB6 /* SwiftXor-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftXor-Bridging-Header.h"; sourceTree = "<group>"; };
+		0BC5F60C1EBA59A200CA4FB6 /* ocr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ocr.m; sourceTree = "<group>"; };
+		0BC5F60F1EBA5BFC00CA4FB6 /* ocr.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ocr.h; sourceTree = "<group>"; };
 		0BC8178B1EB8F36400A02732 /* SwiftXor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftXor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BC8178E1EB8F36400A02732 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0BC817901EB8F36400A02732 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +64,9 @@
 				0BC817951EB8F36400A02732 /* Assets.xcassets */,
 				0BC817971EB8F36400A02732 /* LaunchScreen.storyboard */,
 				0BC8179A1EB8F36400A02732 /* Info.plist */,
+				0BC5F60C1EBA59A200CA4FB6 /* ocr.m */,
+				0BC5F60F1EBA5BFC00CA4FB6 /* ocr.h */,
+				0BC5F60B1EBA59A200CA4FB6 /* SwiftXor-Bridging-Header.h */,
 			);
 			path = SwiftXor;
 			sourceTree = "<group>";
@@ -97,6 +104,7 @@
 					0BC8178A1EB8F36400A02732 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = ZNVH9D6AWM;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -137,6 +145,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BC5F60D1EBA59A200CA4FB6 /* ocr.m in Sources */,
 				0BC817911EB8F36400A02732 /* ViewController.swift in Sources */,
 				0BC8178F1EB8F36400A02732 /* AppDelegate.swift in Sources */,
 			);
@@ -261,11 +270,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = ZNVH9D6AWM;
 				INFOPLIST_FILE = SwiftXor/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xigk.SwiftXor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftXor/SwiftXor-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -274,11 +286,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = ZNVH9D6AWM;
 				INFOPLIST_FILE = SwiftXor/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xigk.SwiftXor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftXor/SwiftXor-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -302,6 +316,7 @@
 				0BC8179F1EB8F36400A02732 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
