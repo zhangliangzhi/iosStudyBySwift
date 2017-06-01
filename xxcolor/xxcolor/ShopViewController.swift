@@ -258,6 +258,7 @@ class ShopViewController: UIViewController {
                 case .storeProductNotAvailable: print("The product is not available in the current storefront")
                 case .cloudServicePermissionDenied: print("Access to cloud service information is not allowed")
                 case .cloudServiceNetworkConnectionFailed: print("Could not connect to the network")
+                default:break
                 }
             }
         }
@@ -281,10 +282,28 @@ class ShopViewController: UIViewController {
                 case .storeProductNotAvailable: print("The product is not available in the current storefront")
                 case .cloudServicePermissionDenied: print("Access to cloud service information is not allowed")
                 case .cloudServiceNetworkConnectionFailed: print("Could not connect to the network")
+                default:break
                 }
             }
         }
     }
+    
+    static func buy320() {
+        MobClick.event("UMSHOPWANTBUY320")
+        SwiftyStoreKit.purchaseProduct("3", atomically: true) { result in
+            switch result {
+            case .success(let product):
+                print("Purchase Success: \(product.productId)")
+                gGlobalSet?.diamon += 320
+                appDelegate.saveContext()
+                MobClick.event("UMSHOPBUY320")
+                TipsSwift.showCenterWithText(NSLocalizedString("Sucess", comment: ""), duration: 3)
+            case .error(let error):
+                break
+            }
+        }
+    }
+
     
     func btnBuyDiamond3800() {
         MobClick.event("UMSHOPWANTBUY3800")
@@ -304,6 +323,7 @@ class ShopViewController: UIViewController {
                 case .storeProductNotAvailable: print("The product is not available in the current storefront")
                 case .cloudServicePermissionDenied: print("Access to cloud service information is not allowed")
                 case .cloudServiceNetworkConnectionFailed: print("Could not connect to the network")
+                default:break
                 }
             }
         }

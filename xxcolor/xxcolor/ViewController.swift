@@ -86,24 +86,32 @@ class ViewController: UIViewController, GKGameCenterControllerDelegate {
         
         
         // 位置修正
+        btnOneSec.snp.makeConstraints { (make) in
+            make.width.equalTo(250)
+            make.height.equalTo(40)
+            make.centerX.equalTo(btnShowLocal)
+            make.top.equalTo(self.view).offset(100)
+        }
+        btnOneSec.layer.cornerRadius = 20
+        
         btnShowLocal.snp.makeConstraints { (make) in
             make.width.equalTo(150)
             make.height.equalTo(40)
             make.centerX.equalTo(self.view)
-            make.centerY.equalTo(self.view).offset(-30)
+            make.top.equalTo(btnOneSec.snp.bottom).offset(30)
         }
         
-        btnOneSec.snp.makeConstraints { (make) in
-            make.width.equalTo(150)
-            make.height.equalTo(40)
+        btnShop.snp.makeConstraints { (make) in
+            make.width.height.equalTo(btnPlayMaxTime)
             make.centerX.equalTo(btnShowLocal)
-            make.bottom.equalTo(btnShowLocal.snp.top).offset(-30)
+            make.top.equalTo(btnShowLocal.snp.bottom).offset(30)
         }
+        
         gcBtn.snp.makeConstraints { (make) in
             make.width.equalTo(150)
             make.height.equalTo(40)
             make.centerX.equalTo(btnShowLocal)
-            make.top.equalTo(btnShowLocal.snp.bottom).offset(30)
+            make.top.equalTo(btnShop.snp.bottom).offset(30)
         }
         btnPlayMaxTime.snp.makeConstraints { (make) in
             make.width.equalTo(250)
@@ -111,11 +119,8 @@ class ViewController: UIViewController, GKGameCenterControllerDelegate {
             make.centerX.equalTo(btnShowLocal)
             make.top.equalTo(gcBtn.snp.bottom).offset(30)
         }
-        btnShop.snp.makeConstraints { (make) in
-            make.width.height.equalTo(btnPlayMaxTime)
-            make.centerX.equalTo(btnShowLocal)
-            make.top.equalTo(btnPlayMaxTime.snp.bottom).offset(30)
-        }
+        btnPlayMaxTime.layer.cornerRadius = 20
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -43,6 +43,18 @@ class PlayMaxTimeViewController: UIViewController {
         let dia = " " + String(format: "%d", (gGlobalSet?.diamon)!) + " "
         let strShow = NSLocalizedString("You have", comment: "") + dia + strzs
         TipsSwift.showTopWithText(strShow)
+        
+        let title = NSLocalizedString("Buy Diamond", comment: "")
+        let msg = NSLocalizedString("TO BUY DIAMOND", comment: "")
+        let sok = NSLocalizedString("OK", comment: "")
+        let scancle = NSLocalizedString("Cancle", comment: "")
+        let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: sok, style: .default, handler: { (action) in
+            ShopViewController.buy320()
+        }))
+        alert.addAction(UIAlertAction(title: scancle, style: .cancel, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
     }
     
     func reSetDiamond() {
