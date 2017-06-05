@@ -13,6 +13,13 @@
 		0B84DEC91EE522C600E998F8 /* ColorWar.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0B84DEC71EE522C600E998F8 /* ColorWar.xcdatamodeld */; };
 		0B84DECB1EE522C600E998F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B84DECA1EE522C600E998F8 /* Assets.xcassets */; };
 		0B84DECE1EE522C600E998F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B84DECC1EE522C600E998F8 /* LaunchScreen.storyboard */; };
+		0B84DED61EE5291200E998F8 /* BootstrapBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B84DED51EE5291200E998F8 /* BootstrapBtn.swift */; };
+		0B84DEDC1EE5291C00E998F8 /* INSDataStackContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B84DED81EE5291C00E998F8 /* INSDataStackContainer.swift */; };
+		0B84DEDD1EE5291C00E998F8 /* INSPersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B84DED91EE5291C00E998F8 /* INSPersistentContainer.swift */; };
+		0B84DEDE1EE5291C00E998F8 /* INSPersistentStoreDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B84DEDA1EE5291C00E998F8 /* INSPersistentStoreDescription.swift */; };
+		0B84DEDF1EE5291C00E998F8 /* NSManagedObjectContext+iOS10Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B84DEDB1EE5291C00E998F8 /* NSManagedObjectContext+iOS10Additions.swift */; };
+		0B84DEE11EE5292400E998F8 /* TipsSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B84DEE01EE5292400E998F8 /* TipsSwift.swift */; };
+		0B84DEE31EE5294300E998F8 /* MyColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B84DEE21EE5294300E998F8 /* MyColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +31,13 @@
 		0B84DECA1EE522C600E998F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0B84DECD1EE522C600E998F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0B84DECF1EE522C600E998F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0B84DED51EE5291200E998F8 /* BootstrapBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BootstrapBtn.swift; sourceTree = "<group>"; };
+		0B84DED81EE5291C00E998F8 /* INSDataStackContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INSDataStackContainer.swift; sourceTree = "<group>"; };
+		0B84DED91EE5291C00E998F8 /* INSPersistentContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INSPersistentContainer.swift; sourceTree = "<group>"; };
+		0B84DEDA1EE5291C00E998F8 /* INSPersistentStoreDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INSPersistentStoreDescription.swift; sourceTree = "<group>"; };
+		0B84DEDB1EE5291C00E998F8 /* NSManagedObjectContext+iOS10Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+iOS10Additions.swift"; sourceTree = "<group>"; };
+		0B84DEE01EE5292400E998F8 /* TipsSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipsSwift.swift; sourceTree = "<group>"; };
+		0B84DEE21EE5294300E998F8 /* MyColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +70,8 @@
 		0B84DEBF1EE522C600E998F8 /* ColorWar */ = {
 			isa = PBXGroup;
 			children = (
+				0B84DED71EE5291C00E998F8 /* INSPersistentContainer */,
+				0B84DED51EE5291200E998F8 /* BootstrapBtn.swift */,
 				0B84DEC01EE522C600E998F8 /* AppDelegate.swift */,
 				0B84DEC21EE522C600E998F8 /* ViewController.swift */,
 				0B84DEC41EE522C600E998F8 /* Main.storyboard */,
@@ -65,6 +81,19 @@
 				0B84DEC71EE522C600E998F8 /* ColorWar.xcdatamodeld */,
 			);
 			path = ColorWar;
+			sourceTree = "<group>";
+		};
+		0B84DED71EE5291C00E998F8 /* INSPersistentContainer */ = {
+			isa = PBXGroup;
+			children = (
+				0B84DEE21EE5294300E998F8 /* MyColor.swift */,
+				0B84DEE01EE5292400E998F8 /* TipsSwift.swift */,
+				0B84DED81EE5291C00E998F8 /* INSDataStackContainer.swift */,
+				0B84DED91EE5291C00E998F8 /* INSPersistentContainer.swift */,
+				0B84DEDA1EE5291C00E998F8 /* INSPersistentStoreDescription.swift */,
+				0B84DEDB1EE5291C00E998F8 /* NSManagedObjectContext+iOS10Additions.swift */,
+			);
+			path = INSPersistentContainer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,8 +170,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B84DEC31EE522C600E998F8 /* ViewController.swift in Sources */,
+				0B84DEDD1EE5291C00E998F8 /* INSPersistentContainer.swift in Sources */,
 				0B84DEC11EE522C600E998F8 /* AppDelegate.swift in Sources */,
 				0B84DEC91EE522C600E998F8 /* ColorWar.xcdatamodeld in Sources */,
+				0B84DED61EE5291200E998F8 /* BootstrapBtn.swift in Sources */,
+				0B84DEE31EE5294300E998F8 /* MyColor.swift in Sources */,
+				0B84DEE11EE5292400E998F8 /* TipsSwift.swift in Sources */,
+				0B84DEDE1EE5291C00E998F8 /* INSPersistentStoreDescription.swift in Sources */,
+				0B84DEDF1EE5291C00E998F8 /* NSManagedObjectContext+iOS10Additions.swift in Sources */,
+				0B84DEDC1EE5291C00E998F8 /* INSDataStackContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
