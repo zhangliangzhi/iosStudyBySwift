@@ -23,9 +23,11 @@
 		0B84DEE81EE5F95600E998F8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0B84DEEA1EE5F95600E998F8 /* InfoPlist.strings */; };
 		0B84DEEB1EE5F95900E998F8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0B84DEED1EE5F95900E998F8 /* Localizable.strings */; };
 		0B84DEF31EE5FAF300E998F8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B84DEF21EE5FAF300E998F8 /* MainViewController.swift */; };
+		D4255C8E493E3AB312A0BBD8 /* Pods_ColorWar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C54E1164AA66E149D3965CD /* Pods_ColorWar.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A1FEFEC23AC308A603045E8 /* Pods-ColorWar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ColorWar.release.xcconfig"; path = "Pods/Target Support Files/Pods-ColorWar/Pods-ColorWar.release.xcconfig"; sourceTree = "<group>"; };
 		0B84DEBD1EE522C600E998F8 /* ColorWar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorWar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B84DEC01EE522C600E998F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0B84DEC21EE522C600E998F8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -48,6 +50,8 @@
 		0B84DEF01EE5F96D00E998F8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		0B84DEF11EE5F96D00E998F8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		0B84DEF21EE5FAF300E998F8 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		29641DE9021B0D7CC530D6BE /* Pods-ColorWar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ColorWar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ColorWar/Pods-ColorWar.debug.xcconfig"; sourceTree = "<group>"; };
+		2C54E1164AA66E149D3965CD /* Pods_ColorWar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ColorWar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4255C8E493E3AB312A0BBD8 /* Pods_ColorWar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +71,8 @@
 			children = (
 				0B84DEBF1EE522C600E998F8 /* ColorWar */,
 				0B84DEBE1EE522C600E998F8 /* Products */,
+				DE314B46585C411ACCD08758 /* Pods */,
+				4489645C3172D8E3D7618023 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,6 +116,23 @@
 			path = INSPersistentContainer;
 			sourceTree = "<group>";
 		};
+		4489645C3172D8E3D7618023 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2C54E1164AA66E149D3965CD /* Pods_ColorWar.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DE314B46585C411ACCD08758 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				29641DE9021B0D7CC530D6BE /* Pods-ColorWar.debug.xcconfig */,
+				0A1FEFEC23AC308A603045E8 /* Pods-ColorWar.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -116,9 +140,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0B84DED21EE522C600E998F8 /* Build configuration list for PBXNativeTarget "ColorWar" */;
 			buildPhases = (
+				0D798C34AA994F5D78899126 /* [CP] Check Pods Manifest.lock */,
 				0B84DEB91EE522C600E998F8 /* Sources */,
 				0B84DEBA1EE522C600E998F8 /* Frameworks */,
 				0B84DEBB1EE522C600E998F8 /* Resources */,
+				7EBCBE2055D6008D28D9474E /* [CP] Embed Pods Frameworks */,
+				158328D92BC685D649CEC41C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -179,6 +206,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0D798C34AA994F5D78899126 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		158328D92BC685D649CEC41C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ColorWar/Pods-ColorWar-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7EBCBE2055D6008D28D9474E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ColorWar/Pods-ColorWar-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0B84DEB91EE522C600E998F8 /* Sources */ = {
@@ -340,6 +415,7 @@
 		};
 		0B84DED31EE522C600E998F8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 29641DE9021B0D7CC530D6BE /* Pods-ColorWar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -357,6 +433,7 @@
 		};
 		0B84DED41EE522C600E998F8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A1FEFEC23AC308A603045E8 /* Pods-ColorWar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
