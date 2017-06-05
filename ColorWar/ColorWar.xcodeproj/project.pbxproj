@@ -20,6 +20,8 @@
 		0B84DEDF1EE5291C00E998F8 /* NSManagedObjectContext+iOS10Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B84DEDB1EE5291C00E998F8 /* NSManagedObjectContext+iOS10Additions.swift */; };
 		0B84DEE11EE5292400E998F8 /* TipsSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B84DEE01EE5292400E998F8 /* TipsSwift.swift */; };
 		0B84DEE31EE5294300E998F8 /* MyColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B84DEE21EE5294300E998F8 /* MyColor.swift */; };
+		0B84DEE81EE5F95600E998F8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0B84DEEA1EE5F95600E998F8 /* InfoPlist.strings */; };
+		0B84DEEB1EE5F95900E998F8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0B84DEED1EE5F95900E998F8 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,12 @@
 		0B84DEDB1EE5291C00E998F8 /* NSManagedObjectContext+iOS10Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+iOS10Additions.swift"; sourceTree = "<group>"; };
 		0B84DEE01EE5292400E998F8 /* TipsSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipsSwift.swift; sourceTree = "<group>"; };
 		0B84DEE21EE5294300E998F8 /* MyColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyColor.swift; sourceTree = "<group>"; };
+		0B84DEE91EE5F95600E998F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0B84DEEC1EE5F95900E998F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0B84DEEE1EE5F95D00E998F8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0B84DEEF1EE5F96100E998F8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0B84DEF01EE5F96D00E998F8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		0B84DEF11EE5F96D00E998F8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +87,8 @@
 				0B84DECC1EE522C600E998F8 /* LaunchScreen.storyboard */,
 				0B84DECF1EE522C600E998F8 /* Info.plist */,
 				0B84DEC71EE522C600E998F8 /* ColorWar.xcdatamodeld */,
+				0B84DEEA1EE5F95600E998F8 /* InfoPlist.strings */,
+				0B84DEED1EE5F95900E998F8 /* Localizable.strings */,
 			);
 			path = ColorWar;
 			sourceTree = "<group>";
@@ -140,6 +150,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 0B84DEB41EE522C600E998F8;
 			productRefGroup = 0B84DEBE1EE522C600E998F8 /* Products */;
@@ -156,7 +167,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B84DEEB1EE5F95900E998F8 /* Localizable.strings in Resources */,
 				0B84DECE1EE522C600E998F8 /* LaunchScreen.storyboard in Resources */,
+				0B84DEE81EE5F95600E998F8 /* InfoPlist.strings in Resources */,
 				0B84DECB1EE522C600E998F8 /* Assets.xcassets in Resources */,
 				0B84DEC61EE522C600E998F8 /* Main.storyboard in Resources */,
 			);
@@ -201,6 +214,26 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		0B84DEEA1EE5F95600E998F8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0B84DEE91EE5F95600E998F8 /* Base */,
+				0B84DEEF1EE5F96100E998F8 /* en */,
+				0B84DEF01EE5F96D00E998F8 /* zh-Hans */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		0B84DEED1EE5F95900E998F8 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0B84DEEC1EE5F95900E998F8 /* Base */,
+				0B84DEEE1EE5F95D00E998F8 /* en */,
+				0B84DEF11EE5F96D00E998F8 /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -208,6 +241,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -259,6 +293,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -306,6 +341,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = ZNVH9D6AWM;
 				INFOPLIST_FILE = ColorWar/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xigk.FindColorFree;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -322,6 +358,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = ZNVH9D6AWM;
 				INFOPLIST_FILE = ColorWar/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xigk.FindColorFree;
 				PRODUCT_NAME = "$(TARGET_NAME)";
