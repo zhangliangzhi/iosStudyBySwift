@@ -22,6 +22,7 @@
 		0B84DEE31EE5294300E998F8 /* MyColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B84DEE21EE5294300E998F8 /* MyColor.swift */; };
 		0B84DEE81EE5F95600E998F8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0B84DEEA1EE5F95600E998F8 /* InfoPlist.strings */; };
 		0B84DEEB1EE5F95900E998F8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0B84DEED1EE5F95900E998F8 /* Localizable.strings */; };
+		0B84DEF31EE5FAF300E998F8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B84DEF21EE5FAF300E998F8 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		0B84DEEF1EE5F96100E998F8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0B84DEF01EE5F96D00E998F8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		0B84DEF11EE5F96D00E998F8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		0B84DEF21EE5FAF300E998F8 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				0B84DED71EE5291C00E998F8 /* INSPersistentContainer */,
-				0B84DED51EE5291200E998F8 /* BootstrapBtn.swift */,
+				0B84DEF21EE5FAF300E998F8 /* MainViewController.swift */,
 				0B84DEC01EE522C600E998F8 /* AppDelegate.swift */,
 				0B84DEC21EE522C600E998F8 /* ViewController.swift */,
 				0B84DEC41EE522C600E998F8 /* Main.storyboard */,
@@ -89,6 +91,7 @@
 				0B84DEC71EE522C600E998F8 /* ColorWar.xcdatamodeld */,
 				0B84DEEA1EE5F95600E998F8 /* InfoPlist.strings */,
 				0B84DEED1EE5F95900E998F8 /* Localizable.strings */,
+				0B84DED51EE5291200E998F8 /* BootstrapBtn.swift */,
 			);
 			path = ColorWar;
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B84DEC31EE522C600E998F8 /* ViewController.swift in Sources */,
+				0B84DEF31EE5FAF300E998F8 /* MainViewController.swift in Sources */,
 				0B84DEDD1EE5291C00E998F8 /* INSPersistentContainer.swift in Sources */,
 				0B84DEC11EE522C600E998F8 /* AppDelegate.swift in Sources */,
 				0B84DEC91EE522C600E998F8 /* ColorWar.xcdatamodeld in Sources */,
