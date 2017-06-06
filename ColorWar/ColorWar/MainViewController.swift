@@ -24,6 +24,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.view.backgroundColor = BG1_COLOR
         rootv = UIView()
         self.view.addSubview(rootv)
         rootv.snp.makeConstraints { (make) in
@@ -44,7 +45,15 @@ class MainViewController: UIViewController {
     }
 
     func initUI() {
-        
+        let pkButton = BootstrapBtn(frame: CGRect(x: 0, y: 0, width: 60, height: 30), btButtonType: .Warning)
+        rootv.addSubview(pkButton)
+        pkButton.snp.makeConstraints { (make) in
+            make.centerX.equalTo(rootv)
+            make.top.equalTo(rootv).offset(100)
+            make.height.equalTo(30)
+            make.width.equalTo(100)
+        }
+        pkButton.setTitle(WZ(1), for: .normal)
     }
     
     // 第一次打开app，加入测试数据
@@ -86,4 +95,7 @@ class MainViewController: UIViewController {
         }
     }
 
+    func WZ(_ id:Int) -> String {
+        return "hi"
+    }
 }
